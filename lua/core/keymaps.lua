@@ -7,6 +7,11 @@ vim.keymap.set("i", "<A-h>", [[<Left>]], { noremap = true })                    
 vim.keymap.set("i", "<A-k>", [[<Up>]], { noremap = true })                                  -- 替换方向键上移
 vim.keymap.set("i", "<A-j>", [[<Down>]], { noremap = true })                                -- 替换方向键下移
 
+vim.keymap.set("n", "<C-h>",[[<C-w>h]], { noremap = true }) -- 移至左窗口
+vim.keymap.set("n", "<C-l>",[[<C-w>l]], { noremap = true }) -- 移至右窗口
+vim.keymap.set("n", "<C-j>",[[<C-w>j]], { noremap = true }) -- 移至下窗口
+vim.keymap.set("n", "<C-k>",[[<C-w>k]], { noremap = true }) -- 移至上窗口
+
 vim.keymap.set({ "n", "v"}, "y", [["+y]], { noremap = true })       -- 复制
 vim.keymap.set("v", "x", [["+x]], { noremap = true })               -- 剪切
 vim.keymap.set({ "n", "v" }, "p", [["+p]], { noremap = true })      -- 粘贴
