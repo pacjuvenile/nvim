@@ -1,3 +1,5 @@
+vim.g.mapleader = " "   -- 设置引导符为空格 
+
 vim.opt.number          = true  -- 显示当前行号
 vim.opt.relativenumber  = true  -- 显示相对行号
 

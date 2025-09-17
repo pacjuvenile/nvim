@@ -1,5 +1,3 @@
-vim.g.mapleader = " "   -- 设置引导符为空格 
-
 vim.keymap.set("n", "j", [[v:count == 0 ? "gj" : "j"]], { expr = true, noremap = true })    -- 视觉行下移
 vim.keymap.set("n", "k", [[v:count == 0 ? "gk" : "k"]], { expr = true, noremap = true })    -- 视觉行上移
 vim.keymap.set("i", "<A-l>", [[<Right>]], { noremap = true })                               -- 替换方向键右移
