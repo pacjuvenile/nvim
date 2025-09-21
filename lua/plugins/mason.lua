@@ -5,8 +5,30 @@ return {
     "mason-org/mason-lspconfig.nvim"
   },
   lazy = true,
-  event = "VeryLazy",
-  opts = {},
+  -- event = "VeryLazy",
+  ft = {
+    -- 配置
+    "lua",
+
+    -- 前端
+    "html",
+    "css",
+    "javascript",
+    "typescript",
+
+    -- 全栈
+    "python",
+  },
+  -- event = { "BufReadPre", "BufNewFile" },
+  opts = {
+    ui = {
+      icons = {
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗"
+      }
+    }
+  },
   config = function (_, opts)
     require("mason").setup(opts)
     local registry = require("mason-registry")
@@ -16,6 +38,7 @@ return {
         package:install()
       end
       local nvim_lsp = require("mason-lspconfig.mappings").get_mason_map().package_to_lspconfig[mason_lsp]
+      config.capabilities = require("blink.cmp").get_lsp_capabilities()
       vim.lsp.config(nvim_lsp, config)
     end
 

@@ -16,7 +16,7 @@ vim.keymap.set({ "n", "v" }, "p", [["+p]], { noremap = true })      -- 粘贴
 vim.keymap.set("i", "<A-p>", [[<C-r>+<Esc>]], { noremap = true })   -- 插入模式粘贴
 
 vim.keymap.set("n", ":", [[q:i]], { noremap = true })               -- 进入命令窗口
-vim.keymap.set("i", "jj", function ()
+vim.keymap.set("i", "<A-n>", function ()
   if vim.fn.getcmdwintype() ~= "" then
     return "<Esc>"                  -- 命令窗口返回普通模式
   end
