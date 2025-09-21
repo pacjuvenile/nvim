@@ -15,4 +15,4 @@ vim.opt.autoread    = true      -- 自动加载外部修改
 vim.opt.splitright  = true      -- 新窗口分割到右侧
 vim.opt.splitbelow  = true      -- 新窗口分割到下方
 
-vim.opt.cmdwinheight    = 1        -- 设置命令窗口大小为1
+vim.opt.cmdwinheight    = 1     -- 设置命令窗口大小为1
