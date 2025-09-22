@@ -6,10 +6,10 @@ return {
     ensure_installed = {
       -- 配置脚本
       "bash",
-      "vim",
       "toml",
       "yaml",
       "json",
+      "vim",
       "lua",
       -- 笔记/论文
       "markdown",
