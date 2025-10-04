@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     keys = {
         {
-            "<leader>pi",
+            "<leader>ic",
             function()
                 vim.cmd("normal! m`") -- 标记光标位置
                 vim.cmd("PasteImage") -- 粘贴图片链接
