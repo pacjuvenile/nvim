@@ -1,7 +1,8 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    lazy = true,
-    event = "VeryLazy",
+    branch = "main",
+    build = ":TSUpdate",
+    lazy = false,
     opts = {
         ensure_installed = {
             -- 配置脚本
