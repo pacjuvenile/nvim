@@ -5,8 +5,8 @@ vim.g.mapleader = " "
 require("plugin_manager.lazy")
 
 -- 选项设置
-require("core.options")
+require("settings.options")
 -- 键位配置
-require("core.keymaps")
+require("settings.keymaps")
 -- 自动命令
-require("core.autocmds")
+require("settings.autocmds")
