@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- 插件管理
-require("config.lazy")
+require("plugin_manager.lazy")
 
 -- 选项设置
 require("core.options")
