@@ -17,14 +17,12 @@ return {
     },
     config = function(_, opts)
         require("mason").setup(opts)
-        local registry = require("mason-registry")
         local function setup(mason_lsp, config)
-            local success, package = pcall(registry.get_package, mason_lsp)
+            local success, package = pcall(require("mason-registry").get_package, mason_lsp)
             if success and not package:is_installed() then
                 package:install()
             end
-            local nvim_lsp = require("mason-lspconfig.mappings").get_mason_map().package_to_lspconfig[mason_lsp]
-            config.capabilities = require("blink.cmp").get_lsp_capabilities()
+            local nvim_lsp = require("mason-lspconfig").get_mappings().package_to_lspconfig[mason_lsp]
 
             -- 以前的写法require + LspStart
             -- require("lspconfig")[nvim_lsp].setup(config)
