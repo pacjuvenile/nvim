@@ -17,7 +17,7 @@ return {
 
         update_on_change = true,
 
-        app = '/mnt/c/Users/sunny/app/firefox/firefox.exe', -- 'webview', 'browser', string or a table of strings explained below
+        -- app = '/mnt/c/Users/sunny/app/firefox/firefox.exe', -- 'webview', 'browser', string or a table of strings explained below
 
         filetype = { 'markdown' }, -- list of filetypes to recognize as markdown
 
