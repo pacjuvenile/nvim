@@ -1,5 +1,6 @@
 -- 全局设置
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- 插件管理
 require("plugin_manager.lazy")
