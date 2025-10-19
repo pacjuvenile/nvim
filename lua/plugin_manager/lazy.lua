@@ -13,6 +13,31 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
-        { import = "plugins" },
+        -- 文件跳转
+        -- nvim-tree.lua
+        {
+            "nvim-tree/nvim-tree.lua",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+            lazy = true,
+            keys = {
+                { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Nvimtree toggle" }
+            },
+            config = function()
+                require("plugins.nvim-tree")     
+            end
+        },
+
+        -- UI
+        -- nvim-web-devicons
+        {
+            "nvim-tree/nvim-web-devicons",
+            lazy = false,
+            config = function()
+                require("plugins.nvim-web-devicons")
+            end
+        }
+    },
+    ui = {
+        border = "rounded"
     }
 })
