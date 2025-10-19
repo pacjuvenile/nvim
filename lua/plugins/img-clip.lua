@@ -11,7 +11,8 @@ return {
                 vim.cmd("normal! v0\"+xdd") -- 剪切图片链接并删除新行
                 vim.cmd("normal! ``") -- 回到光标位置
             end,
-            silent = true
+            silent = true,
+            desc = "Use img-clip to paste the image link into the clipboard"
         }
     },
     opts = {

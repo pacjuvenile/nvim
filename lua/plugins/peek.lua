@@ -4,8 +4,8 @@ return {
     lazy = true,
     event = "VeryLazy",
     keys = {
-        { "<leader>po", "<CMD>PeekOpen<CR>", silent = true },
-        { "<leader>pc", "<CMD>PeekClose<CR>", silent = true }
+        { "<leader>po", "<CMD>PeekOpen<CR>", silent = true, desc = "Peek open markdown preview" },
+        { "<leader>pc", "<CMD>PeekClose<CR>", silent = true, desc = "Peek close markdown preview"}
     },
     opts = {
         auto_load = true,        -- whether to automatically load preview when entering another markdown buffer
