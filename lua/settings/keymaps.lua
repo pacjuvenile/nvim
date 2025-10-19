@@ -14,13 +14,17 @@ vim.keymap.set("n", ":", [[q:i]], { noremap = true })                           
 vim.keymap.set("i", "<A-n>", function()
     if vim.fn.getcmdwintype() ~= "" then
         return "<Esc>" -- 命令窗口返回普通模式
+    elseif vim.bo.buftype == "terminal" then
+        return "<Esc>" -- 终端窗口返回普通模式
     end
 end, { expr = true, noremap = true })
-vim.keymap.set({ "n", "i" }, "<Esc>", function()
-    if vim.fn.getcmdwintype() ~= "" then
+vim.keymap.set({ "t", "n", "i" }, "<Esc>", function()
+    if vim.fn.getcmdwin ~= "" then
         return "<C-c><C-c>"    -- 退出命令窗口
+    elseif vim.bo.buftype == "terminal" then
+        return "<C-\\><C-n>"
     elseif vim.fn.mode() == "n" then
-        return "<Cmd>nohl<CR>" -- 取消高亮
+        return "<CMD>nohl<CR>" -- 取消高亮
     else
         return "<Esc>"         -- 返回普通模式
     end
