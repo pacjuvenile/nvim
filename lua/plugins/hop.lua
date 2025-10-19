@@ -2,7 +2,7 @@ return {
     "smoka7/hop.nvim",
     lazy = true,
     keys = {
-        { "<leader>hp", "<Cmd>HopWord<CR>", mode = { "n", "v" }, silent = true }
+        { "<leader>hp", "<Cmd>HopWord<CR>", mode = { "n", "v" }, desc = "Hop word in current buffer"}
     },
     opts = {
         hint_position = 3 -- require("hop.hint").HintPosition.END的值是3
