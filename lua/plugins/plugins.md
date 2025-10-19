@@ -9,9 +9,20 @@
     - 代码解析
         - nvim-treesitter
 
-    - buffer标签 & 图标
-        - bufferline
+    - 图标显示
         - nvim-web-devicons
+
+    - buffer标签
+        - bufferline
+
+    - 侧边文件树
+        - nvim-tree
+
+    - 底部状态栏
+        - lualine
+
+    - 缩进显示
+        - indent-blankline
 
     - 括号配对
         - nvim-autopairs
@@ -20,15 +31,26 @@
     - 快速移动
         - hop 
 
-    - 代码诊断、提示与补全
-        - mason
-            - nvim-lspconfig
-            - mason-lspconfig
-        - lspsaga
-        - blink
-            - friendly-snippets
+    - 快速跳转
+        - telescope
+            - plenary
+            - telescope-fzf-native
 
-2. 额外功能
+    - 多文件替换
+        - grug-far 
+
+2. lsp(代码诊断、提示与补全)
+    - mason
+        - nvim-lspconfig
+        - mason-lspconfig
+    - lspsaga
+    - blink
+        - friendly-snippets
+
+3. 额外功能
     - markdown渲染
         - peek
         - img-clip
+
+    - 异步执行
+        - asyncrun
