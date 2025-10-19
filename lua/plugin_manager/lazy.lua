@@ -22,8 +22,11 @@ require("lazy").setup({
             keys = {
                 { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Nvimtree toggle" }
             },
+            init = function()
+                require("plugins.nvim-tree").startup()     
+            end,
             config = function()
-                require("plugins.nvim-tree")     
+                require("plugins.nvim-tree").setup()     
             end
         },
 
