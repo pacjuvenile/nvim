@@ -23,7 +23,7 @@ require("lazy").setup({
                 { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Nvimtree toggle" }
             },
             config = function()
-                require("plugins.nvim-tree")     
+                require("plugins.nvim-tree").setup()     
             end
         },
 
@@ -33,7 +33,7 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
             lazy = false,
             config = function()
-                require("plugins.nvim-web-devicons")
+                require("plugins.nvim-web-devicons").setup()
             end
         }
     },
