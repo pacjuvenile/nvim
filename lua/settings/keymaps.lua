@@ -19,7 +19,7 @@ vim.keymap.set("i", "<A-n>", function()
     end
 end, { expr = true, noremap = true })
 vim.keymap.set({ "t", "n", "i" }, "<Esc>", function()
-    if vim.fn.getcmdwin ~= "" then
+    if vim.bo.buftype == "nofile" then
         return "<C-c><C-c>"    -- 退出命令窗口
     elseif vim.bo.buftype == "terminal" then
         return "<C-\\><C-n>"
