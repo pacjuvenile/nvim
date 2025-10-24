@@ -15,5 +15,3 @@ vim.opt.cmdwinheight   = 1     -- 设置命令窗口大小为1
 
 vim.opt.ignorecase     = true  -- 不输入大写则大小写不敏感
 vim.opt.smartcase      = true  -- 输入大写则大写敏感
-
-vim.opt.showmode       = false -- 禁用nvim自身的模式显示

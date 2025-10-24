@@ -26,8 +26,9 @@ require("lazy").setup({
                 require("plugins.nvim-tree").setup()     
             end
         },
+        -- telescope.lua
 
-        -- UI
+        -- 界面UI
         -- nvim-web-devicons
         {
             "nvim-tree/nvim-web-devicons",
@@ -35,7 +36,23 @@ require("lazy").setup({
             config = function()
                 require("plugins.nvim-web-devicons").setup()
             end
-        }
+        },
+
+        -- markdown渲染
+        -- peek.nvim
+        {
+            "toppair/peek.nvim",
+            build = "deno task --quiet build:fast",
+            lazy = true,
+            event = "VeryLazy",
+            keys = {
+                { "<leader>po", "<CMD>PeekOpen<CR>", silent = true, desc = "Peek open markdown preview" },
+                { "<leader>pc", "<CMD>PeekClose<CR>", silent = true, desc = "Peek close markdown preview" }
+            },
+            config = function()
+                require("plugins.peek").setup()
+            end
+        },
     },
     ui = {
         border = "rounded"

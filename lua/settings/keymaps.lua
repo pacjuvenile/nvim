@@ -11,22 +11,20 @@ vim.keymap.set({ "n", "v" }, "p", [["+p]], { noremap = true })                  
 vim.keymap.set("i", "<A-p>", [[<C-r>+<Esc>]], { noremap = true })                        -- 插入模式粘贴
 
 vim.keymap.set("n", ":", [[q:i]], { noremap = true })                                    -- 进入命令窗口
-vim.keymap.set("i", "<A-n>", function()
-    if vim.fn.getcmdwintype() ~= "" then
-        return "<Esc>" -- 命令窗口返回普通模式
-    elseif vim.bo.buftype == "terminal" then
-        return "<Esc>" -- 终端窗口返回普通模式
-    end
-end, { expr = true, noremap = true })
 vim.keymap.set({ "t", "n", "i" }, "<Esc>", function()
-    if vim.bo.buftype == "nofile" then
-        return "<C-c><C-c>"    -- 退出命令窗口
+    if vim.fn.getcmdwintype() ~= "" then
+        return [[<C-c><C-c>]]    -- 退出命令窗口
     elseif vim.bo.buftype == "terminal" then
-        return "<C-\\><C-n>"
+        return [[<C-\><C-n>]]
     elseif vim.fn.mode() == "n" then
         return "<CMD>nohl<CR>" -- 取消高亮
     else
         return "<Esc>"         -- 返回普通模式
+    end
+end, { expr = true, noremap = true })
+vim.keymap.set("i", "<A-n>", function()
+    if vim.fn.getcmdwintype() ~= "" or vim.bo.buftpye == "terminal" then
+        return [[<Esc>]] -- 命令窗口/终端返回普通模式
     end
 end, { expr = true, noremap = true })
 
