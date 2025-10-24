@@ -26,7 +26,20 @@ require("lazy").setup({
                 require("plugins.nvim-tree").setup()     
             end
         },
-        -- telescope.lua
+        -- telescope.nvim
+        {
+            "nvim-telescope/telescope.nvim",
+            dependencies = { "nvim-lua/plenary.nvim" },
+            lazy = true,
+            cmd = "Telescope",
+            keys = {
+                { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
+                { "<leader>fg", "<CMD>Telescope live_grep<CR>", desc = "Telescope live grep" }
+            },
+            config = function()
+                require("plugins.telescope").setup()
+            end
+        },
 
         -- 界面UI
         -- nvim-web-devicons

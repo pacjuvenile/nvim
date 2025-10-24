@@ -6,8 +6,8 @@
     - 文件跳转
         1. nvim-tree.lua(文件树)
         2. telescope.nvim(搜索神器)
-            - plenary
-            - telescope-fzf-native
+            - plenary.nvim
+            <!-- - telescope-fzf-native.nvim -->
     - 界面UI
         1. nvim-web-devicons(图标)
     <!-- - 颜色主题 -->
