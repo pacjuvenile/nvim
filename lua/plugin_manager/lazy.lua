@@ -13,6 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
+        ------------------------
+        -- 1. 编辑体验
+        ------------------------
         -- 文件跳转
         -- nvim-tree.lua
         {
@@ -41,16 +44,13 @@ require("lazy").setup({
             end
         },
 
-        -- 界面UI
-        -- nvim-web-devicons
-        {
-            "nvim-tree/nvim-web-devicons",
-            lazy = false,
-            config = function()
-                require("plugins.nvim-web-devicons").setup()
-            end
-        },
-
+        ------------------------
+        -- 2. lsp
+        ------------------------
+        
+        ------------------------
+        -- 3. 额外功能
+        ------------------------
         -- markdown渲染
         -- peek.nvim
         {

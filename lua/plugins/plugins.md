@@ -5,11 +5,11 @@
 1. 编辑体验
     - 文件跳转
         1. nvim-tree.lua(文件树)
+            - nvim-web-devicons(提供图标支持)
         2. telescope.nvim(搜索神器)
-            - plenary.nvim
+            - plenary.nvim(提供telescope所需模块)
             <!-- - telescope-fzf-native.nvim -->
-    - 界面UI
-        1. nvim-web-devicons(图标)
+    <!-- - 界面美化 -->
     <!-- - 颜色主题 -->
     <!--     - tokyonight -->
     <!-- - 代码解析 -->
