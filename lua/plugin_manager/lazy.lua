@@ -5,7 +5,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
         lazypath
     })
 end
@@ -66,8 +65,7 @@ require("lazy").setup({
 
         {
             "nvim-treesitter/nvim-treesitter",
-            branch = "main",
-            commit = "9ee023538e072163cc541f29bc74214f7b0b90f6",
+            branch = "master",
             lazy = false,
             config = function()
                 require("plugins.nvim-treesitter").setup()
