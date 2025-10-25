@@ -36,7 +36,8 @@ require("lazy").setup({
             lazy = true,
             keys = {
                 { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
-                { "<leader>fg", "<CMD>Telescope live_grep<CR>", desc = "Telescope live grep" }
+                { "<leader>fg", "<CMD>Telescope live_grep<CR>", desc = "Telescope live grep" },
+                { "<leader>fc", "<CMD>Telescope colorscheme<CR>" }
             },
             config = function()
                 require("plugins.telescope").setup()
