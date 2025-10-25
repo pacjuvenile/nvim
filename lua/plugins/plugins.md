@@ -2,26 +2,24 @@
 0. 插件管理器
     - lazy.nvim
 
-1. 编辑体验
-    - 文件跳转
+1. 编辑效率
+    - 跳转
         1. nvim-tree.lua(文件树)
             - nvim-web-devicons(提供图标支持)
         2. telescope.nvim(搜索神器)
             - plenary.nvim(提供telescope所需模块)
-            <!-- - telescope-fzf-native.nvim -->
-    <!-- - 界面美化 -->
-    <!-- - 颜色主题 -->
-    <!--     - tokyonight -->
-    <!-- - 代码解析 -->
-    <!--     - nvim-treesitter -->
+
+    - 配对
+        1. nvim-autopairs(括号自动配对)
+
+    - 美化
+        1. indent-blankline.nvim(可视化缩进间距)
+        2. nvim-treessitter(代码高亮&折叠)
     <!-- - buffer标签 -->
     <!--     - bufferline -->
     <!-- - 底部状态栏 -->
     <!--     - lualine -->
-    <!-- - 缩进显示 -->
-    <!--     - indent-blankline -->
     <!-- - 括号配对 -->
-    <!--     - nvim-autopairs -->
     <!--     - nvim-surround -->
     <!-- - 快速移动 -->
     <!--     - hop  -->

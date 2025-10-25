@@ -14,9 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         ------------------------
-        -- 1. 编辑体验
+        -- 1. 编辑效率
         ------------------------
-        -- 文件跳转
+        -- 跳转
         -- nvim-tree.lua
         {
             "nvim-tree/nvim-tree.lua",
@@ -43,6 +43,37 @@ require("lazy").setup({
                 require("plugins.telescope").setup()
             end
         },
+
+        -- 配对
+        {
+            "windwp/nvim-autopairs",
+            lazy = true,
+            event = "InsertEnter",
+            config = function()
+                require("plugins.nvim-autopairs").setup()
+            end
+        },
+
+        -- 美化
+        {
+            "lukas-reineke/indent-blankline.nvim",
+            lazy = true,
+            event = "VeryLazy",
+            config = function()
+                require("plugins.indent-blankline").setup()
+            end
+        },
+
+        {
+            "nvim-treesitter/nvim-treesitter",
+            branch = "main",
+            commit = "99bd52ba56a4b7c9a8cc50a6140180755e76fac6",
+            build = ":TSUpdate",
+            lazy = false,
+            config = function()
+                require("plugins.nvim-treesitter").setup()
+            end
+        }, 
 
         ------------------------
         -- 2. lsp

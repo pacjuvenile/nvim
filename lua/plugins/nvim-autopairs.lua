@@ -1,8 +1,7 @@
-return {
-    "windwp/nvim-autopairs",
-    lazy = true,
-    event = "InsertEnter",
-    config = function()
-        require("nvim-autopairs").setup({})
-    end
-}
+local M = {}
+
+function M.setup()
+    require("nvim-autopairs").setup({})
+end
+
+return M
