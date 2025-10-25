@@ -14,7 +14,7 @@
 
     - 美化
         1. indent-blankline.nvim(可视化缩进间距)
-        2. nvim-treessitter(代码高亮&折叠)
+        2. nvim-treesitter(代码高亮&折叠)
     <!-- - buffer标签 -->
     <!--     - bufferline -->
     <!-- - 底部状态栏 -->
