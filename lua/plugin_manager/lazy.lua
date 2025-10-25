@@ -67,8 +67,7 @@ require("lazy").setup({
         {
             "nvim-treesitter/nvim-treesitter",
             branch = "main",
-            commit = "99bd52ba56a4b7c9a8cc50a6140180755e76fac6",
-            build = ":TSUpdate",
+            commit = "9ee023538e072163cc541f29bc74214f7b0b90f6",
             lazy = false,
             config = function()
                 require("plugins.nvim-treesitter").setup()
