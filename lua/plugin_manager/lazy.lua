@@ -70,7 +70,7 @@ require("lazy").setup({
             config = function()
                 require("plugins.nvim-treesitter").setup()
             end
-        }, 
+        },
 
         ------------------------
         -- 2. lsp
