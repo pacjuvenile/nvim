@@ -55,6 +55,7 @@ require("lazy").setup({
         },
 
         -- 配对
+        -- nvim-autopairs
         {
             "windwp/nvim-autopairs",
             lazy = true,
@@ -65,6 +66,7 @@ require("lazy").setup({
         },
 
         -- 美化
+        -- indent-blankline.nvim
         {
             "lukas-reineke/indent-blankline.nvim",
             lazy = true,
@@ -73,7 +75,7 @@ require("lazy").setup({
                 require("plugins.indent-blankline").setup()
             end
         },
-
+        -- nvim-treesitter
         {
             "nvim-treesitter/nvim-treesitter",
             branch = "main",
