@@ -70,6 +70,11 @@
 #### peek.nvim
 - Requirements
     - Deno（JS/TS运行时）
-<!-- - img-clip -->
-<!-- - 异步执行 -->
-<!--     - asyncrun -->
+#### img-clip.nvim
+- Requirements
+    - xclip(x11) or wl-clipboard(wayland)
+
+### 3.2 命令异步执行
+#### asyncrun.vim
+- Requirements
+    - Neovim >= 0.1.4

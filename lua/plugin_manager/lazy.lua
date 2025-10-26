@@ -40,7 +40,13 @@ require("lazy").setup({
         ------------------------
         -- markdown渲染
         -- peek.nvim
-        { import = "plugins.peek" }
+        { import = "plugins.peek" },
+        -- img-clip.nvim
+        { import = "plugins.img-clip" },
+        
+        -- 命令异步执行
+        -- asyncrun.vim
+        { import = "plugins.asyncrun" },
     },
     ui = {
         border = "rounded"

@@ -1,21 +1,7 @@
-return {
-    "HakonHarnes/img-clip.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    keys = {
-        {
-            "<leader>ic",
-            function()
-                vim.cmd("normal! m`") -- 标记光标位置
-                vim.cmd("PasteImage") -- 粘贴图片链接
-                vim.cmd("normal! v0\"+xdd") -- 剪切图片链接并删除新行
-                vim.cmd("normal! ``") -- 回到光标位置
-            end,
-            silent = true,
-            desc = "Use img-clip to paste the image link into the clipboard"
-        }
-    },
-    opts = {
+local M = {}
+
+M.setup = function()
+    require("img-clip").setup({
         default = {
             -- 文件/目录选项
             dir_path = "assets",
@@ -54,8 +40,27 @@ return {
                 insert_mode = false
             }
         }
+    })
+end
+
+return {
+    "HakonHarnes/img-clip.nvim",
+    lazy = true,
+    event = "VeryLazy",
+    keys = {
+        {
+            "<leader>ic",
+            function()
+                vim.cmd("normal! m`") -- 标记光标位置
+                vim.cmd("PasteImage") -- 粘贴图片链接
+                vim.cmd("normal! v0\"+xdd") -- 剪切图片链接并删除新行
+                vim.cmd("normal! ``") -- 回到光标位置
+            end,
+            silent = true,
+            desc = "Use img-clip to paste the image link into the clipboard"
+        }
     },
-    config = function(_, opts)
-        require("img-clip").setup(opts)
+    config = function()
+        M.setup()
     end
 }
