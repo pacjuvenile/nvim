@@ -1,6 +1,9 @@
 -- 全局设置
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+-- 颜色主题
+vim.cmd("colorscheme habamax")
+vim.wo.cursorline = true
 
 -- 选项设置
 require("settings.options")

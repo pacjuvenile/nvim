@@ -31,7 +31,18 @@ require("lazy").setup({
         -- telescope.nvim
         {
             "nvim-telescope/telescope.nvim",
-            dependencies = { "nvim-lua/plenary.nvim" },
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+                {
+                    "nvim-telescope/telescope-fzf-native.nvim",
+                    build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release'
+                },
+                "nvim-tree/nvim-web-devicons",
+                {
+                    "nvim-treesitter/nvim-treesitter",
+                    branch = "main"
+                },
+            },
             lazy = true,
             keys = {
                 { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
