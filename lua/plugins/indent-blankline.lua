@@ -4,4 +4,11 @@ function M.setup()
     require("ibl").setup({})
 end
 
-return M
+return {
+    "lukas-reineke/indent-blankline.nvim",
+    lazy = true,
+    event = "VeryLazy",
+    config = function()
+        M.setup()
+    end
+}

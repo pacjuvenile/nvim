@@ -23,4 +23,16 @@ function M.setup()
     vim.api.nvim_create_user_command("PeekClose", require("peek").close, { desc = "Peek close markdown preview" })
 end
 
-return M
+return {
+    "toppair/peek.nvim",
+    build = "deno task --quiet build:fast",
+    lazy = true,
+    event = "VeryLazy",
+    keys = {
+        { "<leader>po", "<CMD>PeekOpen<CR>", silent = true, desc = "Peek open markdown preview" },
+        { "<leader>pc", "<CMD>PeekClose<CR>", silent = true, desc = "Peek close markdown preview" }
+    },
+    config = function()
+        M.setup()
+    end
+}

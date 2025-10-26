@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup()
+M.setup = function()
     require("nvim-treesitter").setup({
         install_dir = vim.fn.stdpath('data') .. '/site'
     })
@@ -42,25 +42,37 @@ function M.setup()
             -- 硬件描述
             "systemverilog",
             "vhdl"
-        }
-        require("nvim-treesitter").install(ensure_installed)
+    }
+    require("nvim-treesitter").install(ensure_installed)
 
-        local treesitter_autogroup = vim.api.nvim_create_augroup("TreesitterAutoGroup", { clear = true })
-        local pattern = {}
-        for _, parser in ipairs(ensure_installed) do
-            local has_parser, _ =  pcall(vim.treesitter.language.inspect, parser)
-            if has_parser then
-                -- 找到解析器适应的全部文件类型
-                pattern = vim.tbl_extend("keep", pattern, vim.treesitter.language.get_filetypes(parser))
+    local treesitter_autogroup = vim.api.nvim_create_augroup("TreesitterAutoGroup", { clear = true })
+    local pattern = {}
+    for _, parser in ipairs(ensure_installed) do
+        local has_parser, _ =  pcall(vim.treesitter.language.inspect, parser)
+        if has_parser then
+            -- 找到解析器适应的全部文件类型
+            local parser_filetypes = vim.treesitter.language.get_filetypes(parser)
+            for _, filetype in ipairs(parser_filetypes) do
+                if not vim.tbl_contains(pattern, filetype,{}) then
+                    pattern[#pattern + 1] = filetype
+                end
             end
         end
-        vim.api.nvim_create_autocmd("FileType", {
-            group = treesitter_autogroup,
-            pattern = pattern,
-            callback = function()
-                vim.treesitter.start()
-            end
-        })
+    end
+    vim.api.nvim_create_autocmd("FileType", {
+        group = treesitter_autogroup,
+        pattern = pattern,
+        callback = function()
+            vim.treesitter.start()
+        end
+    })
 end
 
-return M
+return {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
+        config = function()
+            M.setup()
+        end
+}
