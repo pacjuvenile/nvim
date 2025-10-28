@@ -24,11 +24,3 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
     end
 })
--- vim.api.nvim_create_autocmd("BufWinLeave", {
---     group = view_autogroup,
---     callback = function()
---         if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
---             vim.cmd([[mkview]])
---         end
---     end
--- })
