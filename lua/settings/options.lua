@@ -6,6 +6,8 @@ vim.opt.shiftwidth      = 4         -- 缩进宽度4个空格
 vim.opt.expandtab       = true      -- Tab转换为空格
 vim.opt.softtabstop     = 4         -- Tab/Backspace对应4个空格宽度
 
+vim.opt.cursorline      = true      -- 高亮光标所在行
+
 vim.opt.splitright      = true      -- 新窗口分割到右侧
 vim.opt.splitbelow      = true      -- 新窗口分割到下方
 

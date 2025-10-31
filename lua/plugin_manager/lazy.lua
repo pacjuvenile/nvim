@@ -17,19 +17,24 @@ require("lazy").setup({
         ------------------------
         -- 跳转
         -- nvim-tree.lua
-        { import = "plugins.nvim-tree" }, 
+        { import = "plugins.skip.nvim-tree" }, 
         -- telescope.nvim
-        { import = "plugins.telescope" },
+        { import = "plugins.skip.telescope" },
 
         -- 配对
         -- nvim-autopairs
-        { import = "plugins.nvim-autopairs" },
+        { import = "plugins.pair.nvim-autopairs" },
 
         -- 美化
         -- indent-blankline.nvim
-        { import = "plugins.indent-blankline" },
+        { import = "plugins.beautify.indent-blankline" },
         -- nvim-treesitter
-        { import = "plugins.nvim-treesitter" },
+        { import = "plugins.beautify.nvim-treesitter" },
+        -- tokyonight
+        -- { import = "plugins.beautify.tokyonight" },
+        -- catppuccin
+        { import = "plugins.beautify.catppuccin" },
+        
 
         ------------------------
         -- 2. lsp
@@ -40,9 +45,9 @@ require("lazy").setup({
         ------------------------
         -- markdown渲染
         -- peek.nvim
-        { import = "plugins.peek" },
+        { import = "plugins.markdown.peek" },
         -- img-clip.nvim
-        { import = "plugins.img-clip" },
+        { import = "plugins.markdown.img-clip" },
         
         -- 命令异步执行
         -- asyncrun.vim

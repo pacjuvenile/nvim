@@ -1,5 +1,6 @@
 {
   "asyncrun.vim": { "branch": "master", "commit": "e17c49c67d1dd847cd1d7d6077a7168816f546cc" },
+  "catppuccin": { "branch": "main", "commit": "8c4125e3c746976ba025dc5d908fa22c6aa09486" },
   "img-clip.nvim": { "branch": "main", "commit": "e7e29f0d07110405adecd576b602306a7edd507a" },
   "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
   "lazy.nvim": { "branch": "main", "commit": "e31789c675e2f591a20fc894b6713398eaa5dddd" },
