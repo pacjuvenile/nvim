@@ -46,6 +46,9 @@
     4. tree-sitter-cli（treesitter命令行接口） >= 0.25.0
     5. gcc（C编译器）
     6. Node（JS运行时） >= 23.0.0
+#### catppuccin(颜色主题)
+- Requirements
+    - Neovim >= 0.8.0
 <!-- - buffer标签 -->
 <!--     - bufferline -->
 <!-- - 底部状态栏 -->
