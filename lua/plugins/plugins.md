@@ -33,6 +33,9 @@
 #### nvim-autopairs(括号自动配对)
 - Requirements
     - Neovim >= 0.7.0
+#### nvim-surround
+- Requirements
+    - Neovim >= 0.8.0
 
 ### 1.3 美化
 #### indent-blankline.nvim(可视化缩进间距)
@@ -53,8 +56,6 @@
 <!--     - bufferline -->
 <!-- - 底部状态栏 -->
 <!--     - lualine -->
-<!-- - 括号配对 -->
-<!--     - nvim-surround -->
 <!-- - 快速移动 -->
 <!--     - hop  -->
 <!-- - 多文件查找替换 -->

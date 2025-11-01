@@ -24,6 +24,7 @@ require("lazy").setup({
         -- 配对
         -- nvim-autopairs
         { import = "plugins.pair.nvim-autopairs" },
+        { import = "plugins.pair.nvim-surround" },
 
         -- 美化
         -- indent-blankline.nvim

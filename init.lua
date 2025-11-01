@@ -11,10 +11,3 @@ require("settings.autocmds")
 
 -- 插件管理
 require("plugin_manager.lazy")
-
--- 主题设置 
--- vim.cmd[[
---     colorscheme habamax
---     highlight Normal guibg=none
---     highlight cursorline guibg=#383838
--- ]]
