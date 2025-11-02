@@ -39,12 +39,16 @@ M.setup = function()
         ["lua-language-server"]        = {
             settings = {
                 Lua = {
-                    diagnostics = {
-                        globals = { "vim" }
+                    cmd = { "lua-language-server" },
+                    filetypes = { "lua" },
+                    workspace = {
+                        library = {
+                            vim.env.VIMRUNTIME
+                        }
                     },
                     runtime = {
                         version = "LuaJIT",
-                    }
+                    },
                 }
             }
         },
