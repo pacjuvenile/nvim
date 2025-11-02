@@ -17,25 +17,24 @@ require("lazy").setup({
         ------------------------
         -- 跳转
         -- nvim-tree.lua
-        { import = "plugins.skip.nvim-tree" }, 
+        require("plugins.skip.nvim-tree"),
         -- telescope.nvim
-        { import = "plugins.skip.telescope" },
+        require("plugins.skip.telescope"),
 
         -- 配对
         -- nvim-autopairs
-        { import = "plugins.pair.nvim-autopairs" },
-        { import = "plugins.pair.nvim-surround" },
+        require("plugins.pair.nvim-autopairs"),
+        require("plugins.pair.nvim-surround"),
 
         -- 美化
         -- indent-blankline.nvim
-        { import = "plugins.beautify.indent-blankline" },
+        require("plugins.beautify.indent-blankline"),
         -- nvim-treesitter
-        { import = "plugins.beautify.nvim-treesitter" },
+        require("plugins.beautify.nvim-treesitter"),
         -- tokyonight
-        -- { import = "plugins.beautify.tokyonight" },
+        -- require("plugins.beautify.tokyonight"),
         -- catppuccin
-        { import = "plugins.beautify.catppuccin" },
-        
+        require("plugins.beautify.catppuccin"),
 
         ------------------------
         -- 2. lsp
@@ -46,13 +45,13 @@ require("lazy").setup({
         ------------------------
         -- markdown渲染
         -- peek.nvim
-        { import = "plugins.markdown.peek" },
+        require("plugins.markdown.peek"),
         -- img-clip.nvim
-        { import = "plugins.markdown.img-clip" },
+        require("plugins.markdown.img-clip"),
         
         -- 命令异步执行
         -- asyncrun.vim
-        { import = "plugins.asyncrun" },
+        require("plugins.asyncrun"),
     },
     ui = {
         border = "rounded"
