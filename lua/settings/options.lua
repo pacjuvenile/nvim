@@ -18,3 +18,8 @@ vim.opt.smartcase       = true      -- 输入大写则大写敏感
 
 vim.opt.foldmethod      = "expr"    -- 折叠方法基于表达式
 vim.opt.foldlevel       = 99        -- 大于折叠层级的行会被折叠
+
+vim.diagnostic.config({
+    virtual_text = true,
+    update_in_insert = true
+})

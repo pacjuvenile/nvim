@@ -64,7 +64,7 @@
 <!-- - 多文件查找替换 -->
 <!--     - grug-far  -->
 
-## 2. LSP(代码诊断、提示与补全)
+## 2. LSP相关(代码诊断、提示与补全)
 #### mason.nvim（LSP管理器）
 - Requirements
     - `Neovim` >= 0.10.0

@@ -30,5 +30,7 @@ vim.keymap.set("i", "<A-n>", function()
         return [[<Esc>]] -- 命令窗口/终端返回普通模式
     end
 end, { expr = true, noremap = true })
+vim.keymap.set("n", "<A-f>", "<CMD>lua vim.lsp.buf.format()<CR>", { desc = "Use lsp to format current buffer" })
 
 vim.keymap.set("n", "<A-m>", [[:%s.\r..g<CR>]], { noremap = true, silent = true }) -- 删除Windows风格的换行符
+

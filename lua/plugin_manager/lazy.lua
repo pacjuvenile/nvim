@@ -39,8 +39,8 @@ require("lazy").setup({
         ------------------------
         -- 2. lsp
         ------------------------
-        require("plugins.lsp.mason"),
-        require("plugins.lsp.blink"),
+        require("plugins.lsp-relative.mason"),
+        require("plugins.lsp-relative.blink"),
 
         ------------------------
         -- 3. 额外功能
