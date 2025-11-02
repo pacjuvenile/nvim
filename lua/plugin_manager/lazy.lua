@@ -39,6 +39,8 @@ require("lazy").setup({
         ------------------------
         -- 2. lsp
         ------------------------
+        require("plugins.lsp.mason"),
+        require("plugins.lsp.blink"),
 
         ------------------------
         -- 3. 额外功能
@@ -48,12 +50,15 @@ require("lazy").setup({
         require("plugins.markdown.peek"),
         -- img-clip.nvim
         require("plugins.markdown.img-clip"),
-        
+
         -- 命令异步执行
         -- asyncrun.vim
         require("plugins.asyncrun"),
     },
     ui = {
         border = "rounded"
+    },
+    install = {
+        colorscheme = { "catppuccin-macchiato" }
     }
 })

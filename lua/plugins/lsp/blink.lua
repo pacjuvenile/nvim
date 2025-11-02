@@ -1,12 +1,7 @@
-return {
-    "saghen/blink.cmp",
-    version = "*",
-    dependencies = {
-        "rafamadriz/friendly-snippets"
-    },
-    lazy = true,
-    event = "VeryLazy",
-    opts = {
+local M = {}
+
+M.setup = function()
+    require("blink.cmp").setup({
         completion = {
             documentation = {
                 auto_show = true
@@ -41,9 +36,19 @@ return {
                     auto_show = true
                 }
             }
-        },
+        }
+    })
+end
+
+return {
+    "saghen/blink.cmp",
+    build = 'cargo build --release',
+    dependencies = {
+        "rafamadriz/friendly-snippets"
     },
-    config = function(_, opts)
-        require("blink.cmp").setup(opts)
+    lazy = true,
+    event = "VeryLazy",
+    config = function()
+        M.setup()
     end
 }

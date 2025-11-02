@@ -16,13 +16,13 @@ vim.keymap.set("n", "<C-w>n", [[<CMD>new<CR>]], { noremap = true }) -- 水平分
 vim.keymap.set("n", ":", [[q:i]], { noremap = true })                                    -- 进入命令窗口
 vim.keymap.set({ "t", "n", "i" }, "<Esc>", function()
     if vim.fn.getcmdwintype() ~= "" then
-        return [[<C-c><C-c>]]    -- 退出命令窗口
+        return [[<C-c><C-c>]]   -- 退出命令窗口
     elseif vim.bo.buftype == "terminal" then
-        return [[<C-\><C-n>]]
+        return [[<C-\><C-n>]]   -- 从终端输入中返回nvim普通模式
     elseif vim.fn.mode() == "n" then
-        return "<CMD>nohl<CR>" -- 取消高亮
+        return [[<CMD>nohl<CR>]]  -- 取消高亮
     else
-        return "<Esc>"         -- 返回普通模式
+        return [[<Esc>]]          -- 返回普通模式
     end
 end, { expr = true, noremap = true })
 vim.keymap.set("i", "<A-n>", function()
