@@ -10,4 +10,4 @@ require("settings.keymaps")
 require("settings.autocmds")
 
 -- 插件管理
-require("plugin_manager.lazy")
+require("plugin-manager.lazy")
