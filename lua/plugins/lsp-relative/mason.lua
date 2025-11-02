@@ -1,16 +1,20 @@
 local M = {}
 
-M.lsp_install = function(mason_lsp)
+M.lsp_install_packages = function(mason_lsp)
     local success, package = pcall(require("mason-registry").get_package, mason_lsp)
     if success and not package:is_installed() then
         package:install()
     end
 end
 
-M.lsp_enable = function(lsp_config_table)
+M.lsp_get_mappings = function(mason_lsp)
+    return require("mason-lspconfig").get_mappings().package_to_lspconfig[mason_lsp]
+end
+
+M.lsp_enable_config = function(lsp_config_table)
     for _, lsp_config in ipairs(lsp_config_table) do
-        M.lsp_install(lsp_config.cmd[1])
-        local nvim_lsp = require("mason-lspconfig").get_mappings().package_to_lspconfig[lsp_config.cmd[1]]
+        M.lsp_install_packages(lsp_config.cmd[1])
+        local nvim_lsp = M.lsp_get_mappings(lsp_config.cmd[1])
 
         -- lsp配置
         -- 以前的写法
@@ -33,7 +37,7 @@ M.setup = function()
             }
         }
     })
-    M.lsp_enable({
+    M.lsp_enable_config({
         require("lsp.lua"),
     })
 end
