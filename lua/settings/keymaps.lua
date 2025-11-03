@@ -10,9 +10,6 @@ vim.keymap.set("v", "x", [["+x]], { noremap = true })                           
 vim.keymap.set({ "n", "v" }, "p", [["+p]], { noremap = true })                           -- 粘贴
 vim.keymap.set("i", "<A-p>", [[<C-r>+<Esc>]], { noremap = true })                        -- 插入模式粘贴
 
-vim.keymap.set("n", "<C-w>v", [[<CMD>vnew<CR>]], { noremap = true }) -- 垂直分屏
-vim.keymap.set("n", "<C-w>n", [[<CMD>new<CR>]], { noremap = true }) -- 水平分屏
-
 vim.keymap.set("n", ":", [[q:i]], { noremap = true })                                    -- 进入命令窗口
 vim.keymap.set({ "t", "n", "i" }, "<Esc>", function()
     if vim.fn.getcmdwintype() ~= "" then
@@ -33,4 +30,3 @@ end, { expr = true, noremap = true })
 vim.keymap.set("n", "<A-f>", "<CMD>lua vim.lsp.buf.format()<CR>", { desc = "Use lsp to format current buffer" })
 
 vim.keymap.set("n", "<A-m>", [[:%s.\r..g<CR>]], { noremap = true, silent = true }) -- 删除Windows风格的换行符
-

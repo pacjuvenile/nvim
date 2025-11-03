@@ -18,28 +18,37 @@ require("lazy").setup({
         -- 跳转
         -- nvim-tree.lua
         require("plugins.skip.nvim-tree"),
+
         -- telescope.nvim
         require("plugins.skip.telescope"),
 
         -- 配对
         -- nvim-autopairs
         require("plugins.pair.nvim-autopairs"),
+
+        -- nvim-surround
         require("plugins.pair.nvim-surround"),
 
         -- 美化
-        -- indent-blankline.nvim
-        require("plugins.beautify.indent-blankline"),
-        -- nvim-treesitter
-        require("plugins.beautify.nvim-treesitter"),
         -- tokyonight
         -- require("plugins.beautify.tokyonight"),
+
         -- catppuccin
         require("plugins.beautify.catppuccin"),
+
+        -- indent-blankline.nvim
+        require("plugins.beautify.indent-blankline"),
+
+        -- nvim-treesitter
+        require("plugins.beautify.nvim-treesitter"),
 
         ------------------------
         -- 2. lsp
         ------------------------
+        -- mason.nvim
         require("plugins.lsp-relative.mason"),
+
+        -- blink.cmp
         require("plugins.lsp-relative.blink"),
 
         ------------------------

@@ -7,6 +7,10 @@
     3. a `Nerd Font`
     4. `luarocks`
 
+```lua
+print("hello")
+```
+
 ## 1. 编辑效率
 
 ### 1.1 跳转
@@ -39,11 +43,15 @@
     - `Neovim` >= 0.8.0
 
 ### 1.3 美化
+#### catppuccin(颜色主题)
+- Requirements
+    - `Neovim` >= 0.8.0
+
 #### indent-blankline.nvim(可视化缩进间距)
 - Requirements
     - `Neovim` >= 0.10.0
 
-#### nvim-treesitter(代码高亮&折叠)
+#### nvim-treesitter(高亮（含注入）、折叠)
 - Requirements
     1. `Neovim` >= 0.11.0
     2. `tar`（解压工具）
@@ -52,9 +60,6 @@
     5. `gcc`（C编译器）
     6. `Node`（JS运行时） >= 23.0.0
 
-#### catppuccin(颜色主题)
-- Requirements
-    - Neovim >= 0.8.0
 <!-- - buffer标签 -->
 <!--     - bufferline -->
 <!-- - 底部状态栏 -->

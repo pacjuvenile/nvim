@@ -10,13 +10,13 @@ M.setup = function()
                     "--hidden",
                     "--glob",
                     "!**/.git/*"
-                } 
+                }
             },
             live_grep = {
                 glob_pattern = {
                     "!**/.git/*"
                 },
-                additional_args = { 
+                additional_args = {
                     "--hidden",
                 },
             }
@@ -36,10 +36,6 @@ return {
             build = 'make'
         },
         "nvim-tree/nvim-web-devicons",
-        {
-            "nvim-treesitter/nvim-treesitter",
-            branch = "main"
-        },
     },
     lazy = true,
     keys = {

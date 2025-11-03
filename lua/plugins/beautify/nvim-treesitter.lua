@@ -64,6 +64,7 @@ M.setup = function()
         pattern = pattern,
         callback = function()
             vim.treesitter.start()
+            vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
         end
     })
 end
