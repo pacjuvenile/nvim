@@ -39,14 +39,22 @@ M.setup = function()
     })
     M.lsp_enable_config({
         require("lsp.lua"),
+        require("lsp.markdown"),
     })
 end
 
 return {
     "mason-org/mason.nvim",
     dependencies = {
-        "neovim/nvim-lspconfig",
-        "mason-org/mason-lspconfig.nvim"
+        {
+            "mason-org/mason-lspconfig.nvim",
+            dependencies = {
+                {
+                    "neovim/nvim-lspconfig",
+                    version = "*"
+                }
+            }
+        }
     },
     lazy = true,
     event = "VeryLazy",
