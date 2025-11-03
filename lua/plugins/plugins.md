@@ -92,6 +92,8 @@
         - Dependencies 
             1. `mason.nvim` >= 2.0.0
             2. `nvim-lspconfig` >= 2.0.0
+                - Requirements
+                    - `neovim` >= 0.11.3
 #### blink.cmp（代码提示&补全）
 - Requirements
     - `neovim` >= 0.10.0
