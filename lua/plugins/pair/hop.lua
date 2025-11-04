@@ -14,9 +14,7 @@ M.config = {
     keys = {
         { "<leader>hp", "<Cmd>HopWord<CR>", mode = { "n", "v" }, desc = "Hop word in current buffer" }
     },
-    config = function(_, opts)
-        require("hop").setup(opts)
-    end
+    config = M.setup
 }
 
 if M.ensure_installed then
