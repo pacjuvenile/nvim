@@ -37,11 +37,3 @@ require("lazy").setup({
         }
     }
 })
-
--- 自动清理未使用插件
--- vim.api.nvim_create_autocmd("User",{
---     pattern = "VeryLazy",
---     callback = function()
---         vim.cmd[[ Lazy clean]]
---     end
--- })
