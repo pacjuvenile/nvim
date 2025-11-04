@@ -1,13 +1,15 @@
 local M = {}
 
-M.setup = function()
-end
+M.ensure_installed = true
 
-return {
+M.config = {
     "skywind3000/asyncrun.vim",
     lazy = true,
-    event = "VeryLazy",
-    config = function()
-        M.setup()
-    end
+    event = "VeryLazy"
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

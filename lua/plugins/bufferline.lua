@@ -1,4 +1,12 @@
-return {
+local M = {}
+
+M.ensure_installed = false
+
+M.setup = function()
+    require("bufferline").setup()
+end
+
+M.cofig =  {
     "akinsho/bufferline.nvim",
     lazy = false,
     keys = {
@@ -8,8 +16,11 @@ return {
         { "<leader>bo", "<CMD>BufferLineCloseOthers<CR>", silent = true, desc = "Bufferline close others" },
         { "<leader>bp", "<CMD>BufferLinePick<CR>",        silent = true, desc = "Bufferline pick" }
     },
-    opts = {},
-    config = function(_, opts)
-        require("bufferline").setup(opts)
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.cofig
+end
+
+return {}

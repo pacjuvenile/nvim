@@ -1,9 +1,20 @@
-return {
+local M = {}
+
+M.ensure_installed = false
+
+M.setup = function()
+        require("grug_far").setup()
+end
+
+M.config = {
     "MagicDuck/grug-far.nvim",
     lazy = true,
     cmd = "GrugFar",
-    opts = {},
-    config = function(_, opts)
-        require("grug-far").setup(opts)
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

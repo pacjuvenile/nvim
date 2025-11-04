@@ -1,5 +1,7 @@
 local M = {}
 
+M.ensure_installed = false
+
 M.setup = function()
     require("tokyonight").setup({
         transparent = true,
@@ -12,10 +14,14 @@ M.setup = function()
     ]]
 end
 
-return {
+M.config =  {
     "folke/tokyonight.nvim",
     lazy = false,
-    config = function()
-        M.setup()
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

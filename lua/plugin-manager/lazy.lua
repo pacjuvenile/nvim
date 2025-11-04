@@ -10,60 +10,24 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local plugins_spec = function()
+    local spec_table = {}
+
+    local lua_path = vim.fn.stdpath("config") .. "/lua/"
+    local plugins_path = lua_path .. "plugins/"
+    local plugins_configs = vim.fn.glob(plugins_path .. "**/*.lua", false, true)
+
+    for _, item in ipairs(plugins_configs) do
+        local lua_path_file = item:gsub("^" .. lua_path, "")
+        local plugins_config_module = lua_path_file:gsub("/","."):gsub("%.lua$", "")
+        spec_table[#spec_table + 1] = require(plugins_config_module)
+    end
+
+    return spec_table
+end
+
 require("lazy").setup({
-    spec = {
-        ------------------------
-        -- 1. 编辑效率
-        ------------------------
-        -- 跳转
-        -- nvim-tree.lua
-        require("plugins.skip.nvim-tree"),
-
-        -- telescope.nvim
-        require("plugins.skip.telescope"),
-
-        -- 配对
-        -- nvim-autopairs
-        require("plugins.pair.nvim-autopairs"),
-
-        -- nvim-surround
-        require("plugins.pair.nvim-surround"),
-
-        -- 美化
-        -- tokyonight
-        -- require("plugins.beautify.tokyonight"),
-
-        -- catppuccin
-        require("plugins.beautify.catppuccin"),
-
-        -- indent-blankline.nvim
-        require("plugins.beautify.indent-blankline"),
-
-        -- nvim-treesitter
-        require("plugins.beautify.nvim-treesitter"),
-
-        ------------------------
-        -- 2. lsp
-        ------------------------
-        -- mason.nvim
-        require("plugins.lsp-relative.mason"),
-
-        -- blink.cmp
-        require("plugins.lsp-relative.blink"),
-
-        ------------------------
-        -- 3. 额外功能
-        ------------------------
-        -- markdown渲染
-        -- peek.nvim
-        require("plugins.markdown.peek"),
-        -- img-clip.nvim
-        require("plugins.markdown.img-clip"),
-
-        -- 命令异步执行
-        -- asyncrun.vim
-        require("plugins.asyncrun"),
-    },
+    spec = plugins_spec(),
     ui = {
         border = "rounded"
     },

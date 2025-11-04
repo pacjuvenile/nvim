@@ -1,0 +1,26 @@
+local M = {}
+
+M.ensure_installed = true
+
+M.setup = function()
+    require("hop").setup({
+        hint_position = require("hop.hint").HintPosition.END
+    })
+end
+
+M.config = {
+    "smoka7/hop.nvim",
+    lazy = true,
+    keys = {
+        { "<leader>hp", "<Cmd>HopWord<CR>", mode = { "n", "v" }, desc = "Hop word in current buffer" }
+    },
+    config = function(_, opts)
+        require("hop").setup(opts)
+    end
+}
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

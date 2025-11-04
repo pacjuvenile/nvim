@@ -5,6 +5,7 @@ M.filetype = { "lua" }
 M.root_markers = {
     ".git"
 }
+
 M.settings = {
     Lua = {
         workspace = {
