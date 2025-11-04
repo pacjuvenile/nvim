@@ -1,5 +1,7 @@
 local M = {}
 
+M.ensure_installed = true
+
 M.lsp_install_packages = function(mason_lsp)
     local success, package = pcall(require("mason-registry").get_package, mason_lsp)
     if success and not package:is_installed() then
@@ -43,7 +45,7 @@ M.setup = function()
     })
 end
 
-return {
+M.config = {
     "mason-org/mason.nvim",
     dependencies = {
         {
@@ -58,7 +60,11 @@ return {
     },
     lazy = true,
     event = "VeryLazy",
-    config = function()
-        M.setup()
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

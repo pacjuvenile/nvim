@@ -1,5 +1,7 @@
 local M = {}
 
+M.ensure_installed = true
+
 M.setup = function()
     require("blink.cmp").setup({
         completion = {
@@ -40,7 +42,7 @@ M.setup = function()
     })
 end
 
-return {
+M.config = {
     "saghen/blink.cmp",
     build = 'cargo build --release',
     dependencies = {
@@ -48,7 +50,11 @@ return {
     },
     lazy = true,
     event = "VeryLazy",
-    config = function()
-        M.setup()
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

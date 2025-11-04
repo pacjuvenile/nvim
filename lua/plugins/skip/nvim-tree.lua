@@ -1,9 +1,11 @@
 local M = {}
 
+M.ensure_installed = true
+
 M.setup = function()
     require("nvim-tree").setup({
-        git = { 
-            enable = true 
+        git = {
+            enable = true
         },
         filters = {
             git_ignored = false,
@@ -11,14 +13,18 @@ M.setup = function()
     })
 end
 
-return {
+M.config = {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = true,
     keys = {
         { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Nvimtree toggle" }
     },
-    config = function()
-        M.setup()
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

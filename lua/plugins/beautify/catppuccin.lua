@@ -1,5 +1,7 @@
 local M = {}
 
+M.ensure_installed = true
+
 M.setup = function()
     require("catppuccin").setup({
         transparent_background = true,
@@ -7,16 +9,20 @@ M.setup = function()
             keywords = { "italic" }
         }
     })
-    vim.cmd[[
+    vim.cmd [[
         colorscheme catppuccin-macchiato
     ]]
 end
 
-return {
+M.config = {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
-    config = function()
-        M.setup()
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

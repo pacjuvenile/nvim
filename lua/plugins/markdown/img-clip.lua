@@ -1,5 +1,7 @@
 local M = {}
 
+M.ensure_installed = true
+
 M.setup = function()
     require("img-clip").setup({
         default = {
@@ -12,7 +14,7 @@ M.setup = function()
     })
 end
 
-return {
+M.config = {
     "HakonHarnes/img-clip.nvim",
     lazy = true,
     event = "VeryLazy",
@@ -29,7 +31,11 @@ return {
             desc = "put the image link into the clipboard"
         }
     },
-    config = function()
-        M.setup()
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}

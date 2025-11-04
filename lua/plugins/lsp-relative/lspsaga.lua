@@ -1,4 +1,18 @@
-return {
+local M = {}
+
+M.ensure_installed = true
+
+M.setup = function()
+    require("lspsaga").setup({
+        finder = {
+            keys = {
+                toggle_or_open = "<CR>"
+            }
+        }
+    })
+end
+
+M.config = {
     "nvimdev/lspsaga.nvim",
     lazy = true,
     keys = {
@@ -9,14 +23,11 @@ return {
         { "<leader>ln", "<Cmd>Lspsaga diagnostic_jump_next<CR>" },
         { "<leader>lp", "<Cmd>Lspsaga diagnostic_jump_prev<CR>" },
     },
-    opts = {
-        finder = {
-            keys = {
-                toggle_or_open = "<CR>"
-            }
-        }
-    },
-    config = function(_, opts)
-        require("lspsaga").setup(opts)
-    end
+    config = M.setup
 }
+
+if M.ensure_installed then
+    return M.config
+end
+
+return {}
