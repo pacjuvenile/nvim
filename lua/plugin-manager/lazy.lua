@@ -12,22 +12,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- 插件管理
-local plugins_spec = function()
-    local spec_table = {}
+local spec_table = {}
 
-    local lua_path = vim.fn.stdpath("config") .. "/lua"
-    local plugins_path = lua_path .. "/plugins"
-    local plugins_configs = vim.fn.glob(plugins_path .. "/**/*.lua", false, true)
+local lua_path = vim.fn.stdpath("config") .. "/lua"
+local plugins_config_path = lua_path .. "/plugins"
+local plugins_config = vim.fn.glob(plugins_config_path .. "/**/*.lua", false, true)
 
-    for _, item in ipairs(plugins_configs) do
-        local lua_path_file = item:gsub("^" .. lua_path .. "/", "")
-        local plugins_config_module = lua_path_file:gsub("/", "."):gsub("%.lua$", "")
-        spec_table[#spec_table + 1] = require(plugins_config_module)
-    end
-    return spec_table
+for _, plugin_config in ipairs(plugins_config) do
+    local lua_path_file = plugin_config:gsub("^" .. lua_path .. "/", "")
+    local plugin_config_module = lua_path_file:gsub("/", "."):gsub("%.lua$", "")
+    spec_table[#spec_table + 1] = require(plugin_config_module)
 end
 
-local spec_table = plugins_spec()
 require("lazy").setup({
     spec = spec_table,
     ui = {
@@ -67,9 +63,9 @@ for _, spec in ipairs(spec_table) do
 end
 -- 获取本地已安装的插件
 local plugins_path = vim.fn.stdpath("data") .. "/lazy"
-local plugins_data = vim.fn.readdir(plugins_path)
+local plugins = vim.fn.readdir(plugins_path)
 -- 若本地已安装的插件未被配置，则卸载之
-for _, plugin in ipairs(plugins_data) do
+for _, plugin in ipairs(plugins) do
     if configured_plugins[plugin] ~= true then
         vim.api.nvim_create_autocmd("User", {
             pattern = "VeryLazy",
