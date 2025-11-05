@@ -43,7 +43,8 @@ M.config = {
     keys = {
         { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
         { "<leader>fg", "<CMD>Telescope live_grep<CR>",  desc = "Telescope live grep" },
-        { "<leader>fc", "<CMD>Telescope colorscheme<CR>" }
+        { "<leader>fc", "<CMD>Telescope colorscheme<CR>", desc = "Telescope colorscheme"},
+        {"<leader>fh", "<CMD>Telescope help_tags<CR>", desc = "Telescope find help documents"}
     },
     config = function()
         M.setup()

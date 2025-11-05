@@ -43,7 +43,7 @@ require("lazy").setup({
 -- 自动清理未配置插件
 -- 获取已配置的插件及其依赖
 local configured_plugins = { ["lazy.nvim"] = true }
-local function get_plugin_name(spec)
+local function get_configured_plugins(spec)
     local plugin_name = nil
     if type(spec) == "string" then
         plugin_name = spec:gsub("^.*/", "")
@@ -58,12 +58,12 @@ local function get_plugin_name(spec)
     -- 处理依赖
     if spec.dependencies ~= nil then
         for _, dependency in ipairs(spec.dependencies) do
-            get_plugin_name(dependency)
+            get_configured_plugins(dependency)
         end
     end
 end
 for _, spec in ipairs(spec_table) do
-    get_plugin_name(spec)
+    get_configured_plugins(spec)
 end
 -- 获取本地已安装的插件
 local plugins_path = vim.fn.stdpath("data") .. "/lazy"
@@ -71,12 +71,10 @@ local plugins_data = vim.fn.readdir(plugins_path)
 -- 若本地已安装的插件未被配置，则卸载之
 for _, plugin in ipairs(plugins_data) do
     if configured_plugins[plugin] ~= true then
-        local lazy_augroup = vim.api.nvim_create_augroup("LazyAugroup", { clear = true })
         vim.api.nvim_create_autocmd("User", {
             pattern = "VeryLazy",
-            group = lazy_augroup,
             callback = function()
-                vim.cmd [[Lazy clean]]
+                require("lazy.manage").clean({ show = false })
             end
         })
     end
