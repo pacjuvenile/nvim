@@ -13,6 +13,9 @@ M.setup = function()
                     return false
                 end
 
+                if vim.fn.bufname(buf_number) == "" then
+                    return false
+                end
                 return true
             end
         },
@@ -55,6 +58,10 @@ M.setup = function()
             },
             -- buffer分隔符
             separator = {
+                bg = "none"
+            },
+            -- buffer初始修改符
+            modified = {
                 bg = "none"
             },
             -- buffer激活时修改符
