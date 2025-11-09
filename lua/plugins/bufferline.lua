@@ -17,36 +17,54 @@ M.setup = function()
             end
         },
         highlights = {
+            -- buffer补足宽度填充 
             fill = {
                 bg = "none"
             },
+            -- buffer初始文字
+            background = {
+                bg = "none"
+            },
+            --  buffer激活时文字
             buffer_selected = {
                 bg = "none"
             },
+            -- buffer失活时文字
             buffer_visible = {
                 bg = "none"
             },
-            close_button_selected = {
-                bg = "none"
-            },
-            close_button_visible = {
-                bg = "none"
-            },
-            modified_selected = {
-                bg = "none"
-            },
-            modified_visible = {
-                bg = "none"
-            },
+            -- buffer激活时指示器
             indicator_selected = {
                 bg = "none"
             },
+            -- buffer非激活时指示器
             indicator_visible = {
                 bg = "none"
             },
-            separator_visible = {
+            -- buffer初始关闭按钮
+            close_button = {
                 bg = "none"
-            }
+            },
+            --  buffer激活时关闭按钮
+            close_button_selected = {
+                bg = "none"
+            },
+            -- buffer失活时关闭按钮
+            close_button_visible = {
+                bg = "none"
+            },
+            -- buffer分隔符
+            separator = {
+                bg = "none"
+            },
+            -- buffer激活时修改符
+            modified_selected = {
+                bg = "none"
+            },
+            -- buffer失活时修改符
+            modified_visible = {
+                bg = "none"
+            },
         }
     })
 end
