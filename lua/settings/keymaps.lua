@@ -4,6 +4,8 @@ vim.keymap.set("i", "<A-l>", [[<Right>]], { noremap = true })                   
 vim.keymap.set("i", "<A-h>", [[<Left>]], { noremap = true })                             -- 替换方向键左移
 vim.keymap.set("i", "<A-k>", [[<Up>]], { noremap = true })                               -- 替换方向键上移
 vim.keymap.set("i", "<A-j>", [[<Down>]], { noremap = true })                             -- 替换方向键下移
+vim.keymap.set("n", "H", [[<CMD>:bp<CR>]], { noremap = true })  -- 移动至上一个buffer
+vim.keymap.set("n", "L", [[<CMD>:bn<CR>]], { noremap = true })  -- 移动至下一个buffer
 
 vim.keymap.set({ "n", "v" }, "y", [["+y]], { noremap = true })                           -- 复制
 vim.keymap.set("v", "x", [["+x]], { noremap = true })                                    -- 剪切
@@ -22,7 +24,7 @@ vim.keymap.set({ "t", "n", "i" }, "<Esc>", function()
         return [[<Esc>]]          -- 返回普通模式
     end
 end, { expr = true, noremap = true })
-vim.keymap.set("i", "<A-n>", function()
+vim.keymap.set({ "i", "c" }, "<A-n>", function()
     if vim.fn.getcmdwintype() ~= "" or vim.bo.buftpye == "terminal" then
         return [[<Esc>]] -- 命令窗口/终端返回普通模式
     end

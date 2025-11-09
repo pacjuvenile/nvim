@@ -1,6 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
+M.enabled = true
 
 M.setup = function()
     require("lualine").setup({
@@ -33,10 +34,11 @@ M.config = {
     },
     lazy = true,
     event = "VeryLazy",
-    config = M.setup
+    config = M.setup,
 }
 
 if M.ensure_installed then
+    M.config.enabled = M.enabled
     return M.config
 end
 

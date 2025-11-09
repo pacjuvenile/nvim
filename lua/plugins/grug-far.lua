@@ -1,9 +1,9 @@
 local M = {}
 
-M.ensure_installed = false
+M.ensure_installed = true
 
 M.setup = function()
-        require("grug_far").setup()
+    require("grug-far").setup()
 end
 
 M.config = {

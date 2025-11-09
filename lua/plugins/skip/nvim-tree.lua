@@ -4,6 +4,9 @@ M.ensure_installed = true
 
 M.setup = function()
     require("nvim-tree").setup({
+        view = {
+            side = "right"
+        },
         git = {
             enable = true
         },
