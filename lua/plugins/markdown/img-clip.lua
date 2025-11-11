@@ -6,8 +6,6 @@ M.setup = function()
     require("img-clip").setup({
         default = {
             -- 模板选项
-            use_cursor_in_template = true,
-            template = "$FILE_PATH$CURSOR",
             insert_mode_after_paste = false,
 
             -- 提示选项
@@ -26,7 +24,7 @@ M.config = {
             function()
                 vim.cmd([[normal! m`]]) -- 标记光标位置
                 vim.cmd([[PasteImage]]) -- 粘贴图片链接
-                vim.cmd([[normal! v0"+xdd]]) -- 剪切图片链接并删除新行
+                vim.cmd([[normal! 0v$h"+xdd]]) -- 剪切图片链接并删除新行
                 vim.cmd([[normal! ``]]) -- 回到光标位置
             end,
             silent = true,
