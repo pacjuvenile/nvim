@@ -1,6 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
+M.enabled = false
 
 function M.setup()
     require("ibl").setup({})
@@ -14,6 +15,7 @@ M.config = {
 }
 
 if M.ensure_installed then
+    M.config.enabled = M.enabled
     return M.config
 end
 

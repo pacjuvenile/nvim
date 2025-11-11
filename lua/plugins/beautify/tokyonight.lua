@@ -1,6 +1,7 @@
 local M = {}
 
-M.ensure_installed = false
+M.ensure_installed = true
+M.enabled = false
 
 M.setup = function()
     require("tokyonight").setup({
@@ -21,6 +22,7 @@ M.config =  {
 }
 
 if M.ensure_installed then
+    M.config.enabled = M.enabled
     return M.config
 end
 

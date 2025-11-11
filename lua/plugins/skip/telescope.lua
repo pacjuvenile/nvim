@@ -1,6 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
+M.enalbed = true
 
 M.setup = function()
     require("telescope").setup({
@@ -52,6 +53,7 @@ M.config = {
 }
 
 if M.ensure_installed then
+    M.config.enabled = M.enabled
     return M.config
 end
 
