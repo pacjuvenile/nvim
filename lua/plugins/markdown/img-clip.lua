@@ -4,13 +4,15 @@ M.ensure_installed = true
 
 M.setup = function()
     require("img-clip").setup({
-        default = {
-            -- 模板选项
-            template = "<img src=\"$FILE_PATH\" width=\"50\">",
-            insert_mode_after_paste = false,
+       filetypes = {
+           markdown = {
+                -- 模板选项
+                template = "<img src=\"$FILE_PATH\" width=\"50%\">",
+                insert_mode_after_paste = false,
 
-            -- 提示选项
-            prompt_for_file_name = false,
+                -- 提示选项
+                prompt_for_file_name = false,
+           }
         }
     })
 end
