@@ -1,6 +1,7 @@
 -- 全局设置
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+vim.opt.encoding = "utf-8"
 
 -- 选项设置
 require("settings.options")

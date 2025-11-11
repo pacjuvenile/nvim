@@ -6,6 +6,8 @@ M.setup = function()
     require("img-clip").setup({
         default = {
             -- 模板选项
+            use_cursor_in_template = true,
+            template = "$FILE_PATH$CURSOR",
             insert_mode_after_paste = false,
 
             -- 提示选项
