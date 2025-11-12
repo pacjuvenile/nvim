@@ -9,13 +9,10 @@ M.setup = function()
             custom_filter = function(buf_number)
                 local buftype = vim.bo[buf_number].buftype
 
-                if buftype == "nofile" then
-                    return false
-                end
-
                 if vim.fn.bufname(buf_number) == "" then
                     return false
                 end
+
                 return true
             end
         },

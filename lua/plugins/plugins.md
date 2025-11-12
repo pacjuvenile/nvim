@@ -65,6 +65,16 @@
     5. `gcc`
     6. `Node` >= 23.0.0
 
+### 1.4 文本批量处理
+#### grug-far(全局查找&替换)
+- Requirements
+    1. `Neovim` >= 0.11.0
+    2. `ripgrep` >= 14
+    3. `Nerd Font`
+    4. `ast-grep`(ast-grep search engine)
+
+- Dependencies
+    - `nvim-web-devicons`/`mini.icons`(icons support)
 <!-- - buffer标签 -->
 <!--     - bufferline -->
 <!-- - 底部状态栏 -->

@@ -1,7 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled = false
+M.enabled = true
 
 function M.setup()
     require("ibl").setup({})

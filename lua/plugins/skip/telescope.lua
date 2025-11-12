@@ -1,7 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
-M.enalbed = true
+M.enabled= true
 
 M.setup = function()
     require("telescope").setup({

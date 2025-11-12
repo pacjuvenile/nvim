@@ -1,6 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
+M.enabled = true
 
 M.lsp_install_packages = function(mason_lsp)
     local success, package = pcall(require("mason-registry").get_package, mason_lsp)
@@ -64,6 +65,7 @@ M.config = {
 }
 
 if M.ensure_installed then
+    M.config.enabled = M.enabled 
     return M.config
 end
 
