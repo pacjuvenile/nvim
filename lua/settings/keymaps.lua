@@ -12,9 +12,6 @@ vim.keymap.set("v", "x", [["+x]], { noremap = true })                           
 vim.keymap.set({ "n", "v" }, "p", [["+p]], { noremap = true })                           -- 粘贴
 
 vim.keymap.set("n", ":", [[q:i]], { noremap = true })                                    -- 进入命令窗口
-vim.keymap.set("t", "<C-n>", function()
-    return [[<C-\><C-n>]]   -- 从终端输入中返回nvim普通模式
-end, { expr = true, noremap = true })
 vim.keymap.set("n", "<Esc>", function()
     if vim.fn.getcmdwintype() ~= "" and vim.fn.mode() == "n" then
         return [[<C-c><C-c>]]   -- 退出命令窗口
@@ -26,3 +23,4 @@ end, { expr = true, noremap = true })
 vim.keymap.set("n", "<A-f>", "<CMD>lua vim.lsp.buf.format()<CR>", { desc = "Use lsp to format current buffer" })
 
 vim.keymap.set("n", "<A-m>", [[:%s.\r..g<CR>]], { noremap = true, silent = true }) -- 删除Windows风格的换行符
+vim.keymap.set("n", "<A-r>", "<CMD>silent !/mnt/c/Users/sunny/app/Rime/weasel-0.17.4/WeaselDeployer.exe /deploy<CR>")

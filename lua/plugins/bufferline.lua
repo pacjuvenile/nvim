@@ -57,6 +57,15 @@ M.setup = function()
             separator = {
                 bg = "none"
             },
+            -- separator_visible = {
+            --     bg = "none"
+            -- },
+            -- separator_selected = {
+            --     bg = "none"
+            -- },
+            -- offset_separator = {
+            --     bg = "none"
+            -- },
             -- buffer初始修改符
             modified = {
                 bg = "none"
@@ -69,6 +78,9 @@ M.setup = function()
             modified_visible = {
                 bg = "none"
             },
+            trunc_marker = {
+                bg = "none"
+            }
         }
     })
 end
