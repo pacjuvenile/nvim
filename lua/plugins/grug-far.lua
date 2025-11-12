@@ -4,7 +4,9 @@ M.ensure_installed = true
 M.enabled = true
 
 M.setup = function()
-    require("grug-far").setup({})
+    require("grug-far").setup({
+        windowCreationCommand = ""
+    })
 end
 
 M.config = {
