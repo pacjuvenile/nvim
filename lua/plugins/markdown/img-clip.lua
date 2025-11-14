@@ -8,7 +8,7 @@ M.setup = function()
        filetypes = {
            markdown = {
                 -- 模板选项
-                template = "<img src=\"$FILE_PATH\" width=\"50%\">",
+                template = "<img src=\"$FILE_PATH\" width=\"100%\">",
                 insert_mode_after_paste = false,
 
                 -- 提示选项
