@@ -22,5 +22,5 @@ end, { expr = true, noremap = true })
 
 vim.keymap.set("n", "<A-f>", "<CMD>lua vim.lsp.buf.format()<CR>", { desc = "Use lsp to format current buffer" })
 
-vim.keymap.set("n", "<A-m>", [[:%s.\r..g<CR>]], { noremap = true, silent = true }) -- 删除Windows风格的换行符
-vim.keymap.set("n", "<A-r>", "<CMD>silent !/mnt/c/Users/sunny/app/Rime/weasel-0.17.4/WeaselDeployer.exe /deploy<CR>")
+vim.keymap.set("n", "<C-A-m>", [[:%s.\r..g<CR>]], { noremap = true, silent = true }) -- 删除Windows风格的换行符
+vim.keymap.set("n", "<C-A-r>", "<CMD>silent !/mnt/c/Users/sunny/app/Rime/weasel-0.17.4/WeaselDeployer.exe /deploy<CR>")
