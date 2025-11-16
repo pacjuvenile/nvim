@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         "git",
         "clone",
         "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
+        "https://github.com/folke/lazy.nvim",
         lazypath
     })
 end
@@ -30,9 +30,7 @@ require("lazy").setup({
         border = "rounded"
     },
     install = {
-        colorscheme = {
-            "catppuccin-macchiato"
-        }
+        colorscheme = { "catppuccin-macchiato" }
     }
 })
 
