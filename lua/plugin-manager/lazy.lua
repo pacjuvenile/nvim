@@ -19,8 +19,8 @@ local plugins_config_path = lua_path .. "/plugins"
 local plugins_config = vim.fn.glob(plugins_config_path .. "/**/*.lua", false, true)
 
 for _, plugin_config in ipairs(plugins_config) do
-    local lua_path_file = plugin_config:gsub("^" .. lua_path .. "/", "")
-    local plugin_config_module = lua_path_file:gsub("/", "."):gsub("%.lua$", "")
+    local plugin_config_file = plugin_config:gsub("^" .. lua_path .. "/", "")
+    local plugin_config_module = plugin_config_file:gsub("/", "."):gsub("%.lua$", "")
     spec_table[#spec_table + 1] = require(plugin_config_module)
 end
 
