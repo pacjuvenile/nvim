@@ -1,6 +1,6 @@
 local M = {}
 
-M.ensure_installed = true
+M.ensure_installed = false
 M.enabled = false
 
 M.setup = function()

@@ -50,6 +50,7 @@ local function get_configured_plugins(spec)
     end
     if plugin_name ~= nil then
         configured_plugins[plugin_name] = true
+        -- require("lazy.manage").install()
     end
     -- 处理依赖
     if spec.dependencies ~= nil then
