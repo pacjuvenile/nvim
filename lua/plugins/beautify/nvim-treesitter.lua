@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.setup = function()
+M.config = function()
     require("nvim-treesitter").setup({
         install_dir = vim.fn.stdpath('data') .. '/site'
     })
@@ -72,16 +72,16 @@ M.setup = function()
     })
 end
 
-M.config = {
+M.spec = {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
     lazy = false,
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled
-    return M.config
+    M.spec.enabled = M.enabled
+    return M.spec
 end
 
 return {}

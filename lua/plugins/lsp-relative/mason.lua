@@ -30,7 +30,7 @@ M.lsp_enable_config = function(lsp_config_table)
     end
 end
 
-M.setup = function()
+M.config = function()
     require("mason").setup({
         ui = {
             icons = {
@@ -46,7 +46,7 @@ M.setup = function()
     })
 end
 
-M.config = {
+M.spec = {
     "mason-org/mason.nvim",
     dependencies = {
         {
@@ -61,12 +61,12 @@ M.config = {
     },
     lazy = true,
     event = "VeryLazy",
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled 
-    return M.config
+    M.spec.enabled = M.enabled 
+    return M.spec
 end
 
 return {}

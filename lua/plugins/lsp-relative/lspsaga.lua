@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.setup = function()
+M.config = function()
     require("lspsaga").setup({
         finder = {
             keys = {
@@ -13,7 +13,7 @@ M.setup = function()
     })
 end
 
-M.config = {
+M.spec = {
     "nvimdev/lspsaga.nvim",
     lazy = true,
     keys = {
@@ -24,12 +24,12 @@ M.config = {
         { "<leader>ln", "<Cmd>Lspsaga diagnostic_jump_next<CR>" },
         { "<leader>lp", "<Cmd>Lspsaga diagnostic_jump_prev<CR>" },
     },
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled 
-    return M.config
+    M.spec.enabled = M.enabled 
+    return M.spec
 end
 
 return {}

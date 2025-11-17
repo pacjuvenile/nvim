@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.setup = function()
+M.config = function()
     require("img-clip").setup({
        filetypes = {
            markdown = {
@@ -18,7 +18,7 @@ M.setup = function()
     })
 end
 
-M.config = {
+M.spec = {
     "HakonHarnes/img-clip.nvim",
     lazy = true,
     event = "VeryLazy",
@@ -35,12 +35,12 @@ M.config = {
             desc = "put the image link into the clipboard"
         }
     },
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled 
-    return M.config
+    M.spec.enabled = M.enabled 
+    return M.spec
 end
 
 return {}

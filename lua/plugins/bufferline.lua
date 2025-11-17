@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.setup = function()
+M.config = function()
     require("bufferline").setup({
         options = {
             custom_filter = function(buf_number)
@@ -85,19 +85,19 @@ M.setup = function()
     })
 end
 
-M.config =  {
+M.spec =  {
     "akinsho/bufferline.nvim",
     lazy = false,
     keys = {
         { "<leader>bp", "<CMD>BufferLinePick<CR>",        silent = true, desc = "Bufferline pick" },
         { "<leader>bo", "<CMD>BufferLineCloseOthers<CR>", silent = true, desc = "Bufferline close others" }
     },
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled
-    return M.config
+    M.spec.enabled = M.enabled
+    return M.spec
 end
 
 return {}

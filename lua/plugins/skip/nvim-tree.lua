@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.setup = function()
+M.config = function()
     require("nvim-tree").setup({
         view = {
             side = "right"
@@ -17,19 +17,19 @@ M.setup = function()
     })
 end
 
-M.config = {
+M.spec = {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = true,
     keys = {
         { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Nvimtree toggle" }
     },
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled
-    return M.config
+    M.spec.enabled = M.enabled
+    return M.spec
 end
 
 return {}

@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled= true
 
-M.setup = function()
+M.config = function()
     require("telescope").setup({
         pickers = {
             find_files = {
@@ -30,7 +30,7 @@ M.setup = function()
     require("telescope").load_extension("fzf")
 end
 
-M.config = {
+M.spec = {
     "nvim-telescope/telescope.nvim",
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -48,13 +48,13 @@ M.config = {
         {"<leader>fh", "<CMD>Telescope help_tags<CR>", desc = "Telescope find help documents"}
     },
     config = function()
-        M.setup()
+        M.config()
     end
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled
-    return M.config
+    M.spec.enabled = M.enabled
+    return M.spec
 end
 
 return {}

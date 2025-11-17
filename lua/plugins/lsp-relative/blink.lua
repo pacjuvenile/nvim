@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.setup = function()
+M.config = function()
     require("blink.cmp").setup({
         completion = {
             documentation = {
@@ -43,7 +43,7 @@ M.setup = function()
     })
 end
 
-M.config = {
+M.spec = {
     "saghen/blink.cmp",
     build = 'cargo build --release',
     dependencies = {
@@ -51,12 +51,12 @@ M.config = {
     },
     lazy = true,
     event = "VeryLazy",
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled 
-    return M.config
+    M.spec.enabled = M.enabled 
+    return M.spec
 end
 
 return {}

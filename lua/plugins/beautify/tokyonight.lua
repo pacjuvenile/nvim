@@ -3,7 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.enabled = false
 
-M.setup = function()
+M.config = function()
     require("tokyonight").setup({
         transparent = true,
         styles = {
@@ -15,15 +15,15 @@ M.setup = function()
     ]]
 end
 
-M.config =  {
+M.spec =  {
     "folke/tokyonight.nvim",
     lazy = false,
-    config = M.setup
+    config = M.config
 }
 
 if M.ensure_installed then
-    M.config.enabled = M.enabled
-    return M.config
+    M.spec.enabled = M.enabled
+    return M.spec
 end
 
 return {}
