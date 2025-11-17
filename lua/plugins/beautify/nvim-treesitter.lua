@@ -76,12 +76,8 @@ M.spec = {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
     lazy = false,
-    config = M.config
+    config = M.config,
+    enabled = M.enabled
 }
 
-if M.ensure_installed then
-    M.spec.enabled = M.enabled
-    return M.spec
-end
-
-return {}
+return M

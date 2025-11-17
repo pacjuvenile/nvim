@@ -35,11 +35,7 @@ M.spec = {
     lazy = true,
     event = "VeryLazy",
     config = M.config,
+    enabled = M.enabled,
 }
 
-if M.ensure_installed then
-    M.spec.enabled = M.enabled
-    return M.spec
-end
-
-return {}
+return M

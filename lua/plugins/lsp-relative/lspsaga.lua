@@ -24,12 +24,8 @@ M.spec = {
         { "<leader>ln", "<Cmd>Lspsaga diagnostic_jump_next<CR>" },
         { "<leader>lp", "<Cmd>Lspsaga diagnostic_jump_prev<CR>" },
     },
-    config = M.config
+    config = M.config,
+    enabled = M.enabled
 }
 
-if M.ensure_installed then
-    M.spec.enabled = M.enabled 
-    return M.spec
-end
-
-return {}
+return M
