@@ -1,12 +1,9 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled = true
+M.url = "https://github.com/skywind3000/asyncrun.vim"
 
-M.spec = {
-    "skywind3000/asyncrun.vim",
-    lazy = true,
-    event = "VeryLazy"
-}
+M.lazy = true
+M.event = "VeryLazy"
 
 return M

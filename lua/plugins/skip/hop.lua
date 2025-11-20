@@ -3,11 +3,11 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.config = function()
-    require("hop").setup({
-        hint_position = require("hop.hint").HintPosition.END
-    })
-end
+-- M.config = function()
+--     require("hop").setup({
+--         hint_position = require("hop.hint").HintPosition.END
+--     })
+-- end
 
 M.spec = {
     "smoka7/hop.nvim",

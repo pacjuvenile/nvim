@@ -1,7 +1,14 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled = true
+M.url = "https://github.com/saghen/blink.cmp"
+M.build = 'cargo build --release'
+M.dependencies = {
+    "rafamadriz/friendly-snippets"
+}
+
+M.lazy = true
+M.event = "VeryLazy"
 
 M.config = function()
     require("blink.cmp").setup({
@@ -42,17 +49,5 @@ M.config = function()
         }
     })
 end
-
-M.spec = {
-    "saghen/blink.cmp",
-    build = 'cargo build --release',
-    dependencies = {
-        "rafamadriz/friendly-snippets"
-    },
-    lazy = true,
-    event = "VeryLazy",
-    config = M.config,
-    enabled = M.enabled
-}
 
 return M

@@ -1,7 +1,10 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled = true
+M.url = "https://github.com/catppuccin/nvim"
+M.name = "catppuccin"
+
+M.lazy = false
 
 M.config = function()
     require("catppuccin").setup({
@@ -14,13 +17,5 @@ M.config = function()
         colorscheme catppuccin-macchiato
     ]]
 end
-
-M.spec = {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false,
-    config = M.config,
-    enabled = M.enabled
-}
 
 return M

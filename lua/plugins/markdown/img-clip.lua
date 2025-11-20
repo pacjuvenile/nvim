@@ -3,20 +3,20 @@ local M = {}
 M.ensure_installed = true
 M.enabled = true
 
-M.config = function()
-    require("img-clip").setup({
-       filetypes = {
-           markdown = {
-                -- 模板选项
-                template = "<img src=\"$FILE_PATH\" width=\"100%\">",
-                insert_mode_after_paste = false,
-
-                -- 提示选项
-                prompt_for_file_name = false,
-           }
-        }
-    })
-end
+-- M.config = function()
+--     require("img-clip").setup({
+--        filetypes = {
+--            markdown = {
+--                 -- 模板选项
+--                 template = "<img src=\"$FILE_PATH\" width=\"100%\">",
+--                 insert_mode_after_paste = false,
+--
+--                 -- 提示选项
+--                 prompt_for_file_name = false,
+--            }
+--         }
+--     })
+-- end
 
 M.spec = {
     "HakonHarnes/img-clip.nvim",

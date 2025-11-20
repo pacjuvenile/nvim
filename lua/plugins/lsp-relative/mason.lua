@@ -1,8 +1,23 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled = true
+M.url = "https://github.com/mason-org/mason.nvim"
+M.dependencies = {
+    {
+        "mason-org/mason-lspconfig.nvim",
+        dependencies = {
+            {
+                "neovim/nvim-lspconfig",
+                version = "*"
+            }
+        }
+    }
+}
 
+M.lazy = true
+M.event = "VeryLazy"
+
+-- config
 M.lsp_install_packages = function(mason_lsp)
     local success, package = pcall(require("mason-registry").get_package, mason_lsp)
     if success and not package:is_installed() then
@@ -45,24 +60,5 @@ M.config = function()
         require("lsp.markdown"),
     })
 end
-
-M.spec = {
-    "mason-org/mason.nvim",
-    dependencies = {
-        {
-            "mason-org/mason-lspconfig.nvim",
-            dependencies = {
-                {
-                    "neovim/nvim-lspconfig",
-                    version = "*"
-                }
-            }
-        }
-    },
-    lazy = true,
-    event = "VeryLazy",
-    config = M.config,
-    enabled = M.enabled
-}
 
 return M

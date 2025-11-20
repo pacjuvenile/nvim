@@ -1,7 +1,23 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled= true
+M.url = "https://github.com/nvim-telescope/telescope.nvim"
+M.dependencies = {
+        "nvim-lua/plenary.nvim",
+        {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = 'make'
+        },
+        "nvim-tree/nvim-web-devicons",
+}
+
+M.lazy = true
+M.keys = {
+        { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
+        { "<leader>fg", "<CMD>Telescope live_grep<CR>",  desc = "Telescope live grep" },
+        { "<leader>fc", "<CMD>Telescope colorscheme<CR>", desc = "Telescope colorscheme"},
+        {"<leader>fh", "<CMD>Telescope help_tags<CR>", desc = "Telescope find help documents"}
+}
 
 M.config = function()
     require("telescope").setup({
@@ -29,27 +45,5 @@ M.config = function()
     -- 加载fzf并在telescope中使用
     require("telescope").load_extension("fzf")
 end
-
-M.spec = {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build = 'make'
-        },
-        "nvim-tree/nvim-web-devicons",
-    },
-    lazy = true,
-    keys = {
-        { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
-        { "<leader>fg", "<CMD>Telescope live_grep<CR>",  desc = "Telescope live grep" },
-        { "<leader>fc", "<CMD>Telescope colorscheme<CR>", desc = "Telescope colorscheme"},
-        {"<leader>fh", "<CMD>Telescope help_tags<CR>", desc = "Telescope find help documents"}
-    },
-    config = function()
-        M.config()
-    end
-}
 
 return M

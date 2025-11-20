@@ -1,21 +1,16 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled = true
+M.url = "https://github.com/MagicDuck/grug-far.nvim"
+M.dependencies = { "nvim-tree/nvim-web-devicons" }
+
+M.lazy = true
+M.cmd = "GrugFar"
 
 M.config = function()
     require("grug-far").setup({
         windowCreationCommand = ""
     })
 end
-
-M.spec = {
-    "MagicDuck/grug-far.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    lazy = true,
-    cmd = "GrugFar",
-    config = M.config,
-    enabled = M.enabled
-}
 
 return M
