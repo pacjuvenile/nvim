@@ -22,7 +22,7 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
     local plugin_spec = {}
     local plugin_config = plugin_config_full_dir:gsub("^" .. lua_path .. "/", ""):gsub("%.lua$", "")
     -- 插件安装
-    plugin_spec.enabled = require(plugin_config).ensured_installed
+    plugin_spec.enabled = require(plugin_config).ensure_installed
     plugin_spec.url = require(plugin_config).url
     plugin_spec.branch = require(plugin_config).branch
     plugin_spec.tag = require(plugin_config).tag

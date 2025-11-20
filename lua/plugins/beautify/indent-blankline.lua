@@ -1,18 +1,13 @@
 local M = {}
 
 M.ensure_installed = true
-M.enabled = true
+M.url = "lukas-reineke/indent-blankline.nvim"
 
--- function M.config()
---     require("ibl").setup({})
--- end
+M.lazy = true
+M.event = "VeryLazy"
 
-M.spec = {
-    "lukas-reineke/indent-blankline.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    config = M.config,
-    enabled = M.enabled
-}
+M.config = function()
+    require("ibl").setup({})
+end
 
 return M
