@@ -1,4 +1,4 @@
-# Nvim插件
+# Nvim扩展
 ## 0. 插件管理器
 ### lazy.nvim
 - Requirements
