@@ -4,16 +4,11 @@ M.ensure_installed = true
 M.url = "https://github.com/akinsho/bufferline.nvim"
 
 M.lazy = false
-M.keys = {
-    { "<leader>bp", "<CMD>BufferLinePick<CR>",        silent = true, desc = "Bufferline pick" },
-    { "<leader>bo", "<CMD>BufferLineCloseOthers<CR>", silent = true, desc = "Bufferline close others" }
-}
 
 M.config = function()
     require("bufferline").setup({
         options = {
             custom_filter = function(buf_number)
-                local buftype = vim.bo[buf_number].buftype
 
                 if vim.fn.bufname(buf_number) == "" then
                     return false
@@ -89,6 +84,9 @@ M.config = function()
             }
         }
     })
+
+    vim.keymap.set("n", "<localleader>bp",[[<CMD>BufferLinePick<CR>]], { silent = true, desc = "Bufferline pick" })
+    vim.keymap.set("n", "<localleader>bo",[[<CMD>BufferLineCloseOther<CR>]], { silent = true, desc = "Bufferline close other buffers" })
 end
 
 return M
