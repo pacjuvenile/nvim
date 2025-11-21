@@ -6,8 +6,9 @@ M.dependencies = {
     "nvim-tree/nvim-web-devicons"
 }
 
+M.enabled = false
 M.lazy = true
--- M.event = "VeryLazy"
+M.event = "VeryLazy"
 
 M.config = function()
     require("lualine").setup({

@@ -1,8 +1,9 @@
 local M = {}
 
-M.ensure_installed = false
+M.ensure_installed = true
 M.url = "https://github.com/folke/tokyonight.nvim"
 
+M.enabled = false
 M.lazy = false
 
 M.config = function()
