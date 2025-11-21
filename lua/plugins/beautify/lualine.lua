@@ -7,7 +7,7 @@ M.dependencies = {
 }
 
 M.lazy = true
-M.event = "VeryLazy"
+-- M.event = "VeryLazy"
 
 M.config = function()
     require("lualine").setup({
