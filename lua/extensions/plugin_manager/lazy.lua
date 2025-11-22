@@ -33,27 +33,27 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
                 plugin_path
             })
         end
-        -- 依赖卸载
-        local function recursively_remove_dependencies(dependencies)
-            if dependencies ~= nil then
-                for _, dependency in ipairs(dependencies) do
-                    local dependency_name = dependency.name or dependency.url:gsub("^.*/", "")
-                    local dependency_path = vim.fn.stdpath("data") .. "/lazy/" .. dependency_name
-                    if (vim.uv or vim.loop).fs_stat(dependency_path) then
-                        vim.fn.system({
-                            "rm",
-                            "-rf",
-                            dependency_path
-                        })
-                    end
-
-                    -- 递归地处理依赖
-                    recursively_remove_dependencies(dependency.dependencies)
-                end
-            end
-        end
-        local dependencies = plugin_config.dependencies
-        recursively_remove_dependencies(dependencies)
+        -- -- 依赖卸载
+        -- local function recursively_remove_dependencies(dependencies)
+        --     if dependencies ~= nil then
+        --         for _, dependency in ipairs(dependencies) do
+        --             local dependency_name = dependency.name or dependency.url:gsub("^.*/", "")
+        --             local dependency_path = vim.fn.stdpath("data") .. "/lazy/" .. dependency_name
+        --             if (vim.uv or vim.loop).fs_stat(dependency_path) then
+        --                 vim.fn.system({
+        --                     "rm",
+        --                     "-rf",
+        --                     dependency_path
+        --                 })
+        --             end
+        --
+        --             -- 递归地处理依赖
+        --             recursively_remove_dependencies(dependency.dependencies)
+        --         end
+        --     end
+        -- end
+        -- local dependencies = plugin_config.dependencies
+        -- recursively_remove_dependencies(dependencies)
     else
         -- 插件安装
         plugin_spec.url = plugin_config.url
