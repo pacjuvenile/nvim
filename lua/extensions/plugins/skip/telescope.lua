@@ -3,20 +3,24 @@ local M = {}
 M.ensure_installed = true
 M.url = "https://github.com/nvim-telescope/telescope.nvim"
 M.dependencies = {
-        "nvim-lua/plenary.nvim",
-        {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build = 'make'
-        },
-        "nvim-tree/nvim-web-devicons",
+    {
+        url = "https://github.com/nvim-lua/plenary.nvim"
+    },
+    {
+        url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+        build = 'make'
+    },
+    {
+        url = "https://github.com/nvim-tree/nvim-web-devicons"
+    }
 }
 
 M.lazy = true
 M.keys = {
-        { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
-        { "<leader>fg", "<CMD>Telescope live_grep<CR>",  desc = "Telescope live grep" },
-        { "<leader>fc", "<CMD>Telescope colorscheme<CR>", desc = "Telescope colorscheme"},
-        {"<leader>fh", "<CMD>Telescope help_tags<CR>", desc = "Telescope find help documents"}
+    { "<leader>ff", "<CMD>Telescope find_files<CR>",  desc = "Telescope find files" },
+    { "<leader>fg", "<CMD>Telescope live_grep<CR>",   desc = "Telescope live grep" },
+    { "<leader>fc", "<CMD>Telescope colorscheme<CR>", desc = "Telescope colorscheme" },
+    { "<leader>fh", "<CMD>Telescope help_tags<CR>",   desc = "Telescope find help documents" }
 }
 
 M.config = function()

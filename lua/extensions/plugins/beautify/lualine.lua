@@ -3,7 +3,9 @@ local M = {}
 M.ensure_installed = true
 M.url = "https://github.com/nvim-lualine/lualine.nvim"
 M.dependencies = {
-    "nvim-tree/nvim-web-devicons"
+    {
+        url = "nvim-tree/nvim-web-devicons"
+    }
 }
 
 M.enabled = false

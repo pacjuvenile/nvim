@@ -4,7 +4,9 @@ M.ensure_installed = true
 M.url = "https://github.com/saghen/blink.cmp"
 M.build = 'cargo build --release'
 M.dependencies = {
-    "rafamadriz/friendly-snippets"
+    {
+        url = "rafamadriz/friendly-snippets"
+    }
 }
 
 M.lazy = true

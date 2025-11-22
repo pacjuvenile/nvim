@@ -2,7 +2,11 @@ local M = {}
 
 M.ensure_installed = true
 M.url = "https://github.com/nvim-tree/nvim-tree.lua"
-M.dependencies = { "nvim-tree/nvim-web-devicons" }
+M.dependencies = {
+    {
+        url = "https://github.com/nvim-tree/nvim-web-devicons"
+    }
+}
 
 M.lazy = true
 M.keys = {

@@ -4,10 +4,10 @@ M.ensure_installed = true
 M.url = "https://github.com/mason-org/mason.nvim"
 M.dependencies = {
     {
-        "mason-org/mason-lspconfig.nvim",
+        url = "mason-org/mason-lspconfig.nvim",
         dependencies = {
             {
-                "neovim/nvim-lspconfig",
+                url = "neovim/nvim-lspconfig",
                 version = "*"
             }
         }
