@@ -1,7 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
-M.url = "windwp/nvim-autopairs"
+M.url = "https://github.com/windwp/nvim-autopairs"
 
 M.lazy = true
 M.event = "InsertEnter"

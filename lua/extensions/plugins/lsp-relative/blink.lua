@@ -5,7 +5,7 @@ M.url = "https://github.com/saghen/blink.cmp"
 M.build = 'cargo build --release'
 M.dependencies = {
     {
-        url = "rafamadriz/friendly-snippets"
+        url = "https://github.com/rafamadriz/friendly-snippets"
     }
 }
 

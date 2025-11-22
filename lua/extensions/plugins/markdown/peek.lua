@@ -1,7 +1,7 @@
 local M = {}
 
 M.ensure_installed = true
-M.url = "toppair/peek.nvim"
+M.url = "https://github.com/toppair/peek.nvim"
 M.build = "deno task --quiet build:fast"
 
 M.lazy = true
