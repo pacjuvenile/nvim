@@ -2,30 +2,26 @@ local M = {}
 
 M.ensure_installed = true
 M.url = "https://github.com/lervag/vimtex"
-M.dependencies = {
-    {
-        url = "https://github.com/mhinz/neovim-remote"
-    }
-}
 
 M.enabled = true
-M.lazy = true
-M.ft = "tex"
+M.lazy = false
+-- M.ft = "tex"
 
-M.config = function()
-    vim.g.vimtex_compiler_latexmk_engines = {
-        _ = "-xelatex"
-    }
+M.init = function()
+    vim.g.vimtex_mappings_enabled = 0
+    vim.keymap.set("n", "<localleader>ll", [[<CMD>VimtexCompile<CR>]], { silent = true, desc = "Vimtex toggle compilation" })
+    vim.keymap.set("n", "<localleader>le", [[<CMD>VimtexErrors<CR>]], { silent = true, desc = "Vimtex toggle quickfix window" })
+    vim.keymap.set("n", "<localleader>lc", [[<CMD>VimtexClean<CR>]], { silent = true, desc = "Vimtex clean auxiliary" })
+    vim.keymap.set("n", "<localleader>lv", [[<CMD>VimtexView<CR>]], { silent = true, desc = "Vimtex forward search" })
 
-    vim.g.vimtex_view_general_viewer = "/mnt/c/Users/sunny/app/SumatraPDF/SumatraPDF.exe"
-    vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
-    -- vim.g.vimtex_compiler_progname = "nvr"
+    vim.g.vimtex_quickfix_open_on_warning = 0
 
-    vim.keymap.set("n", "<localleader>vb", [[<CMD>VimtexCompile<CR>]], { silent = true, desc = "Latex compile" })
-    vim.keymap.set("n", "<localleader>vc", [[<CMD>VimtexClean<CR>]], { silent = true, desc = "Latex clean" })
-    vim.keymap.set("n", "<localleader>vv", [[<CMD>VimtexView<CR>]], { silent = true, desc = "Latex view" })
+    vim.g.vimtex_view_method = "sioyek"
+    vim.g.vimtex_view_sioyek_exe = "sioyek.exe"
+    -- vim.g.vimtex_callback_progpath = "wsl nvim"
 
-    vim.g.vimtex_quickfix_mode = 0
+    -- vim.g.vimtex_view_general_viewer = "/mnt/c/Users/sunny/app/SumatraPDF/SumatraPDF.exe"
+    -- vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
 end
 
 return M
