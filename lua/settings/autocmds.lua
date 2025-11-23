@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- 普通文件更新则立即保存
-local autosave_augroup = vim.api.nvim_create_augroup("TexAutosave", { clear = true })
+local autosave_augroup = vim.api.nvim_create_augroup("Autosave", { clear = true })
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     group = autosave_augroup,
     callback = function()
