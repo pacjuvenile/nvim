@@ -14,7 +14,7 @@ local autosave_augroup = vim.api.nvim_create_augroup("TexAutosave", { clear = tr
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     group = autosave_augroup,
     callback = function()
-        if vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+        if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
             vim.defer_fn(function()
                 vim.cmd("silent! write")
             end, 100)
