@@ -9,13 +9,15 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
 })
 
--- 文件更新则立即保存
+-- 普通文件更新则立即保存
 local autosave_augroup = vim.api.nvim_create_augroup("TexAutosave", { clear = true })
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     group = autosave_augroup,
     callback = function()
-        vim.defer_fn(function()
-            vim.cmd("silent! write")
-        end, 100)
-    end,
+        if vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+            vim.defer_fn(function()
+                vim.cmd("silent! write")
+            end, 100)
+        end
+    end
 })
