@@ -13,49 +13,21 @@ vim.opt.rtp:prepend(lazypath)
 
 -- 插件管理
 local spec_table = {}
+local ensure_removed = {}
+local ensure_installed = {}
 
 local lua_path = vim.fn.stdpath("config") .. "/lua"
-local plugins_config_path = lua_path .. "/extensions/plugins"
-local plugins_config_full_dir = vim.fn.glob(plugins_config_path .. "/**/*.lua", false, true)
-
+local plugins_config_full_dir = vim.fn.glob(lua_path .. "/extensions/plugins/**/*.lua", false, true)
 for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
     local plugin_spec = {}
     local plugin_config_module = plugin_config_full_dir:gsub("^" .. lua_path .. "/", ""):gsub("%.lua$", "")
     local plugin_config = require(plugin_config_module)
+    local plugin_name = plugin_config.name or plugin_config.url:gsub("^.*/", "")
     -- 插件卸载
     if plugin_config.ensure_installed == false then
-        local plugin_name = plugin_config.name or plugin_config.url:gsub("^.*/", "")
-        local plugin_path = vim.fn.stdpath("data") .. "/lazy/" .. plugin_name
-        if (vim.uv or vim.loop).fs_stat(plugin_path) then
-            vim.fn.system({
-                "rm",
-                "-rf",
-                plugin_path
-            })
-        end
-        -- -- 依赖卸载
-        -- local function recursively_remove_dependencies(dependencies)
-        --     if dependencies ~= nil then
-        --         for _, dependency in ipairs(dependencies) do
-        --             local dependency_name = dependency.name or dependency.url:gsub("^.*/", "")
-        --             local dependency_path = vim.fn.stdpath("data") .. "/lazy/" .. dependency_name
-        --             if (vim.uv or vim.loop).fs_stat(dependency_path) then
-        --                 vim.fn.system({
-        --                     "rm",
-        --                     "-rf",
-        --                     dependency_path
-        --                 })
-        --             end
-        --
-        --             -- 递归地处理依赖
-        --             recursively_remove_dependencies(dependency.dependencies)
-        --         end
-        --     end
-        -- end
-        -- local dependencies = plugin_config.dependencies
-        -- recursively_remove_dependencies(dependencies)
+        ensure_removed[plugin_name] = true
     else
-        -- 插件安装
+        ensure_installed[plugin_name] = true
         plugin_spec.url = plugin_config.url
         plugin_spec.branch = plugin_config.branch
         plugin_spec.tag = plugin_config.tag
@@ -80,6 +52,34 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
         end
         -- 组配置规格表
         spec_table[#spec_table + 1] = plugin_spec
+    end
+
+    local function ensure_dependency_installed(dependencies)
+        if dependencies ~= nil then
+            for _, dependency in ipairs(dependencies) do
+                local dependency_name = dependency.name or dependency.url:gsub("^.*/", "")
+                if plugin_config.ensure_installed == false then
+                    ensure_removed[dependency_name] = true
+                else
+                    ensure_installed[dependency_name] = true
+                end
+                ensure_dependency_installed(dependency.dependencies)
+            end
+        end
+    end
+    ensure_dependency_installed(plugin_config.dependencies)
+end
+
+for plugin, _ in pairs(ensure_removed) do
+    if ensure_installed[plugin] == nil then
+        local plugin_path = vim.fn.stdpath("data") .. "/lazy/" .. plugin
+        if (vim.uv or vim.loop).fs_stat(lazypath) then
+            vim.fn.system({
+                "rm",
+                "-rf",
+                plugin_path
+            })
+        end
     end
 end
 
