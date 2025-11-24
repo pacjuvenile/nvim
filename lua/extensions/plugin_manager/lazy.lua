@@ -1,6 +1,6 @@
 -- lazy.nvim安装
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
     vim.fn.system({
         "git",
         "clone",
@@ -73,7 +73,7 @@ end
 for plugin, _ in pairs(ensure_removed) do
     if ensure_installed[plugin] == nil then
         local plugin_path = vim.fn.stdpath("data") .. "/lazy/" .. plugin
-        if (vim.uv or vim.loop).fs_stat(lazypath) then
+        if vim.uv.fs_stat(plugin_path) then
             vim.fn.system({
                 "rm",
                 "-rf",
