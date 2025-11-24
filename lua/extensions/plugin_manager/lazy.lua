@@ -33,7 +33,6 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
         plugin_spec.tag = plugin_config.tag
         plugin_spec.commit = plugin_config.commit
         plugin_spec.version = plugin_config.version
-        plugin_spec.dir = plugin_config.dir
         plugin_spec.name = plugin_config.name
         plugin_spec.build = plugin_config.build
         plugin_spec.dependencies = plugin_config.dependencies
