@@ -14,11 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 -- 插件管理
 local plugin_specs = {}
 
-local lua_path = vim.fn.stdpath("config") .. "/lua"
-local plugins_config_full_dir = vim.fn.glob(lua_path .. "/extensions/plugins/**/*.lua", false, true)
+local lua_dir = vim.fn.stdpath("config") .. "/lua"
+local plugins_config_full_dir = vim.fn.glob(lua_dir .. "/extensions/plugins/**/*.lua", false, true)
 for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
     local plugin_spec = {}
-    local plugin_config_module = plugin_config_full_dir:gsub("^" .. lua_path .. "/", ""):gsub("%.lua$", "")
+    local plugin_config_module = plugin_config_full_dir:gsub("^" .. lua_dir .. "/", ""):gsub("%.lua$", "")
     local plugin_config = require(plugin_config_module)
     -- 组单个插件配置规格表
     if plugin_config.ensure_installed == true then
@@ -49,6 +49,7 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
 end
 
 require("lazy").setup({
+    -- 应用插件配置规格表
     spec = plugin_specs,
     ui = {
         border = "rounded"
@@ -60,9 +61,10 @@ require("lazy").setup({
 
 local lazy_augroup = vim.api.nvim_create_augroup("LazyAuGroup", { clear = true })
 vim.api.nvim_create_autocmd("User", {
-    pattern = "VeryLazy",
     group = lazy_augroup,
+    pattern = "VeryLazy",
     callback = function()
+        -- 使用lazy.nvim卸载插件
         require("lazy").clean({ show = false })
     end,
     once = true
