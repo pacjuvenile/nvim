@@ -12,9 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- 插件管理
-local spec_table = {}
-local ensure_removed = {}
-local ensure_installed = {}
+local plugin_specs = {}
 
 local lua_path = vim.fn.stdpath("config") .. "/lua"
 local plugins_config_full_dir = vim.fn.glob(lua_path .. "/extensions/plugins/**/*.lua", false, true)
@@ -22,18 +20,14 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
     local plugin_spec = {}
     local plugin_config_module = plugin_config_full_dir:gsub("^" .. lua_path .. "/", ""):gsub("%.lua$", "")
     local plugin_config = require(plugin_config_module)
-    local plugin_name = plugin_config.name or plugin_config.url:gsub("^.*/", "")
-    -- 插件卸载
-    if plugin_config.ensure_installed == false then
-        ensure_removed[plugin_name] = true
-    else
-        ensure_installed[plugin_name] = true
+    -- 组单个插件配置规格表
+    if plugin_config.ensure_installed == true then
         plugin_spec.url = plugin_config.url
+        plugin_spec.name = plugin_config.name
         plugin_spec.branch = plugin_config.branch
-        plugin_spec.tag = plugin_config.tag
         plugin_spec.commit = plugin_config.commit
         plugin_spec.version = plugin_config.version
-        plugin_spec.name = plugin_config.name
+        plugin_spec.tag = plugin_config.tag
         plugin_spec.build = plugin_config.build
         plugin_spec.dependencies = plugin_config.dependencies
         -- 插件加载
@@ -49,45 +43,27 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
             plugin_spec.init = plugin_config.init
             plugin_spec.config = plugin_config.config
         end
-        -- 组配置规格表
-        spec_table[#spec_table + 1] = plugin_spec
-    end
-
-    local function ensure_dependency_installed(dependencies)
-        if dependencies ~= nil then
-            for _, dependency in ipairs(dependencies) do
-                local dependency_name = dependency.name or dependency.url:gsub("^.*/", "")
-                if plugin_config.ensure_installed == false then
-                    ensure_removed[dependency_name] = true
-                else
-                    ensure_installed[dependency_name] = true
-                end
-                ensure_dependency_installed(dependency.dependencies)
-            end
-        end
-    end
-    ensure_dependency_installed(plugin_config.dependencies)
-end
-
-for plugin, _ in pairs(ensure_removed) do
-    if ensure_installed[plugin] == nil then
-        local plugin_path = vim.fn.stdpath("data") .. "/lazy/" .. plugin
-        if vim.uv.fs_stat(plugin_path) then
-            vim.fn.system({
-                "rm",
-                "-rf",
-                plugin_path
-            })
-        end
+        -- 合并插件配置规格表
+        plugin_specs[#plugin_specs + 1] = plugin_spec
     end
 end
 
 require("lazy").setup({
-    spec = spec_table,
+    spec = plugin_specs,
     ui = {
         border = "rounded"
     },
     install = {
         colorscheme = { "catppuccin-macchiato" }
     }
+})
+
+local lazy_augroup = vim.api.nvim_create_augroup("LazyAuGroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    group = lazy_augroup,
+    callback = function()
+        require("lazy").clean({ show = false })
+    end,
+    once = true
 })
