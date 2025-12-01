@@ -10,7 +10,7 @@ M.ft = "markdown"
 M.config = function()
     require("peek").setup({
         theme = 'light',
-        app = '/mnt/c/Users/sunny/app/qutebrowser/qutebrowser.exe',
+        app = '/mnt/c/Users/sunny/app/firefox/firefox.exe.exe',
     })
 
     vim.api.nvim_create_user_command("PeekOpen", require("peek").open, { desc = "Peek open markdown preview" })
