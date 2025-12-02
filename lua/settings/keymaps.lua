@@ -23,4 +23,4 @@ end, { expr = true, silent = true })
 vim.keymap.set("n", "<A-f>", [[<CMD>lua vim.lsp.buf.format()<CR>]], { silent = true })
 
 vim.keymap.set("n", "<C-A-m>", [[<CMD>%s.\r..g<CR>]], { silent = true }) -- 删除Windows风格的换行符
-vim.keymap.set("n", "<C-A-r>", [[<CMD>silent !/mnt/c/Users/sunny/app/Rime/weasel-0.17.4/WeaselDeployer.exe /deploy<CR>]])
+vim.keymap.set("n", "<C-A-r>", [[<CMD>silent !/mnt/c/Users/sunny/app/rime/weasel-0.17.4/WeaselDeployer.exe /deploy<CR>]])
