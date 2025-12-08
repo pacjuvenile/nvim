@@ -51,26 +51,26 @@ M.config = function()
     }
     require("nvim-treesitter").install(ensure_installed)
 
-    local treesitter_autogroup = vim.api.nvim_create_augroup("TreesitterAutoGroup", { clear = true })
-    local pattern = {}
+    local treesitter_augroup = vim.api.nvim_create_augroup("TreesitterAuGroup", { clear = true })
+    local pattern_filetype = {}
     for _, parser in ipairs(ensure_installed) do
         local has_parser, _ = pcall(vim.treesitter.language.inspect, parser)
         if has_parser then
-            -- 找到解析器适应的全部文件类型
+            -- 找到解析器配对的全部文件类型
             local parser_filetypes = vim.treesitter.language.get_filetypes(parser)
-            for _, filetype in ipairs(parser_filetypes) do
-                if not vim.tbl_contains(pattern, filetype, {}) then
-                    pattern[#pattern + 1] = filetype
+            for _, parser_filetype in ipairs(parser_filetypes) do
+                if not vim.tbl_contains(pattern_filetype, parser_filetype) then
+                    table.insert(pattern_filetype, parser_filetype)
                 end
             end
         end
     end
     vim.api.nvim_create_autocmd("FileType", {
-        group = treesitter_autogroup,
-        pattern = pattern,
+        group = treesitter_augroup,
+        pattern = pattern_filetype,
         callback = function()
             vim.treesitter.start()
-            vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+            vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
         end
     })
 end
