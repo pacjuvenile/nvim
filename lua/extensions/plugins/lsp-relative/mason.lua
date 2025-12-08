@@ -56,8 +56,8 @@ M.config = function()
         }
     })
     M.lsp_enable_config({
-        require("language.lua").ls_config,
-        require("language.markdown").ls_config,
+        require("languages.lua").ls_config,
+        require("languages.markdown").ls_config,
     })
 end
 
