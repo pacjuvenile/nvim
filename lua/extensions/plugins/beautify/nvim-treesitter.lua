@@ -7,51 +7,56 @@ M.branch = "main"
 M.lazy = false
 
 M.config = function()
+    local install_dir = vim.fn.stdpath("data") .. "/site"
     require("nvim-treesitter").setup({
-        install_dir = vim.fn.stdpath('data') .. '/site'
+        install_dir = install_dir
     })
 
+    -- 解析器管理
     local ensure_installed = {
         -- 文档查询
+        "vim",
         "vimdoc",
         "query",
         -- 配置脚本
         "bash",
-        "toml",
-        "yaml",
         "json",
-        "vim",
-        "lua",
-        -- 笔记/论文
-        "markdown",
-        "markdown_inline",
-        "typst",
-        -- 数值计算
-        "matlab",
-        "haskell",
-        -- 科研绘图
-        "r",
-        -- 应用层
-        "python",
-        "java",
-        "go",
-        -- 系统/高性能
-        "c",
-        "cpp",
-        "zig",
-        "rust",
-        -- 前端开发
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        -- 硬件描述
-        "systemverilog",
-        "vhdl"
+        "yaml",
+        "toml",
     }
+
+    local lua_dir = vim.fn.stdpath("config") .. "/lua"
+    local languages_config_full_dir = vim.fn.glob(lua_dir .. "/languages/**/*.lua", false, true)
+    for _, language_config_full_dir in ipairs(languages_config_full_dir) do
+        local language_config_module = language_config_full_dir:gsub("^" .. lua_dir .. "/", ""):gsub("%.lua$", "")
+        local ts_config = require(language_config_module).ts_config
+
+        if ts_config.parser_installed == true then
+            for _, parser in ipairs(ts_config.parser) do
+                if not vim.tbl_contains(ensure_installed, parser) then
+                        table.insert(ensure_installed, parser)
+                end
+            end
+        end
+    end
     require("nvim-treesitter").install(ensure_installed)
 
     local treesitter_augroup = vim.api.nvim_create_augroup("TreesitterAuGroup", { clear = true })
+    vim.api.nvim_create_autocmd("User", {
+        group = treesitter_augroup,
+        pattern = "VeryLazy",
+        callback = function()
+            local local_parsers_full_dir = vim.fn.glob(install_dir .. "/parser/**/*.so", false, true)
+            for _, local_parser_full_dir in ipairs(local_parsers_full_dir) do
+                local local_parser = local_parser_full_dir:gsub("^" .. install_dir .. "/parser/", ""):gsub("%.so$", "")
+                if not vim.tbl_contains(ensure_installed, local_parser) then
+                    require("nvim-treesitter").uninstall(local_parser)
+                end
+            end
+        end,
+        once = true
+    })
+
     local pattern_filetype = {}
     for _, parser in ipairs(ensure_installed) do
         local has_parser, _ = pcall(vim.treesitter.language.inspect, parser)

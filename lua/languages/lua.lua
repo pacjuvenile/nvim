@@ -1,5 +1,10 @@
 local M = {}
 
+M.ts_config = {
+    parser_installed = true,
+    parser = { "lua" }
+}
+
 M.ls_config = {
     cmd = { "lua-language-server" },
     filetype = { "lua" },
