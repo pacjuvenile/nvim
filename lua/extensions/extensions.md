@@ -27,16 +27,14 @@
     3. `fd`
 - Dependencies
     1. `plenary.nvim`（提供`telescope`所需模块）
-    2. `telescope-fzf-native.nvim` 或 `telescope-fzy-native.nvim` （提供更高的排序性能）
-        - `telescope-fzf-native` Requirements 
+    2. `telescope-fzf-native.nvim` （提供更高的排序性能）
+        - Requirements 
             1. `make`
             2. `gcc` or `clang`
     3. `nvim-web-devicons`（提供图标支持）
         - Requirements
             1. `neovim` >= 0.7.0
             2. `Nerd Font`
-    4. `nvim-treesitter`（提供预览时高亮）
-    5. `LSP`（提供搜索时提示&补全）
 
 ### 1.2 配对
 #### nvim-autopairs（括号自动配对）
@@ -56,7 +54,7 @@
 - Requirements
     - `neovim` >= 0.10.0
 
-#### nvim-treesitter(高亮（含注入）、折叠)
+#### nvim-treesitter(增强高亮、折叠)
 - Requirements
     1. `neovim` >= 0.11.0
     2. `tar`
