@@ -1,5 +1,5 @@
 -- 打开文件保留上次光标位置
-local view_augroup = vim.api.nvim_create_augroup("ViewAugroup", { clear = true })
+local view_augroup = vim.api.nvim_create_augroup("ViewAuGroup", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", {
     group = view_augroup,
     callback = function()
@@ -10,9 +10,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- 普通文件更新则立即保存
-local autosave_augroup = vim.api.nvim_create_augroup("Autosave", { clear = true })
+local save_augroup = vim.api.nvim_create_augroup("SaveAuGroup", { clear = true })
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-    group = autosave_augroup,
+    group = save_augroup,
     callback = function()
         if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
             vim.defer_fn(function()
