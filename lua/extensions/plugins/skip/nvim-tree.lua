@@ -22,7 +22,7 @@ M.config = function()
             enable = true
         },
         filters = {
-            git_ignored = false,
+            git_ignored = true,
         }
     })
 end

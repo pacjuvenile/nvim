@@ -26,8 +26,13 @@ M.config = function()
     require("oil").setup({
         win_options = {
             winbar = "%!v:lua.get_oil_winbar()"
+        },
+        view_options = {
+            show_hidden = true
         }
     })
+
+    vim.keymap.set("n", "<localleader>e", "<Cmd>vs | Oil .<CR>", { desc = "Open CWD on the side" })
 end
 
 return M
