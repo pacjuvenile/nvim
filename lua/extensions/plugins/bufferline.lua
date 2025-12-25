@@ -3,6 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.url = "https://github.com/akinsho/bufferline.nvim"
 
+M.enabled = false
 M.lazy = false
 
 M.config = function()

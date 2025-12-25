@@ -8,7 +8,7 @@ M.dependencies = {
     }
 }
 
-M.enabled = false
+M.enabled = true
 M.lazy = true
 M.event = "VeryLazy"
 
