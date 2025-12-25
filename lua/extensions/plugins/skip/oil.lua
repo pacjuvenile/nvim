@@ -8,6 +8,7 @@ M.dependencies = {
     }
 }
 
+M.enabled = false
 M.lazy = false
 M.keys = {}
 
@@ -24,6 +25,7 @@ M.config = function()
     end
 
     require("oil").setup({
+        default_file_explorer = true,
         win_options = {
             winbar = "%!v:lua.get_oil_winbar()"
         },
@@ -32,7 +34,6 @@ M.config = function()
         }
     })
 
-    vim.keymap.set("n", "<localleader>e", "<Cmd>vs | Oil .<CR>", { desc = "Open CWD on the side" })
 end
 
 return M

@@ -8,6 +8,7 @@ M.dependencies = {
     }
 }
 
+M.enabled = true
 M.lazy = true
 M.keys = {
     { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Nvimtree toggle" }
@@ -22,7 +23,7 @@ M.config = function()
             enable = true
         },
         filters = {
-            git_ignored = true,
+            git_ignored = false
         }
     })
 end
