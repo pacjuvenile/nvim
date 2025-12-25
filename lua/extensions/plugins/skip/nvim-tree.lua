@@ -77,6 +77,12 @@ M.config = function()
                 api.tree.change_root_to_node(node)
             end
         end, opts("change root directory to child"))
+
+        vim.keymap.del("n", "y", { buffer = bufnr })
+        vim.keymap.set("n", "y", function()
+            local node = api.tree.get_node_under_cursor()
+            api.fs.copy.node(node)
+        end, opts("copy a file or folder from the nvim-tree clipboard"))
     end
 
     require("nvim-tree").setup({
