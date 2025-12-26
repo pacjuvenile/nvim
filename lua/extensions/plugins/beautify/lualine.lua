@@ -30,7 +30,24 @@ M.config = function()
                 "filetype",
             },
             lualine_y = { "progress" },
-            lualine_z = { "location" }
+            lualine_z = {
+                function()
+                    local prose_filetypes = { "markdown", "text", "md" }
+                    if not vim.tbl_contains(prose_filetypes, vim.bo.filetype) then
+                        return "%l:%c"
+                    end
+
+                    local word_count = 0
+                    if vim.fn.mode() == "v"
+                        or vim.fn.mode() == "V"
+                    then
+                        word_count = vim.fn.wordcount().visual_words
+                    else
+                        word_count = vim.fn.wordcount().words
+                    end
+                    return word_count .. " words"
+                end,
+            },
         }
     })
     vim.opt.showmode = false
