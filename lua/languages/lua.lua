@@ -26,4 +26,7 @@ M.ls_config = {
     }
 }
 
+vim.lsp.config("lua_ls", M.ls_config)
+vim.lsp.enable("lua_ls")
+
 return M
