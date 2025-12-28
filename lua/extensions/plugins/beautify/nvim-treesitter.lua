@@ -25,7 +25,7 @@ M.config = function()
         "toml",
     }
 
-    lang_configs = require("settings.langs")
+    local lang_configs = require("settings.langs")
     for _, lang_config in ipairs(lang_configs) do
         local ts_config = lang_config.ts_config
 
