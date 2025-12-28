@@ -7,20 +7,20 @@ M.ts_config = {
 
 M.ls_config = {
   cmd = { "lua-language-server" },
-  filetype = { "lua" },
+  filetypes = { "lua" },
   root_markers = {
     ".git"
   },
 
   settings = {
     Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
       workspace = {
         library = {
           vim.env.VIMRUNTIME
         }
-      },
-      runtime = {
-        version = "LuaJIT",
       },
     }
   }

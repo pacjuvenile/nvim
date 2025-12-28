@@ -44,7 +44,7 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
       plugin_spec.config = plugin_config.config
     end
     -- 合并插件配置规格表
-    plugin_specs[#plugin_specs + 1] = plugin_spec
+    table.insert(plugin_specs, plugin_spec)
   end
 end
 

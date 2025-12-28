@@ -10,12 +10,15 @@ M.ts_config = {
 
 M.ls_config = {
   cmd = { "marksman" },
-  filetye = { "md" },
+  filetypes = { "markdown" },
   root_markers = {
     ".git"
   },
 
   settings = {}
 }
+
+vim.lsp.config("marksman", M.ls_config)
+vim.lsp.enable("marksman")
 
 return M
