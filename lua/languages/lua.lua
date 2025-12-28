@@ -7,7 +7,7 @@ M.ts_config = {
 
 M.ls_config = {
     cmd = { "lua-language-server" },
-    filetype = { "lua" },
+    filetypes = { "lua" },
     root_markers = {
         ".git"
     },
