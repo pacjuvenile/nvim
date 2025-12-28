@@ -2,9 +2,9 @@ vim.opt.number          = true      -- 显示当前行号
 vim.opt.relativenumber  = true      -- 显示相对行号
 
 vim.opt.tabstop         = 8         -- 制表符宽度8个空格
-vim.opt.shiftwidth      = 2         -- 缩进宽度4个空格
+vim.opt.shiftwidth      = 2         -- 缩进宽度2个空格
 vim.opt.expandtab       = true      -- Tab转换为空格
-vim.opt.softtabstop     = 2         -- Tab/Backspace对应4个空格宽度
+vim.opt.softtabstop     = 2         -- Tab/Backspace对应2个空格宽度
 
 vim.opt.cursorline      = true      -- 高亮光标所在行
 
