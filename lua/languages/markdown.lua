@@ -10,7 +10,7 @@ M.ts_config = {
 
 M.ls_config = {
     cmd = { "marksman" },
-    filetypes = { "md" },
+    filetypes = { "markdown" },
     root_markers = {
         ".git"
     },
