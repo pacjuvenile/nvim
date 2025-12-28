@@ -14,6 +14,5 @@ require("settings.keymaps")
 require("settings.autocmds")
 -- 语言设置
 require("settings.langs")
-
 -- 插件管理
-require("extensions.plugin_manager.lazy")
+require("settings.plugin_manager")

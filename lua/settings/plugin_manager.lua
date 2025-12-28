@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugin_specs = {}
 
 local lua_dir = vim.fn.stdpath("config") .. "/lua"
-local plugins_config_full_dir = vim.fn.glob(lua_dir .. "/extensions/plugins/**/*.lua", false, true)
+local plugins_config_full_dir = vim.fn.glob(lua_dir .. "/plugins/**/*.lua", false, true)
 for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
   local plugin_spec = {}
   local plugin_config_module = plugin_config_full_dir:gsub("^" .. lua_dir .. "/", ""):gsub("%.lua$", "")

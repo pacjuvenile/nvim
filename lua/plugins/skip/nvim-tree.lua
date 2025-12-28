@@ -85,18 +85,18 @@ M.config = function()
         end, opts("copy a file or folder from the nvim-tree clipboard"))
 
         vim.keymap.set("n", "W", function()
-            api.tree.collapse_all()  
+            api.tree.collapse_all()
         end, opts("collapse all"))
 
         vim.keymap.set("n", "E", function()
-            api.tree.expand_all() 
+            api.tree.expand_all()
         end, opts("expand all"))
     end
 
     require("nvim-tree").setup({
         view = {
             side = "right",
-            width = 25
+            width = 30
         },
         git = {
             enable = true
