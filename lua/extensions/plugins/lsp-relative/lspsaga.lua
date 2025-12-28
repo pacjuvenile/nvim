@@ -3,6 +3,7 @@ local M = {}
 M.ensure_installed = true
 M.url = "https://github.com/nvimdev/lspsaga.nvim"
 
+M.enabled = false
 M.lazy = true
 M.keys = {
     { "<leader>lF", "<Cmd>Lspsaga finder<CR>" },
