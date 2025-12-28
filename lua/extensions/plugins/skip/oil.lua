@@ -1,6 +1,6 @@
 local M = {}
 
-M.ensure_installed = true
+M.ensure_installed = false
 M.url = "https://github.com/stevearc/oil.nvim"
 M.dependencies = {
     {
