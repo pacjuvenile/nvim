@@ -41,7 +41,7 @@ M.config = function()
     end
     require("nvim-treesitter").install(ensure_installed)
 
-    local treesitter_augroup = vim.api.nvim_create_augroup("TreesitterAuGroup", { clear = true })
+    local treesitter_augroup = vim.api.nvim_create_augroup("Treesitter", { clear = true })
     vim.api.nvim_create_autocmd("User", {
         group = treesitter_augroup,
         pattern = "VeryLazy",

@@ -59,7 +59,7 @@ require("lazy").setup({
     }
 })
 
-local lazy_augroup = vim.api.nvim_create_augroup("LazyAuGroup", { clear = true })
+local lazy_augroup = vim.api.nvim_create_augroup("Lazy", { clear = true })
 vim.api.nvim_create_autocmd("User", {
     group = lazy_augroup,
     pattern = "VeryLazy",
