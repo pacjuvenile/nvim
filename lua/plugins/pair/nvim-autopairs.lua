@@ -7,7 +7,7 @@ M.lazy = true
 M.event = "InsertEnter"
 
 M.config = function()
-    require("nvim-autopairs").setup({})
+  require("nvim-autopairs").setup({})
 end
 
 return M

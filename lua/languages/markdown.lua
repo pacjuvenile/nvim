@@ -14,7 +14,6 @@ M.ls_config = {
   root_markers = {
     ".git"
   },
-
   settings = {}
 }
 

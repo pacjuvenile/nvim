@@ -8,13 +8,13 @@ M.enabled = false
 M.lazy = false
 
 M.config = function()
-    require("tokyonight").setup({
-        transparent = true,
-        styles = {
-            sidebars = "transparent",
-        }
-    })
-    vim.cmd[[
+  require("tokyonight").setup({
+    transparent = true,
+    styles = {
+      sidebars = "transparent",
+    }
+  })
+  vim.cmd [[
         colorscheme tokyonight-moon
     ]]
 end

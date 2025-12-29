@@ -7,13 +7,13 @@ M.name = "catppuccin"
 M.lazy = false
 
 M.config = function()
-    require("catppuccin").setup({
-        transparent_background = true,
-        styles = {
-            keywords = { "italic" }
-        }
-    })
-    vim.cmd [[
+  require("catppuccin").setup({
+    transparent_background = true,
+    styles = {
+      keywords = { "italic" }
+    }
+  })
+  vim.cmd [[
         colorscheme catppuccin-macchiato
     ]]
 end

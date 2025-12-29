@@ -7,7 +7,7 @@ M.lazy = true
 M.event = "VeryLazy"
 
 M.config = function()
-    require("nvim-surround").setup({})
+  require("nvim-surround").setup({})
 end
 
 return M

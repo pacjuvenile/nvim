@@ -7,7 +7,7 @@ M.lazy = true
 M.event = "VeryLazy"
 
 M.config = function()
-    require("ibl").setup({})
+  require("ibl").setup({})
 end
 
 return M
