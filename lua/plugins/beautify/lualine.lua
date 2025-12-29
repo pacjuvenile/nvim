@@ -22,7 +22,7 @@ M.config = function()
     extensions = { "nvim-tree" },
     sections = {
       lualine_a = { "filename" },
-      lualine_b = { "branch", "diff" },
+      lualine_b = { "branch"},
       lualine_c = { "" },
       lualine_x = {
         "encoding",
@@ -38,9 +38,7 @@ M.config = function()
           end
 
           local word_count = 0
-          if vim.fn.mode() == "v"
-              or vim.fn.mode() == "V"
-          then
+          if vim.fn.mode() == "v" or vim.fn.mode() == "V" then
             word_count = vim.fn.wordcount().visual_words
           else
             word_count = vim.fn.wordcount().words
