@@ -21,9 +21,9 @@ M.config = function()
     },
     extensions = { "nvim-tree" },
     sections = {
-      lualine_a = { "mode" },
+      lualine_a = { "filename" },
       lualine_b = { "branch", "diff" },
-      lualine_c = { "filename" },
+      lualine_c = { "" },
       lualine_x = {
         "encoding",
         "filesize",
@@ -50,7 +50,6 @@ M.config = function()
       },
     }
   })
-  vim.opt.showmode = false
 end
 
 return M
