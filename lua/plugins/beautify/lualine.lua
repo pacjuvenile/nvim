@@ -26,7 +26,6 @@ M.config = function()
       lualine_c = { "" },
       lualine_x = {
         "encoding",
-        "filesize",
         "filetype",
       },
       lualine_y = { "progress" },
