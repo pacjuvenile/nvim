@@ -22,12 +22,9 @@ M.config = function()
     extensions = { "nvim-tree" },
     sections = {
       lualine_a = { "filename" },
-      lualine_b = { "branch"},
-      lualine_c = { "" },
-      lualine_x = {
-        "encoding",
-        "filetype",
-      },
+      lualine_b = { "filetype"},
+      lualine_c = { "encoding" },
+      lualine_x = { "" },
       lualine_y = { "progress" },
       lualine_z = {
         function()
