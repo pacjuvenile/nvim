@@ -13,9 +13,7 @@ M.config = function()
       keywords = { "italic" }
     }
   })
-  vim.cmd [[
-        colorscheme catppuccin-macchiato
-    ]]
+  vim.cmd("colorscheme catppuccin-macchiato")
 end
 
 return M

@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   group = view_augroup,
   callback = function()
     if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
-      vim.cmd([[normal! `"]])
+      vim.cmd("normal! `\"")
     end
   end
 })
