@@ -15,20 +15,18 @@ M.event = "VeryLazy"
 M.config = function()
   require("lualine").setup({
     options = {
-      theme = "auto",
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      theme = "catppuccin-frappe",
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
     },
-    extensions = { "nvim-tree" },
     sections = {
-      lualine_a = { "filename" },
-      lualine_b = { "encoding"},
+      lualine_a = { "" },
+      lualine_b = { "mode"},
       lualine_c = { "" },
-      lualine_x = { "" },
-      lualine_y = { "progress" },
-      lualine_z = {
+      lualine_x = { "progress" },
+      lualine_y = {
         function()
-          local prose_filetypes = { "markdown", "text", "md" }
+          local prose_filetypes = { "markdown", "text" }
           if not vim.tbl_contains(prose_filetypes, vim.bo.filetype) then
             return "%l:%c"
           end
@@ -42,7 +40,17 @@ M.config = function()
           return word_count .. " words"
         end,
       },
-    }
+      lualine_z = { "" },
+    },
+    winbar = {
+      lualine_a = { "filename" },
+      lualine_b = { "filetype" },
+      lualine_c = { "encoding" },
+      lualine_x = { "lsp_status" },
+      lualine_y = { "" },
+      lualine_z = { "" }
+    },
+    extensions = { "nvim-tree" }
   })
 end
 
