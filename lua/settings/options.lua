@@ -13,6 +13,7 @@ vim.opt.splitbelow     = true   -- 新窗口分割到下方
 
 vim.opt.showmode       = false  -- 不使用默认的模式显示
 vim.opt.cmdheight      = 0      -- 命令行与状态栏共享空间
+vim.opt.laststatus     = 3      -- 所有window共用底部状态栏
 vim.opt.cmdwinheight   = 1      -- 设置命令窗口大小为1
 
 vim.opt.ignorecase     = true   -- 不输入大写则大小写不敏感

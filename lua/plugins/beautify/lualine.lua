@@ -20,11 +20,12 @@ M.config = function()
       section_separators = { left = "", right = "" },
     },
     sections = {
-      lualine_a = { "" },
-      lualine_b = { "mode"},
-      lualine_c = { "" },
-      lualine_x = { "progress" },
-      lualine_y = {
+      lualine_a = { "mode" },
+      lualine_b = { "branch", "diff"},
+      lualine_c = { "filename", "encoding", "filesize" },
+      lualine_x = { "lsp_status" },
+      lualine_y = { "progress" },
+      lualine_z = {
         function()
           local prose_filetypes = { "markdown", "text" }
           if not vim.tbl_contains(prose_filetypes, vim.bo.filetype) then
@@ -38,15 +39,14 @@ M.config = function()
             word_count = vim.fn.wordcount().words
           end
           return word_count .. " words"
-        end,
+        end
       },
-      lualine_z = { "" },
     },
     winbar = {
       lualine_a = { "filename" },
       lualine_b = { "filetype" },
-      lualine_c = { "encoding" },
-      lualine_x = { "lsp_status" },
+      lualine_c = { "" },
+      lualine_x = { "" },
       lualine_y = { "" },
       lualine_z = { "" }
     },
