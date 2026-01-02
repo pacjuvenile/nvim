@@ -43,9 +43,9 @@ M.config = function()
       },
     },
     winbar = {
-      lualine_a = { "filename" },
-      lualine_b = { "filetype" },
-      lualine_c = { "" },
+      lualine_a = { "" },
+      lualine_b = { "filename" },
+      lualine_c = { "filetype" },
       lualine_x = { "" },
       lualine_y = { "" },
       lualine_z = { "" }
