@@ -7,9 +7,7 @@
     3. a `Nerd Font`
     4. `luarocks`
 
-## 1. 编辑效率
-
-### 1.1 跳转
+## 1. 文件浏览
 
 #### nvim-tree.lua（文件树）
 - Requirements
@@ -36,35 +34,7 @@
             1. `neovim` >= 0.7.0
             2. `Nerd Font`
 
-### 1.2 配对
-#### nvim-autopairs（括号自动配对）
-- Requirements
-    - `neovim` >= 0.7.0
-
-#### nvim-surround（快速处理配对）
-- Requirements
-    - `neovim` >= 0.8.0
-
-### 1.3 美化
-#### catppuccin(颜色主题)
-- Requirements
-    - `neovim` >= 0.8.0
-
-#### indent-blankline.nvim(可视化缩进间距)
-- Requirements
-    - `neovim` >= 0.10.0
-
-#### nvim-treesitter(增强高亮、折叠)
-- Requirements
-    1. `neovim` >= 0.11.0
-    2. `tar`
-    3. `curl`
-    4. `tree-sitter-cli` >= 0.25.0
-    5. `gcc`
-    6. `Node` >= 23.0.0
-
-### 1.4 文本批量处理
-#### grug-far(全局查找&替换)
+#### grug-far(多文件查找&替换)
 - Requirements
     1. `Neovim` >= 0.11.0
     2. `ripgrep` >= 14
@@ -73,34 +43,17 @@
 
 - Dependencies
     - `nvim-web-devicons`/`mini.icons`(icons support)
-<!-- - buffer标签 -->
-<!--     - bufferline -->
-<!-- - 底部状态栏 -->
-<!--     - lualine -->
-<!-- - 快速移动 -->
-<!--     - hop  -->
-<!-- - 多文件查找替换 -->
-<!--     - grug-far  -->
 
-## 2. LSP相关(代码诊断、提示与补全)
-#### mason.nvim（LSP管理器）
+## 2. 编辑增强
+#### nvim-autopairs（括号自动配对）
 - Requirements
-    - `neovim` >= 0.10.0
-    - `git`
-    - `curl` or `wget`
-    - `unzip`
-    - `tar` or `gtar`
-    - `gzip`
-    - `cargo`
-    - `npm`
-- Extensions 
-    - `mason-lspconfig.nvim`
-        - Requirements
-            - `neovim` >= 0.11.0
-        - Dependencies 
-            - `nvim-lspconfig` >= 2.0.0
-                - Requirements
-                    - `neovim` >= 0.11.3
+    - `neovim` >= 0.7.0
+
+#### nvim-surround（快速处理配对）
+- Requirements
+    - `neovim` >= 0.8.0
+
+#### hop（buffer内快速跳转）
 
 #### blink.cmp（代码提示&补全）
 - Requirements
@@ -110,10 +63,29 @@
     - `rustup`
 - Dependencies
     - `friendly-snippets`
-<!-- - lspsaga -->
 
-## 3. 额外功能
-### 3.1 markdown渲染
+#### nvim-treesitter（增强高亮、折叠）
+- Requirements
+    1. `neovim` >= 0.11.0
+    2. `tar`
+    3. `curl`
+    4. `tree-sitter-cli` >= 0.25.0
+    5. `gcc`
+    6. `Node` >= 23.0.0
+
+#### indent-blankline.nvim（可视化缩进间距）
+- Requirements
+    - `neovim` >= 0.10.0
+
+## 3. 界面美化
+#### catppuccin（颜色主题）
+- Requirements
+    - `neovim` >= 0.8.0
+
+#### lualine（状态栏）
+
+
+## 4. 文档写作
 #### peek.nvim（Markdown渲染）
 - Requirements
     - `Deno`（JS/TS运行时）
@@ -122,7 +94,8 @@
 - Requirements
     - `xclip`(x11) or `wl-clipboard`(wayland)
 
-### 3.2 命令异步执行
+#### vimtex（Latex环境）
+
 #### asyncrun.vim（异步执行命令）
 - Requirements
     - `neovim` >= 0.1.4
