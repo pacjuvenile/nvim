@@ -9,40 +9,52 @@
 
 ## 1. 文件浏览
 
-#### nvim-tree.lua（文件树）
+<!-- #### nvim-tree.lua（文件树） -->
+<!-- - Requirements -->
+<!--     - `neovim` >= 0.9.0 -->
+<!-- - Dependencies  -->
+<!--     - `nvim-web-devicons`（提供图标支持） -->
+<!--         - Requirements -->
+<!--             1. `neovim` >= 0.7.0 -->
+<!--             2. `Nerd Font` -->
+
+#### Otree.nvim（文件树）
 - Requirements
-    - `neovim` >= 0.9.0
-- Dependencies 
+    - `neovim` >= 0.10.0
+    - `fd`
+- Dependencies
+    - `oil.nvim`（提供文件操作）
     - `nvim-web-devicons`（提供图标支持）
         - Requirements
             1. `neovim` >= 0.7.0
             2. `Nerd Font`
 
+
 #### telescope.nvim（搜索神器）
 - Requirements
-    1. `neovim` >= 0.9.0
+    1. `neovim` > 0.10.4
     2. `ripgrep`
     3. `fd`
 - Dependencies
     1. `plenary.nvim`（提供`telescope`所需模块）
-    2. `telescope-fzf-native.nvim` （提供更高的排序性能）
-        - Requirements 
-            1. `make`
-            2. `gcc` or `clang`
-    3. `nvim-web-devicons`（提供图标支持）
+    2. `nvim-web-devicons`（提供图标支持）
         - Requirements
             1. `neovim` >= 0.7.0
             2. `Nerd Font`
+    3. `telescope-fzf-native.nvim`（提供更高的排序性能）
+        - Requirements
+            1. `make`
+            2. `gcc`
+    4. `nerdy.nvim`（提供nerd图标搜索支持）
 
 #### grug-far(多文件查找&替换)
 - Requirements
     1. `Neovim` >= 0.11.0
     2. `ripgrep` >= 14
     3. `Nerd Font`
-    4. `ast-grep`(ast-grep search engine)
 
 - Dependencies
-    - `nvim-web-devicons`/`mini.icons`(icons support)
+    - `nvim-web-devicons`/`mini.icons`（提供图标支持）
 
 ## 2. 编辑增强
 #### nvim-autopairs（括号自动配对）
