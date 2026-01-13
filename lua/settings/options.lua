@@ -1,18 +1,17 @@
 vim.opt.number         = true   -- 显示当前行号
 vim.opt.relativenumber = true   -- 显示相对行号
 
-vim.opt.tabstop        = 8      -- 制表符宽度8个空格
 vim.opt.shiftwidth     = 2      -- 缩进宽度2个空格
-vim.opt.expandtab      = true   -- Tab转换为空格
+vim.opt.tabstop        = 8      -- 制表符宽度8个空格
 vim.opt.softtabstop    = 2      -- Tab/Backspace对应2个空格宽度
+vim.opt.expandtab      = true   -- Tab转换为空格
 
 vim.opt.cursorline     = true   -- 高亮光标所在行
 
 vim.opt.splitright     = true   -- 新窗口分割到右侧
 vim.opt.splitbelow     = true   -- 新窗口分割到下方
 
-vim.opt.showmode       = false  -- 不使用默认的模式显示
-vim.opt.cmdheight      = 0      -- 命令行与状态栏共享空间
+vim.opt.cmdheight      = 1      -- 命令行与状态栏共享空间
 vim.opt.laststatus     = 3      -- 所有window共用底部状态栏
 vim.opt.cmdwinheight   = 1      -- 设置命令窗口大小为1
 

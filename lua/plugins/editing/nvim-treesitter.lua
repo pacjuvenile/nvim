@@ -23,6 +23,8 @@ M.config = function()
     "json",
     "yaml",
     "toml",
+    
+    "matlab",
   }
 
   local lang_configs = require("settings.langs")
