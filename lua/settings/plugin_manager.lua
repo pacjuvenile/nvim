@@ -12,7 +12,13 @@ end
 vim.opt.rtp:prepend(lazy_path)
 
 -- 插件管理
-local plugin_specs = {}
+local plugin_specs = {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false
+  }
+}
 
 local lua_dir = vim.fn.stdpath("config") .. "/lua"
 local plugins_config_full_dir = vim.fn.glob(lua_dir .. "/plugins/**/*.lua", false, true)
