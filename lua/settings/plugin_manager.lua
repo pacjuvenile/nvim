@@ -55,7 +55,6 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
     table.insert(plugin_specs, plugin_spec)
   end
 end
-
 require("lazy").setup({
   -- 应用插件配置规格表
   spec = plugin_specs,
