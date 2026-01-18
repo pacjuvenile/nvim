@@ -67,13 +67,5 @@ require("lazy").setup({
   }
 })
 
-local lazy_augroup = vim.api.nvim_create_augroup("Lazy", { clear = true })
-vim.api.nvim_create_autocmd("User", {
-  group = lazy_augroup,
-  pattern = "VeryLazy",
-  callback = function()
-    -- 使用lazy.nvim卸载插件
-    require("lazy").clean({ show = false })
-  end,
-  once = true
-})
+-- 插件清理
+require("lazy").clean({ wait = true, show = false })
