@@ -1,10 +1,12 @@
 local M = {}
 
+-- treesitter config
 M.ts_config = {
   parser_installed = true,
   parser = { "lua" }
 }
 
+-- lsp config
 M.ls_config = {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
@@ -28,7 +30,6 @@ M.ls_config = {
     }
   }
 }
-
 vim.lsp.config("lua_ls", M.ls_config)
 vim.lsp.enable("lua_ls")
 

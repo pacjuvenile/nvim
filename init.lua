@@ -6,6 +6,8 @@ vim.opt.termguicolors = true    -- enable 24-bit color
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- 语言设置
+require("settings.langs")
 -- 插件管理
 require("settings.plugin_manager")
 -- 选项设置
@@ -14,5 +16,3 @@ require("settings.options")
 require("settings.keymaps")
 -- 自动命令
 require("settings.autocmds")
--- 语言设置
-require("settings.langs")

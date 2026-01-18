@@ -1,15 +1,15 @@
 -- lazy.nvim安装
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.uv.fs_stat(lazypath) then
+local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.uv.fs_stat(lazy_path) then
   vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim",
-    lazypath
+    lazy_path
   })
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazy_path)
 
 -- 插件管理
 local plugin_specs = {}
@@ -26,8 +26,8 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
     plugin_spec.name = plugin_config.name
     plugin_spec.branch = plugin_config.branch
     plugin_spec.commit = plugin_config.commit
-    plugin_spec.version = plugin_config.version
     plugin_spec.tag = plugin_config.tag
+    plugin_spec.version = plugin_config.version
     plugin_spec.build = plugin_config.build
     plugin_spec.dependencies = plugin_config.dependencies
     -- 插件加载
