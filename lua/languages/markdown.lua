@@ -9,6 +9,7 @@ M.ts_config = {
 }
 
 M.ls_config = {
+  name = "marksman",
   cmd = { "marksman" },
   filetypes = { "markdown" },
   root_markers = {
@@ -16,8 +17,5 @@ M.ls_config = {
   },
   settings = {}
 }
-
-vim.lsp.config("marksman", M.ls_config)
-vim.lsp.enable("marksman")
 
 return M

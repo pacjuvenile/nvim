@@ -8,6 +8,7 @@ M.ts_config = {
 
 -- lsp config
 M.ls_config = {
+  name = "lua_ls",
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
   root_markers = {
@@ -30,7 +31,5 @@ M.ls_config = {
     }
   }
 }
-vim.lsp.config("lua_ls", M.ls_config)
-vim.lsp.enable("lua_ls")
 
 return M

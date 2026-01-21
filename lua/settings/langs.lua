@@ -88,3 +88,7 @@ if vim.uv.fs_stat(treesitter_path) then
 end
 
 -- language servers配置
+for _, ls_config in ipairs(ls_configs) do
+  vim.lsp.config(ls_config.name, ls_config)
+  vim.lsp.enable(ls_config.name)
+end
