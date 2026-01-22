@@ -89,8 +89,12 @@ end
 
 -- language servers配置
 for _, ls_config in ipairs(ls_configs) do
-  if ls_config.enabled ~= false and ls_config.name ~= nil then
+  -- 配置lsp
+  if ls_config.name ~= nil then
     vim.lsp.config(ls_config.name, ls_config)
-    vim.lsp.enable(ls_config.name)
+    -- 启用lsp
+    if ls_config.enabled ~= false then
+      vim.lsp.enable(ls_config.name)
+    end
   end
 end
