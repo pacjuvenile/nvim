@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- 插件管理
-require("settings.plugin_manager")
+require("settings.lazy")
 -- 语言设置
 require("settings.langs")
 -- 选项设置
