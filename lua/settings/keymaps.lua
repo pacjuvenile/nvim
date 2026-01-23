@@ -4,8 +4,6 @@ vim.keymap.set("i", "<A-l>", [[<Right>]])                                -- 替�
 vim.keymap.set("i", "<A-h>", [[<Left>]])                                 -- 替换方向键左移
 vim.keymap.set("i", "<A-k>", [[<Up>]])                                   -- 替换方向键上移
 vim.keymap.set("i", "<A-j>", [[<Down>]])                                 -- 替换方向键下移
-vim.keymap.set("n", "H", [[<Cmd>:bp<CR>]], { silent = true })            -- 移动至上一个buffer
-vim.keymap.set("n", "L", [[<Cmd>:bn<CR>]], { silent = true })            -- 移动至下一个buffer
 
 vim.keymap.set({ "n", "v" }, "y", [["+y]])                               -- 复制
 vim.keymap.set("v", "x", [["+x]])                                        -- 剪切

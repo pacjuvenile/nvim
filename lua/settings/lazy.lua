@@ -12,16 +12,8 @@ end
 vim.opt.rtp:prepend(lazy_path)
 
 -- 插件管理
-local plugin_specs = {
-  -- 基础插件
-  {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    lazy = false
-  }
-}
+local plugin_specs = {}
 
--- 扩展插件
 local lua_dir = vim.fn.stdpath("config") .. "/lua"
 local plugins_config_full_dir = vim.fn.glob(lua_dir .. "/plugins/**/*.lua", false, true)
 for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
