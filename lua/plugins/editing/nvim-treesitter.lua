@@ -27,7 +27,7 @@ M.config = function()
     "matlab",
   }
 
-  local ts_configs = require("settings.langs").ts_configs
+  local ts_configs = require("langs").ts_configs
   for _, ts_config in ipairs(ts_configs) do
     if ts_config.parser_installed == true then
       for _, parser in ipairs(ts_config.parser) do
