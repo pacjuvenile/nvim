@@ -9,7 +9,7 @@ vim.keymap.set({ "n", "v" }, "y", [["+y]])                               -- 复�
 vim.keymap.set("v", "x", [["+x]])                                        -- 剪切
 vim.keymap.set({ "n", "v" }, "p", [["+p]])                               -- 粘贴
 
-vim.keymap.set("n", ":", [[q:i]])                                        -- 进入命令窗口
+vim.keymap.set("n", ":", [[q:]])                                        -- 进入命令窗口
 vim.keymap.set("n", "<Esc>", function()
   if vim.fn.getcmdwintype() ~= "" and vim.fn.mode() == "n" then
     return [[<C-c><C-c>]]        -- 退出命令窗口

@@ -1,5 +1,5 @@
--- 打开文件保留上次光标位置
 local view_augroup = vim.api.nvim_create_augroup("View", { clear = true })
+-- 打开文件保留上次光标位置
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = view_augroup,
   callback = function()
@@ -9,8 +9,8 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end
 })
 
--- 普通文件更新则立即保存
 local save_augroup = vim.api.nvim_create_augroup("Save", { clear = true })
+-- 普通文件更新则立即保存
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   group = save_augroup,
   callback = function()
@@ -20,4 +20,15 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
       end, 100)
     end
   end
+})
+
+local cmd_augroup = vim.api.nvim_create_augroup("Cmd", { clear = true })
+-- 进入命令行窗口即进入插入模式
+vim.api.nvim_create_autocmd("CmdwinEnter", {
+    group = cmd_augroup,
+    callback = function()
+        vim.cmd "startinsert"
+        vim.wo.number = false
+        vim.wo.relativenumber = false
+    end,
 })
