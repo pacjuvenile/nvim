@@ -11,6 +11,12 @@ M.config = function()
     transparent_background = true,
     styles = {
       keywords = { "italic" }
+    },
+    integrations = {
+      rainbow_delimiters = true,
+      telescope = {
+        enabled = true
+      }
     }
   })
   vim.cmd("colorscheme catppuccin-macchiato")
