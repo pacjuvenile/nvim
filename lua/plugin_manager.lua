@@ -21,7 +21,7 @@ for _, plugin_config_full_dir in ipairs(plugins_config_full_dir) do
   local plugin_config_module = plugin_config_full_dir:gsub("^" .. lua_dir .. "/", ""):gsub("%.lua$", "")
   local plugin_config = require(plugin_config_module)
   -- 组单个插件配置规格表
-  if plugin_config.ensure_installed == true then
+  if plugin_config.ensure_installed ~= false then
     plugin_spec.url = plugin_config.url
     plugin_spec.name = plugin_config.name
     plugin_spec.branch = plugin_config.branch
