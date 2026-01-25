@@ -57,7 +57,37 @@ require("lazy").setup({
     colorscheme = { "catppuccin-macchiato" }
   },
   ui = {
-    border = "rounded"
+    border = "rounded",
+    backdrop = 100
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        -- 统一编辑器格式插件
+        "editorconfig",
+        -- 打开归档文件内置插件
+        "gzip",
+        "tarPlugin",
+        "zigPlugin",
+        -- 手册/教程查看插件
+        "man",
+        "tutor",
+        -- 匹配插件
+        "matchit",
+        "matchparen",
+        -- 文件浏览器
+        "netrwPlugin",
+        -- 拼写检查
+        "spellfile",
+        -- 代码转html
+        "tohtml",
+        -- 远程编辑
+        -- "net",
+        -- "osc52",
+        -- 旧插件兼容
+        -- "rplugin"
+      }
+    }
   }
 })
 
