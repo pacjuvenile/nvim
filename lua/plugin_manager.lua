@@ -50,11 +50,14 @@ end
 require("lazy").setup({
   -- 应用插件配置规格表
   spec = plugin_specs,
-  ui = {
-    border = "rounded"
+  rocks = {
+    enabled = false
   },
   install = {
     colorscheme = { "catppuccin-macchiato" }
+  },
+  ui = {
+    border = "rounded"
   }
 })
 
