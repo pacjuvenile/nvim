@@ -6,18 +6,18 @@ M.ts_config = {
 
 M.ls_config = {
   name = "pyright",
-  cmd = { "pyright-langserver" },
+  cmd = { "pyright-langserver", "--stdio" },
   filetypes = { "python" },
   root_markers = {
     ".git"
   },
   settings = {
     python = {
-      analysis = {
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-        diagnosticMode = "openFilesOnly"
-      }
+      -- analysis = {
+      --   autoSearchPaths = true,
+      --   useLibraryCodeForTypes = true,
+      --   diagnosticMode = "openFilesOnly"
+      -- }
     }
   }
 }
