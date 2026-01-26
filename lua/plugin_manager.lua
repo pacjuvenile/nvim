@@ -58,7 +58,8 @@ require("lazy").setup({
     colorscheme = { "catppuccin-macchiato" }
   },
   ui = {
-    border = "rounded"
+    border = "rounded",
+    backdrop = 100
   },
   performance = {
     rtp = {

@@ -9,10 +9,10 @@ vim.g.maplocalleader = ","
 -- 插件管理
 require("plugin_manager")
 -- 语言设置
-require("settings.lsp")
+require("core.lsp")
 -- 选项设置
-require("settings.options")
+require("core.options")
 -- 键位配置
-require("settings.keymaps")
+require("core.keymaps")
 -- 自动命令
-require("settings.autocmds")
+require("core.autocmds")
