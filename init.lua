@@ -6,12 +6,12 @@ vim.g.encoding = "UTF-8"
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- 选项设置
+require("core.options")
 -- 插件管理
 require("plugin_manager")
 -- 语言设置
 require("core.lsp")
--- 选项设置
-require("core.options")
 -- 键位配置
 require("core.keymaps")
 -- 自动命令

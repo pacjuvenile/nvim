@@ -9,3 +9,9 @@ for _, ls_config in ipairs(ls_configs) do
     end
   end
 end
+
+-- 诊断配置
+vim.diagnostic.config({
+  virtual_text = true,
+  update_in_insert = true
+})

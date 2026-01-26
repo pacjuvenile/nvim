@@ -1,6 +1,6 @@
 local M = {}
 
-M.ensure_installed = true
+M.ensure_installed = false
 M.url = "https://github.com/nvim-tree/nvim-tree.lua"
 M.dependencies = {
   {
@@ -10,9 +10,9 @@ M.dependencies = {
 
 M.enabled = true
 M.lazy = true
-M.keys = {
-  { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "nvim-tree toggle" }
-}
+-- M.keys = {
+--   { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "nvim-tree toggle" }
+-- }
 
 M.config = function()
   local on_attach = function(bufnr)

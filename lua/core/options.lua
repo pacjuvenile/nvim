@@ -56,8 +56,3 @@ vim.opt.pumheight      = 10 -- 最多显示10个补全项
 vim.opt.swapfile       = false --禁用交换文件
 vim.opt.writebackup    = false -- 禁用写入备份文件
 vim.opt.backup         = false -- 禁用备份文件
-
-vim.diagnostic.config({
-  virtual_text = true,
-  update_in_insert = true
-})
