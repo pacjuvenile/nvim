@@ -55,7 +55,7 @@ require("lazy").setup({
     enabled = false
   },
   install = {
-    colorscheme = { "catppuccin-macchiato" }
+    -- colorscheme = { "catppuccin-macchiato" }
   },
   ui = {
     border = "rounded",
