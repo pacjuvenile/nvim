@@ -8,7 +8,6 @@ M.lazy = false
 
 M.config = function()
   require("catppuccin").setup({
-    transparent_background = true,
     styles = {
       keywords = { "italic" }
     },
