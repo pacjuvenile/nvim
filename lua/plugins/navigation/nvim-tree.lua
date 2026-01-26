@@ -8,11 +8,11 @@ M.dependencies = {
   }
 }
 
-M.enabled = true
+M.enabled = false
 M.lazy = true
--- M.keys = {
---   { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "nvim-tree toggle" }
--- }
+M.keys = {
+  { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "nvim-tree toggle" }
+}
 
 M.config = function()
   local on_attach = function(bufnr)
