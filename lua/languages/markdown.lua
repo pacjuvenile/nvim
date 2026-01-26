@@ -1,7 +1,6 @@
 local M = {}
 
 M.ts_config = {
-  parser_installed = true,
   parser = {
     "markdown",
     "markdown_inline"

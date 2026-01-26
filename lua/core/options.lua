@@ -17,9 +17,6 @@ vim.opt.tabstop        = 8    -- 制表符宽度8个空格
 vim.opt.softtabstop    = 2    -- Tab/Backspace对应2个空格宽度
 vim.opt.expandtab      = true -- Tab转换为空格
 
--- 新行缩进
-vim.opt.smartindent    = true -- 启动语义缩进
-
 -- 光标
 vim.opt.cursorline     = true -- 高亮光标所在行
 

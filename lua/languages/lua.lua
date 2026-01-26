@@ -1,12 +1,10 @@
 local M = {}
 
--- treesitter config
 M.ts_config = {
-  parser_installed = true,
+  -- ensure_installed = true,
   parser = { "lua" }
 }
 
--- lsp config
 M.ls_config = {
   name = "lua_ls",
   cmd = { "lua-language-server" },

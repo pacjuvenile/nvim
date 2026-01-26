@@ -29,7 +29,7 @@ M.config = function()
 
   local ts_configs = require("langs").ts_configs
   for _, ts_config in ipairs(ts_configs) do
-    if ts_config.parser_installed == true then
+    if ts_config.ensure_installed ~= false then
       for _, parser in ipairs(ts_config.parser) do
         if not vim.tbl_contains(ensure_installed, parser) then
           table.insert(ensure_installed, parser)
