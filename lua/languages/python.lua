@@ -9,15 +9,17 @@ M.ls_config = {
   cmd = { "pyright-langserver", "--stdio" },
   filetypes = { "python" },
   root_markers = {
-    ".git"
+    ".git",
+    "pyproject.toml",
   },
   settings = {
     python = {
-      -- analysis = {
-      --   autoSearchPaths = true,
-      --   useLibraryCodeForTypes = true,
-      --   diagnosticMode = "openFilesOnly"
-      -- }
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = "openFilesOnly",
+        extraBuiltins = { "config" }
+      }
     }
   }
 }
