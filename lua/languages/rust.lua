@@ -9,7 +9,8 @@ M.ls_config = {
   cmd = { "rust-analyzer" } ,
   filetypes = { "rust" },
   root_markers = {
-    ".git"
+    ".git",
+    "Cargo.toml",
   },
   capabilities = {
       experimental = {
