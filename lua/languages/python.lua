@@ -18,7 +18,6 @@ M.ls_config = {
         autoSearchPaths = true,
         useLibraryCodeForTypes = true,
         diagnosticMode = "openFilesOnly",
-        extraBuiltins = { "config" }
       }
     }
   }

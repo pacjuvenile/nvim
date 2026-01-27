@@ -1,5 +1,5 @@
 -- 文件编码
-vim.opt.fileencoding   = "utf-8"  -- 启用utf-8
+vim.opt.fileencoding   = "utf-8" -- 启用utf-8
 
 -- 同步外部修改
 vim.opt.autoread       = true -- 自动读取外部修改
@@ -10,6 +10,9 @@ vim.opt.termguicolors  = true -- 启用24-bit颜色
 -- 行号
 vim.opt.number         = true -- 显示当前行号
 vim.opt.relativenumber = true -- 显示相对行号
+
+-- 缩进
+vim.opt.smartindent    = true -- 根据语义缩进
 
 -- Tab行为
 vim.opt.shiftwidth     = 2    -- 缩进宽度2个空格
@@ -26,6 +29,8 @@ vim.opt.signcolumn     = "no" -- 不显示左侧符号列
 -- 命令行
 vim.opt.cmdheight      = 1 -- 始终显示一行的底部命令行区域
 vim.opt.cmdwinheight   = 1 -- 设置命令窗口大小为1
+
+-- 状态栏
 vim.opt.laststatus     = 3 -- 所有window共用底部状态栏
 
 -- 搜索设置
@@ -36,8 +41,7 @@ vim.opt.smartcase      = true -- 输入大写则大写敏感
 vim.opt.nrformats      = "bin,hex,alpha" -- 二进制，十六进制和字母都视为数字
 
 -- 折叠设置
-vim.opt.foldmethod     = "expr" -- 折叠方法基于表达式
-vim.opt.foldlevel      = 99     -- 大于折叠层级的行会被折叠
+vim.opt.foldlevel      = 99 -- 大于折叠层级的行会被折叠
 
 -- 窗口分割
 vim.opt.splitright     = true -- 新窗口分割到右侧
