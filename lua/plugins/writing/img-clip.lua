@@ -20,7 +20,7 @@ M.config = function()
     }
   })
 
-  vim.keymap.set("n", "<localleader>ic", function()
+  vim.keymap.set("n", "<leader>ic", function()
     vim.cmd("normal! m`")         -- 标记光标位置
     vim.cmd("PasteImage")         -- 粘贴图片链接
     vim.cmd("normal! ^v$h\"+xdd") -- 剪切图片链接并删除新行
