@@ -25,10 +25,10 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 local cmd_augroup = vim.api.nvim_create_augroup("Cmd", { clear = true })
 -- 进入命令行窗口即进入插入模式
 vim.api.nvim_create_autocmd("CmdwinEnter", {
-    group = cmd_augroup,
-    callback = function()
-        vim.cmd "startinsert"
-        vim.wo.number = false
-        vim.wo.relativenumber = false
-    end,
+  group = cmd_augroup,
+  callback = function()
+    vim.cmd("startinsert")
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  end,
 })
