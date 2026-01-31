@@ -17,4 +17,4 @@ vim.diagnostic.config({
 })
 
 -- 格式化配置
-vim.keymap.set("n", "<localleader>f", [[<Cmd>lua vim.lsp.buf.format()<CR>]], { silent = true })                                  -- 基于lsp进行buffer格式化
+vim.keymap.set("n", "<localleader>f", [[<Cmd>lua vim.lsp.buf.format()<cr>]], { silent = true })                                  -- 基于lsp进行buffer格式化

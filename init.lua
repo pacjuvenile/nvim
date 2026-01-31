@@ -4,7 +4,7 @@ vim.g.encoding = "UTF-8"
 
 -- 全局映射
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = "\\"
 
 -- 选项设置
 require("core.options")

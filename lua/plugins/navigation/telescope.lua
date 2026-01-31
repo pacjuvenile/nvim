@@ -20,12 +20,12 @@ M.dependencies = {
 
 M.lazy = true
 M.keys = {
-  { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
-  { "<leader>fg", "<CMD>Telescope live_grep<CR>", desc = "Telescope live grep" },
-  { "<leader>fh", "<CMD>Telescope help_tags<CR>", desc = "Telescope help tags" },
-  { "<leader>fb", "<CMD>Telescope buffers<CR>", desc = "Telescope buffers" },
-  { "<leader>fc", "<CMD>Telescope colorscheme<CR>", desc = "Telescope colorscheme" },
-  { "<leader>fn", "<CMD>Telescope nerdy<CR>", desc = "Telescope browser nerd icons" },
+  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Telescope find files" },
+  { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Telescope live grep" },
+  { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
+  { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Telescope buffers" },
+  { "<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Telescope colorscheme" },
+  { "<leader>fn", "<cmd>Telescope nerdy<cr>", desc = "Telescope browser nerd icons" },
 }
 
 M.config = function()

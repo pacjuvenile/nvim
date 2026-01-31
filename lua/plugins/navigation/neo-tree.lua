@@ -11,7 +11,7 @@ M.dependencies = {
 
 M.lazy = true
 M.keys = {
-  { "<leader>e", "<CMD>Neotree toggle<CR>", desc = "neo-tree toggle" }
+  { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "neo-tree toggle" }
 }
 M.cmd = "Neotree"
 
@@ -53,7 +53,7 @@ M.config = function()
     window = {
       width = 25,
       mappings = {
-        ["<S-CR>"] = "system_open",
+        ["<S-cr>"] = "system_open",
         ["<Space>"] = false,
         ["[b"] = "prev_source",
         ["]b"] = "next_source",
