@@ -12,8 +12,10 @@ M.config = function()
       after = false,
       before = true
     },
-    char = {
-      keys = {}
+    modes = {
+      char = {
+        enabled = false
+      }
     }
   })
 end
