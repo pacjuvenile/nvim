@@ -1,8 +1,8 @@
 local M = {}
 
-M.ts_config = {
-  parser = { "systemverilog" }
-}
+-- M.ts_config = {
+--   parser = { "systemverilog" }
+-- }
 
 M.ls_config = {
   name = "svls",
