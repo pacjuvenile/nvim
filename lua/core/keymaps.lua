@@ -10,6 +10,7 @@ vim.keymap.set("n", "L", [[<Cmd>bnext<cr>]], { silent = true })          -- 切�
 vim.keymap.set({ "n", "v" }, "y", [["+y]])                               -- 复制
 vim.keymap.set("v", "x", [["+x]])                                        -- 剪切
 vim.keymap.set({ "n", "v" }, "p", [["+p]])                               -- 粘贴
+vim.keymap.set("i", "<A-p>", [[<C-r>+]])                                 -- 插入模式下粘贴
 
 vim.keymap.set("n", ":", [[q:]])                                         -- 进入命令窗口
 vim.keymap.set("n", "<Esc>", function()
