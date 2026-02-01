@@ -2,7 +2,7 @@ local M = {}
 
 M.ensure_installed = true
 M.url = "https://github.com/saghen/blink.cmp"
-M.build = 'cargo build --release'
+M.build = "cargo build --release"
 M.dependencies = {
   {
     url = "https://github.com/rafamadriz/friendly-snippets"
@@ -21,7 +21,7 @@ M.config = function()
     },
     keymap = {
       preset = "none",
-      ['<Tab>'] = {
+      ["<Tab>"] = {
         function(cmp)
           if cmp.snippet_active() then
             return cmp.accept()
@@ -29,18 +29,21 @@ M.config = function()
             return cmp.select_and_accept()
           end
         end,
-        'snippet_forward',
-        'fallback'
+        "snippet_forward",
+        "fallback"
       },
-      ['<S-Tab>'] = { "hide" },
+      ["<Esc>"] = {
+        "hide",
+        "fallback"
+      },
 
-      ['<Up>'] = { 'select_prev', 'fallback' },
-      ['<Down>'] = { 'select_next', 'fallback' },
+      ["<Up>"] = { "select_prev", "fallback" },
+      ["<Down>"] = { "select_next", "fallback" },
 
-      ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
-      ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+      ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+      ["<C-f>"] = { "scroll_documentation_down", "fallback" },
 
-      ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+      ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
     },
     sources = {
       default = {
