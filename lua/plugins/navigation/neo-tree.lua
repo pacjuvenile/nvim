@@ -13,7 +13,6 @@ M.lazy = true
 M.keys = {
   { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "neo-tree toggle" }
 }
-M.cmd = "Neotree"
 
 M.config = function()
   require("neo-tree").setup({
