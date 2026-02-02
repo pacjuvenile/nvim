@@ -31,15 +31,15 @@ M.config = function()
         "snippet_forward",
         "fallback"
       },
-      ["<A-e>"] = {
+      ["<C-e>"] = {
         "show",
         "hide",
         "fallback"
       },
-      -- ["<A-k>"] = { "show_signature", "hide_signature", "fallback" },
+      -- ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 
-      -- ["<A-b>"] = { "scroll_documentation_up", "fallback" },
-      -- ["<A-f>"] = { "scroll_documentation_down", "fallback" },
+      -- ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+      -- ["<C-f>"] = { "scroll_documentation_down", "fallback" },
     },
     sources = {
       default = {
