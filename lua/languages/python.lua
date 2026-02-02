@@ -23,13 +23,13 @@ M.ls_config = {
   }
 }
 
-local python_augroup = vim.api.nvim_create_augroup("Python", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-  group = python_augroup,
-  pattern = "python",
-  callback = function()
-    vim.bo.indentexpr = ""
-  end
-})
+-- local python_augroup = vim.api.nvim_create_augroup("Python", { clear = true })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = python_augroup,
+--   pattern = "python",
+--   callback = function()
+--     vim.bo.indentexpr = ""
+--   end
+-- })
 
 return M

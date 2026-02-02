@@ -6,6 +6,9 @@ vim.g.encoding = "UTF-8"
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- 关闭内置缩进
+vim.cmd('filetype indent off')
+
 -- 选项设置
 require("core.options")
 -- 插件管理
