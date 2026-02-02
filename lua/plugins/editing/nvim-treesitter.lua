@@ -25,6 +25,7 @@ M.config = function()
     "toml",
 
     "matlab",
+    "commonlisp"
   }
 
   local ts_configs = require("langs").ts_configs
