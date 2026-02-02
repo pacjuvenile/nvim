@@ -12,7 +12,8 @@ vim.opt.number         = true -- 显示当前行号
 vim.opt.relativenumber = true -- 显示相对行号
 
 -- 缩进
-vim.opt.smartindent    = true -- 根据语义缩进
+vim.opt.smartindent    = false -- 禁用语义缩进
+vim.opt.autoindent     = true  -- 继承上一行的缩进
 
 -- Tab行为
 vim.opt.shiftwidth     = 2    -- 缩进宽度2个空格
