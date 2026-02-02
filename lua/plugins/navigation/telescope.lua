@@ -29,7 +29,16 @@ M.keys = {
 }
 
 M.config = function()
+  -- local actions = require("telescope.actions")
+
   require("telescope").setup({
+    -- defaults = {
+    --   mappings = {
+    --     i = {
+    --       ["<M-v>"] = actions.select_vertical,
+    --     }
+    --   }
+    -- },
     pickers = {
       find_files = {
         find_command = {

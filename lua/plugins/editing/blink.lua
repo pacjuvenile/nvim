@@ -17,10 +17,13 @@ M.config = function()
     completion = {
       documentation = {
         auto_show = true
-      }
+     }
     },
     keymap = {
       preset = "none",
+      ["<Up>"] = { "select_prev", "fallback" },
+      ["<Down>"] = { "select_next", "fallback" },
+
       ["<Tab>"] = {
         function(cmp)
           return cmp.select_and_accept()
@@ -28,18 +31,15 @@ M.config = function()
         "snippet_forward",
         "fallback"
       },
-      ["<Esc>"] = {
+      ["<A-e>"] = {
+        "show",
         "hide",
         "fallback"
       },
+      -- ["<A-k>"] = { "show_signature", "hide_signature", "fallback" },
 
-      ["<Up>"] = { "select_prev", "fallback" },
-      ["<Down>"] = { "select_next", "fallback" },
-
-      ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-      ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-
-      ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+      -- ["<A-b>"] = { "scroll_documentation_up", "fallback" },
+      -- ["<A-f>"] = { "scroll_documentation_down", "fallback" },
     },
     sources = {
       default = {
