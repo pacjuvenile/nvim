@@ -10,20 +10,19 @@ M.lazy = false
 M.config = function()
   local mc = require("multicursor-nvim")
   mc.setup({})
+  vim.keymap.set({ "n", "x" }, "<C-q>", mc.toggleCursor)
   vim.keymap.set({ "n", "x" }, "<C-j>", function() mc.lineAddCursor(1) end)
   vim.keymap.set({ "n", "x" }, "<C-k>", function() mc.lineAddCursor(-1) end)
   vim.keymap.set({ "n", "x" }, "<C-S-j>", function() mc.lineSkipCursor(1) end)
   vim.keymap.set({ "n", "x" }, "<C-S-k>", function() mc.lineSkipCursor(-1) end)
 
-  vim.keymap.set({ "n", "x" }, "<C-q>", mc.toggleCursor)
-
   mc.addKeymapLayer(function(layerSet)
     -- Select a different cursor as the main one.
-    layerSet({ "n", "x" }, "<left>", mc.prevCursor)
-    layerSet({ "n", "x" }, "<right>", mc.nextCursor)
+    layerSet({ "n", "x" }, "<down>", mc.prevCursor)
+    layerSet({ "n", "x" }, "<up>", mc.nextCursor)
 
     -- Delete the main cursor.
-    layerSet({ "n", "x" }, "<leader>x", mc.deleteCursor)
+    layerSet({ "n", "x" }, "<C-d>", mc.deleteCursor)
 
     -- Enable and clear cursors using escape.
     layerSet("n", "<esc>", function()
