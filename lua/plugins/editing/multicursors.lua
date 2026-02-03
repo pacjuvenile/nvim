@@ -1,6 +1,6 @@
 local M = {}
 
-M.ensure_installed = false
+M.ensure_installed = true
 M.url = "https://github.com/jake-stewart/multicursor.nvim"
 M.branc = "1.0"
 
