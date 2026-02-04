@@ -12,7 +12,7 @@ M.init = function()
   vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
   vim.cmd([[
     function! OpenMarkdownPreview(url)
-      execute '!wsl.exe /mnt/c/Users/sunny/app/qutebrowser/qutebrowser.exe -T ":set statusbar.show never" ' . a:url . ' &'
+      execute '!wsl.exe /mnt/c/Users/sunny/app/qutebrowser/qutebrowser.exe -T ":set tabs.show never" ' . a:url . ' &'
       redraw!
     endfunction
   ]])
