@@ -43,19 +43,19 @@ M.config = function()
     pickers = {
       find_files = {
         find_command = {
-          "rg",
-          "--files",
-          "--hidden",
-          "--glob",
-          "!**/.git"
+          'rg',
+          '--files',
+          '--hidden',
+          '--glob',
+          '!**/.git'
         }
       },
       live_grep = {
         glob_pattern = {
-          "!**/.git/*"
+          '!**/.git/*'
         },
         additional_args = {
-          "--hidden",
+          '--hidden',
         },
       }
     }
