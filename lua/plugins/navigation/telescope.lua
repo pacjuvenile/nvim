@@ -47,7 +47,7 @@ M.config = function()
           "--files",
           "--hidden",
           "--glob",
-          "!**/.git/*"
+          "!**/.git"
         }
       },
       live_grep = {
