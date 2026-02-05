@@ -21,7 +21,6 @@ M.config = function()
     -- 配置脚本
     "bash",
     "json",
-
     "matlab",
     "commonlisp"
   }
