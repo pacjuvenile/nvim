@@ -21,8 +21,6 @@ M.config = function()
     -- 配置脚本
     "bash",
     "json",
-    "yaml",
-    "toml",
 
     "matlab",
     "commonlisp"
