@@ -1,13 +1,27 @@
 local M = {}
 
 M.ts_config = {
-  parser = { "yaml" }
+  parser = { 'yaml' }
 }
 
--- local yaml_augroup = vim.api.nvim_create_augroup("Yaml", { clear = true })
--- vim.api.nvim_create_autocmd("FileType", {
+M.ls_config = {
+  name = 'yamlls',
+  cmd = { 'yaml-language-server', '--stdio' },
+  filetypes = { 'yaml' },
+  root_markers = { '.git' },
+  settings = {
+    redhat = { telemetry = { enabled = false } },
+    yaml = { format = { enable = true } },
+  },
+  on_init = function(client)
+    client.server_capabilities.documentFormattingProvider = true
+  end
+}
+
+-- local yaml_augroup = vim.api.nvim_create_augroup('Yaml', { clear = true })
+-- vim.api.nvim_create_autocmd('FileType', {
 --   group = yaml_augroup,
---   pattern = "yaml",
+--   pattern = 'yaml',
 --   callback = function ()
 --     vim.wo[0][0].foldlevel = 0
 --   end

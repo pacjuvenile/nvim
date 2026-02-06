@@ -2,23 +2,23 @@ local M = {}
 
 M.ts_config = {
   -- ensure_installed = true,
-  parser = { "lua" }
+  parser = { 'lua' }
 }
 
 M.ls_config = {
-  name = "lua_ls",
-  cmd = { "lua-language-server" },
-  filetypes = { "lua" },
+  name = 'lua_ls',
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
   root_markers = {
-    ".git"
+    '.git'
   },
   settings = {
     Lua = {
       runtime = {
-        version = "LuaJIT",
+        version = 'LuaJIT',
         path = {
-          "lua/?.lua",
-          "lua/?/init.lua",
+          'lua/?.lua',
+          'lua/?/init.lua',
         }
       },
       workspace = {

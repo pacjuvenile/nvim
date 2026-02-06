@@ -1,16 +1,16 @@
 local M = {}
 
 M.ts_config = {
-  parser = { "rust" }
+  parser = { 'rust' }
 }
 
 M.ls_config = {
-  name = "rust_analyzer",
-  cmd = { "rust-analyzer" } ,
-  filetypes = { "rust" },
+  name = 'rust_analyzer',
+  cmd = { 'rust-analyzer' } ,
+  filetypes = { 'rust' },
   root_markers = {
-    ".git",
-    "Cargo.toml",
+    '.git',
+    'Cargo.toml',
   },
   capabilities = {
       experimental = {
