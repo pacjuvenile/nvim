@@ -1,16 +1,16 @@
 local M = {}
 
 M.ts_config = {
-  parser = { 'bash' }
+  parser = { 'zsh', 'powershell' }
 }
 
-local shell_augroup = vim.api.nvim_create_augroup('Shell', { clear = true })
+local do_augroup = vim.api.nvim_create_augroup('Do', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-  group = shell_augroup,
-  pattern = { '*.do', '.bat' },
+  group = do_augroup,
+  pattern = { '*.do' },
   callback = function()
-    vim.bo.filetype = 'sh'
-    -- vim.wo[0][0].foldmethod = 'manual'
+    vim.bo.filetype = 'zsh'
+    vim.wo[0][0].foldmethod = 'manual'
   end
 })
 
