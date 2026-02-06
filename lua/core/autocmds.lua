@@ -1,33 +1,33 @@
-local view_augroup = vim.api.nvim_create_augroup("View", { clear = true })
+local view_augroup = vim.api.nvim_create_augroup('View', { clear = true })
 -- 打开文件保留上次光标位置
-vim.api.nvim_create_autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd('BufReadPost', {
   group = view_augroup,
   callback = function()
-    if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
-      vim.cmd("normal! `\"")
+    if vim.bo.buftype == '' and vim.fn.expand('%') ~= '' then
+      vim.cmd('normal! `\"')
     end
   end
 })
 
-local save_augroup = vim.api.nvim_create_augroup("Save", { clear = true })
+local save_augroup = vim.api.nvim_create_augroup('Save', { clear = true })
 -- 普通文件更新则立即保存
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
   group = save_augroup,
   callback = function()
-    if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
+    if vim.bo.buftype == '' and vim.fn.expand('%') ~= '' then
       vim.defer_fn(function()
-        vim.cmd("silent! write")
+        vim.cmd('silent! write')
       end, 100)
     end
   end
 })
 
-local cmd_augroup = vim.api.nvim_create_augroup("Cmd", { clear = true })
+local cmd_augroup = vim.api.nvim_create_augroup('Cmd', { clear = true })
 -- 进入命令行窗口即进入插入模式
-vim.api.nvim_create_autocmd("CmdwinEnter", {
+vim.api.nvim_create_autocmd('CmdwinEnter', {
   group = cmd_augroup,
   callback = function()
-    vim.cmd("startinsert")
+    vim.cmd('startinsert')
     vim.wo.number = false
     vim.wo.relativenumber = false
   end
