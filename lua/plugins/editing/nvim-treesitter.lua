@@ -19,7 +19,6 @@ M.config = function()
     "vimdoc",
     "query",
     -- 配置脚本
-    "bash",
     "json",
     "matlab",
     "commonlisp"
