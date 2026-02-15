@@ -13,16 +13,16 @@ M.ls_config = {
     'Cargo.toml',
   },
   capabilities = {
-      experimental = {
-        serverStatusNotification = true,
-        commands = {
-          commands = {
-            'rust-analyzer.showReferences',
-            'rust-analyzer.runSingle',
-            'rust-analyzer.debugSingle',
-          },
-        },
+    experimental = {
+      serverStatusNotification = true,
+      commands = {
+	commands = {
+	  'rust-analyzer.showReferences',
+	  'rust-analyzer.runSingle',
+	  'rust-analyzer.debugSingle',
+	},
       },
+    },
   },
   settings = {
     ['rust-analyzer'] = {
