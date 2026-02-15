@@ -1,6 +1,7 @@
 local M = {}
 
 M.ts_config = {
+	ensure_installed = true,
   parser = { 'python' }
 }
 
