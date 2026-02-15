@@ -16,7 +16,7 @@ vim.opt.autoindent     = true  -- 继承上一行的缩进
 
 -- Tab行为
 vim.opt.shiftwidth     = 2    -- 缩进宽度2个空格
-vim.opt.tabstop        = 8    -- 制表符宽度8个空格
+vim.opt.tabstop        = 2    -- 制表符宽度8个空格
 -- vim.opt.softtabstop    = 2    -- Tab/Backspace对应2个空格宽度
 -- vim.opt.expandtab      = true -- Tab转换为空格
 
