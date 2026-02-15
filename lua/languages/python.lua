@@ -27,7 +27,7 @@ M.ls_config = {
 -- vim.api.nvim_create_autocmd('FileType', {
 --   group = python_augroup,
 --   pattern = 'python',
--- w  callback = function()
+--   callback = function()
 --     vim.bo.indentexpr = ''
 --   end
 -- })
