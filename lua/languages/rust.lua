@@ -40,7 +40,7 @@ M.ls_config = {
         updateTest = { enable = true },
       },
     },
-  },
+  }
 }
 
 return M
