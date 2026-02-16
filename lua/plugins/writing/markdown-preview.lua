@@ -1,5 +1,6 @@
 local M = {}
 
+M.ensure_installed = true
 M.url = "https://github.com/iamcco/markdown-preview.nvim"
 M.build = "cd app && yarn install"
 
