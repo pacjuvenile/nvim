@@ -24,7 +24,7 @@ vim.opt.tabstop        = 2    -- 制表符宽度8个空格
 vim.opt.cursorline     = true -- 高亮光标所在行
 
 -- 符号列
-vim.opt.signcolumn     = 'no' -- 不显示左侧符号列
+-- vim.opt.signcolumn     = 'no' -- 不显示左侧符号列
 
 -- 命令行
 vim.opt.cmdheight      = 1 -- 始终显示一行的底部命令行区域
