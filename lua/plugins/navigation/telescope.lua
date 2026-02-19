@@ -1,42 +1,36 @@
 local M = {}
 
 M.ensure_installed = true
-M.url = "https://github.com/nvim-telescope/telescope.nvim"
+M.url = 'https://github.com/nvim-telescope/telescope.nvim'
 M.dependencies = {
+  'nvim-lua/plenary.nvim',
+  'nvim-tree/nvim-web-devicons' ,
   {
-    url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  {
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
-  },
-  {
-    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+    'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make'
   },
-  {
-    url = "https://github.com/2KAbhishek/nerdy.nvim"
-  }
+  '2KAbhishek/nerdy.nvim'
 }
 
 M.lazy = true
 M.keys = {
-  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Telescope find files" },
-  { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Telescope live grep" },
-  { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
-  { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Telescope buffers" },
-  { "<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Telescope colorscheme" },
-  { "<leader>fn", "<cmd>Telescope nerdy<cr>", desc = "Telescope browser nerd icons" },
+  { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find files' },
+  { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Telescope live grep' },
+  { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Telescope help tags' },
+  { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Telescope buffers' },
+  { '<leader>fc', '<cmd>Telescope colorscheme<cr>', desc = 'Telescope colorscheme' },
+  { '<leader>fn', '<cmd>Telescope nerdy<cr>', desc = 'Telescope browser nerd icons' },
 }
 
 M.config = function()
-  local actions = require("telescope.actions")
+  local actions = require('telescope.actions')
 
-  require("telescope").setup({
+  require('telescope').setup({
     defaults = {
       mappings = {
         i = {
-          ["<C-v>"] = actions.select_vertical,
-          ["<C-h>"] = actions.select_horizontal,
+          ['<C-v>'] = actions.select_vertical,
+          ['<C-h>'] = actions.select_horizontal,
         }
       }
     },
@@ -62,9 +56,9 @@ M.config = function()
   })
 
   -- 使用fzf作为telescope扩展
-  require("telescope").load_extension("fzf")
+  require('telescope').load_extension('fzf')
   -- 使用nerdy作为telescope扩展
-  require("telescope").load_extension("nerdy")
+  require('telescope').load_extension('nerdy')
 end
 
 return M
