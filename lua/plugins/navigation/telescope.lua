@@ -9,100 +9,25 @@ M.dependencies = {
 		'nvim-telescope/telescope-fzf-native.nvim',
 		build = 'make'
 	},
+	'nvim-telescope/telescope-project.nvim',
 	'2KAbhishek/nerdy.nvim'
 }
 
 M.lazy = true
 M.keys = {
-	{ '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find file' },
-	{ '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Telescope live grep' },
-	{ '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Telescope help tags' },
-	{ '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Telescope buffers' },
+	{ '<leader>ff', '<cmd>Telescope find_files<cr>',  desc = 'Telescope find file' },
+	{ '<leader>fg', '<cmd>Telescope live_grep<cr>',   desc = 'Telescope live grep' },
+	{ '<leader>fh', '<cmd>Telescope help_tags<cr>',   desc = 'Telescope help tags' },
+	{ '<leader>fb', '<cmd>Telescope buffers<cr>',     desc = 'Telescope buffers' },
 	{ '<leader>fc', '<cmd>Telescope colorscheme<cr>', desc = 'Telescope colorscheme' },
-	{ '<leader>fn', '<cmd>Telescope nerdy<cr>', desc = 'Telescope browser nerd icons' },
-
-	-- 查找特定目录
-	{
-		'<leader>fdni',
-		function()
-			local nixos_path = '/home/pacjuvenile/dotfiles/nixos/'
-			if vim.uv.fs_stat(nixos_path) then
-				local opts = { cwd = nixos_path }
-				require('telescope.builtin').find_files(opts)
-			end
-		end,
-		desc = 'Telescope find directory nixos'
-	},
-	{
-		'<leader>fdr',
-		function()
-			local rime_path = '/home/pacjuvenile/dotfiles/rime/'
-			if vim.uv.fs_stat(rime_path) then
-				local opts = { cwd = rime_path }
-				require('telescope.builtin').find_files(opts)
-			end
-		end,
-		desc = 'Telescope find directory rime'
-	},
-	{
-		'<leader>fdk',
-		function()
-			local kanata_path = '/home/pacjuvenile/dotfiles/kanata/'
-			if vim.uv.fs_stat(kanata_path) then
-				local opts = { cwd = kanata_path }
-				require('telescope.builtin').find_files(opts)
-			end
-		end,
-		desc = 'Telescope find directory kanata'
-	},
-	{
-		'<leader>fdz',
-		function()
-			local zshell_path = '/home/pacjuvenile/dotfiles/zshell/'
-			if vim.uv.fs_stat(zshell_path) then
-				local opts = { cwd = zshell_path }
-				require('telescope.builtin').find_files(opts)
-			end
-		end,
-		desc = 'Telescope find directory zshell'
-	},
-	{
-		'<leader>fdnv',
-		function()
-			local nvim_path = '/home/pacjuvenile/dotfiles/nvim/'
-			if vim.uv.fs_stat(nvim_path) then
-				local opts = { cwd = nvim_path }
-				require('telescope.builtin').find_files(opts)
-			end
-		end,
-		desc = 'Telescope find directory nvim'
-	},
-	{
-		'<leader>fdqb',
-		function()
-			local qutebrowser_path = '/home/pacjuvenile/dotfiles/qutebrowser/'
-			if vim.uv.fs_stat(qutebrowser_path) then
-				local opts = { cwd = qutebrowser_path }
-				require('telescope.builtin').find_files(opts)
-			end
-		end,
-		desc = 'Telescope find directory qutebrowser'
-	},
-	{
-		'<leader>fdb',
-		function()
-			local blog_path = "/home/pacjuvenile/blog/"
-			if vim.uv.fs_stat(blog_path) then
-				local opts = { cwd = blog_path }
-				require('telescope.builtin').find_files(opts)
-			end
-		end,
-		desc = 'Telescope find directory blog'
-	}
+	{ '<leader>fn', '<cmd>Telescope nerdy<cr>',       desc = 'Telescope nerd icons' },
+	{ '<leader>fp', '<cmd>Telescope project<cr>',     desc = 'Telescope project' },
 }
 
 M.config = function()
 	local actions = require('telescope.actions')
+	local project_actions = require('telescope._extensions.project.actions')
+	local plugin_path = vim.fn.stdpath('data') .. '/lazy'
 
 	require('telescope').setup({
 		defaults = {
@@ -131,11 +56,29 @@ M.config = function()
 					'--hidden',
 				},
 			}
+		},
+		extensions = {
+			project = {
+				base_dirs = {
+					plugin_path,
+					'~/blog',
+					'~/dotfiles/nixos',
+					'~/dotfiles/rime',
+					'~/dotfiles/kanata',
+					'~/dotfiles/wezterm',
+					'~/dotfiles/zshell',
+					'~/dotfiles/nvim',
+					'~/dotfiles/yazi',
+					'~/dotfiles/qutebrowser'
+				}
+			}
 		}
 	})
 
 	-- 使用fzf作为telescope扩展
 	require('telescope').load_extension('fzf')
+	-- 使用project作为telescope扩展
+	require('telescope').load_extension('project')
 	-- 使用nerdy作为telescope扩展
 	require('telescope').load_extension('nerdy')
 end
