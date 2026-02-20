@@ -41,7 +41,6 @@ M.config = function()
 		},
 		on_open = function(term)
 			vim.cmd('startinsert!')
-			vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<C-q>', '<cmd>close<cr>', { silent = true })
 
 			if term.direction == 'float' then
 				vim.api.nvim_win_set_config(term.window, {
@@ -53,11 +52,7 @@ M.config = function()
 					width = math.floor(vim.o.columns * 0.6),
 				})
 			end
-		end,
-		on_close = function ()
-			vim.cmd('startinsert!')
 		end
-
 	})
 end
 
