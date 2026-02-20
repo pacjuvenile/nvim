@@ -1,7 +1,7 @@
 vim.keymap.set('n', 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true }) -- 视觉行下移
 vim.keymap.set('n', 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true }) -- 视觉行上移
-vim.keymap.set('n', 'H', [[<Cmd>bprevious<cr>]], { silent = true })      -- 切换至上一个buffer
-vim.keymap.set('n', 'L', [[<Cmd>bnext<cr>]], { silent = true })          -- 切换至下一个buffer
+vim.keymap.set('n', 'H', [[<cmd>bprevious<cr>]], { silent = true })      -- 切换至上一个buffer
+vim.keymap.set('n', 'L', [[<cmd>bnext<cr>]], { silent = true })          -- 切换至下一个buffer
 
 vim.keymap.set({ 'n', 'v' }, 'y', [["+y]])                               -- 复制
 vim.keymap.set('v', 'x', [["+x]])                                        -- 剪切

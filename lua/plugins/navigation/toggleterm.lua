@@ -34,7 +34,26 @@ M.keys = {
 }
 
 M.config = function()
-	require('toggleterm').setup({})
+	require('toggleterm').setup({
+		float_opts = {
+			border = 'curved',
+			winblend = 3,
+		},
+		on_open = function(term)
+			vim.cmd("startinsert!")
+
+			if term.direction == 'float' then
+				vim.api.nvim_win_set_config(term.window, {
+					anchor = 'NW',
+					relative = 'tabline',
+					row = math.floor(vim.o.lines * 0.2),
+					col = math.floor(vim.o.columns * 0.3),
+					height = math.floor(vim.o.lines * 0.5),
+					width = math.floor(vim.o.columns * 0.4),
+				})
+			end
+		end
+	})
 end
 
 return M

@@ -27,7 +27,7 @@ local cmd_augroup = vim.api.nvim_create_augroup('Cmd', { clear = true })
 vim.api.nvim_create_autocmd('CmdwinEnter', {
   group = cmd_augroup,
   callback = function()
-    vim.cmd('startinsert')
+    vim.cmd('startinsert!')
     vim.wo.number = false
     vim.wo.relativenumber = false
   end
