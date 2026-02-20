@@ -26,9 +26,8 @@ M.keys = {
 	{
 		'<leader>tf',
 		function()
-			local size = vim.o.lines * 0.1
 			local direction = 'float'
-			vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
+			vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction)
 		end,
 		desc = 'toggle terminal float'
 	}
