@@ -79,8 +79,22 @@ M.config = function()
 	require('telescope').load_extension('fzf')
 	-- 使用project作为telescope扩展
 	require('telescope').load_extension('project')
+	local telescope_augroup = vim.api.nvim_create_augroup('Telescope_augroup', { clear = true })
 	-- 使用nerdy作为telescope扩展
 	require('telescope').load_extension('nerdy')
+
+	-- 和telescope相关的autocmd
+	-- 每次启动刷新telescope-project
+	vim.api.nvim_create_autocmd('VimEnter', {
+		group = telescope_augroup,
+		callback = function()
+			local telescope_projects_data = vim.fn.stdpath('data') .. '/telescope-prjects.txt'
+			if vim.uv.fs_stat(telescope_projects_data) then
+				os.remove(telescope_projects_data)
+			end
+		end,
+		once = true
+	})
 end
 
 return M
