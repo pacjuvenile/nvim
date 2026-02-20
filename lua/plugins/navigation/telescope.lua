@@ -88,7 +88,7 @@ M.config = function()
 	vim.api.nvim_create_autocmd('VimEnter', {
 		group = telescope_augroup,
 		callback = function()
-			local telescope_projects_data = vim.fn.stdpath('data') .. '/telescope-prjects.txt'
+			local telescope_projects_data = vim.fn.stdpath('data') .. '/telescope-projects.txt'
 			if vim.uv.fs_stat(telescope_projects_data) then
 				os.remove(telescope_projects_data)
 			end
