@@ -40,19 +40,24 @@ M.config = function()
 			winblend = 3,
 		},
 		on_open = function(term)
-			vim.cmd("startinsert!")
+			vim.cmd('startinsert!')
+			vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<C-q>', '<cmd>close<cr>', { silent = true })
 
 			if term.direction == 'float' then
 				vim.api.nvim_win_set_config(term.window, {
 					anchor = 'NW',
 					relative = 'tabline',
 					row = math.floor(vim.o.lines * 0.2),
-					col = math.floor(vim.o.columns * 0.1),
+					col = math.floor(vim.o.columns * 0.2),
 					height = math.floor(vim.o.lines * 0.5),
-					width = math.floor(vim.o.columns * 0.8),
+					width = math.floor(vim.o.columns * 0.6),
 				})
 			end
+		end,
+		on_close = function ()
+			vim.cmd('startinsert!')
 		end
+
 	})
 end
 
