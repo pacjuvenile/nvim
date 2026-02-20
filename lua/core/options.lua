@@ -48,7 +48,7 @@ vim.opt.splitright     = true -- 新窗口分割到右侧
 vim.opt.splitbelow     = true -- 新窗口分割到下方
 
 -- 按键超时时间
-vim.opt.timeoutlen     = 500 -- 缩短按键超时时间
+vim.opt.timeoutlen     = 800 -- 缩短按键超时时间
 
 -- 补全项显示的最大数目
 vim.opt.pumheight      = 10 -- 最多显示10个补全项

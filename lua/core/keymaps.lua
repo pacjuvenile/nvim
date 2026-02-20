@@ -8,7 +8,7 @@ vim.keymap.set('v', 'x', [["+x]])                                        -- 剪�
 vim.keymap.set({ 'n', 'v' }, 'p', [["+p]])                               -- 粘贴
 vim.keymap.set('i', '<C-v>', [[<C-r>+]])                                 -- 插入模式下粘贴
 
-vim.keymap.set({ 'n', 'v' }, ':', [[q:]])                                         -- 进入命令窗口
+vim.keymap.set({ 'n', 'v' }, ':', [[q:]])                                -- 进入命令窗口
 vim.keymap.set('n', '<Esc>', function()
 	if vim.fn.getcmdwintype() ~= '' and vim.fn.mode() == 'n' then
 		return [[<C-c><C-c>]]       -- 退出命令窗口
