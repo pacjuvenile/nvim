@@ -47,9 +47,9 @@ M.config = function()
 					anchor = 'NW',
 					relative = 'tabline',
 					row = math.floor(vim.o.lines * 0.15),
-					col = math.floor(vim.o.columns * 0.1),
+					col = math.floor(vim.o.columns * 0.15),
 					height = math.floor(vim.o.lines * 0.6),
-					width = math.floor(vim.o.columns * 0.8),
+					width = math.floor(vim.o.columns * 0.7),
 				})
 			end
 		end
