@@ -14,7 +14,56 @@ M.dependencies = {
 
 M.lazy = true
 M.keys = {
-  { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find files' },
+  { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find file' },
+	{'<leader>fdni', function()
+		local nixos_path = '/home/pacjuvenile/dotfiles/nixos/'
+		if vim.uv.fs_stat(nixos_path) then
+			local opts = { cwd = nixos_path }
+			require('telescope.builtin').find_files(opts)
+		end
+	end, desc = 'Telescope qutebrowser config'},
+	{'<leader>fdr', function()
+		local rime_path = '/home/pacjuvenile/dotfiles/rime/'
+		if vim.uv.fs_stat(rime_path) then
+			local opts = { cwd = rime_path }
+			require('telescope.builtin').find_files(opts)
+		end
+	end, desc = 'Telescope qutebrowser config'},
+	{'<leader>fdk', function()
+		local kanata_path = '/home/pacjuvenile/dotfiles/kanata/'
+		if vim.uv.fs_stat(kanata_path) then
+			local opts = { cwd = kanata_path }
+			require('telescope.builtin').find_files(opts)
+		end
+	end, desc = 'Telescope qutebrowser config'},
+	{'<leader>fdz', function()
+		local zshell_path = '/home/pacjuvenile/dotfiles/zshell/'
+		if vim.uv.fs_stat(zshell_path) then
+			local opts = { cwd = zshell_path }
+			require('telescope.builtin').find_files(opts)
+		end
+	end, desc = 'Telescope qutebrowser config'},
+	{'<leader>fdnv', function()
+		local nvim_path = '/home/pacjuvenile/dotfiles/nvim/'
+		if vim.uv.fs_stat(nvim_path) then
+			local opts = { cwd = nvim_path }
+			require('telescope.builtin').find_files(opts)
+		end
+	end, desc = 'Telescope qutebrowser config'},
+	{'<leader>fdqb', function()
+		local qutebrowser_path = '/home/pacjuvenile/dotfiles/qutebrowser/'
+		if vim.uv.fs_stat(qutebrowser_path) then
+			local opts = { cwd = qutebrowser_path }
+			require('telescope.builtin').find_files(opts)
+		end
+	end, desc = 'Telescope qutebrowser config'},
+	{'<leader>fdb', function()
+		local blog_path = "/home/pacjuvenile/blog/"
+		if vim.uv.fs_stat(blog_path) then
+			local opts = { cwd = blog_path }
+			require('telescope.builtin').find_files(opts)
+		end
+	end, desc = 'Telescope blog'},
   { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Telescope live grep' },
   { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Telescope help tags' },
   { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Telescope buffers' },
