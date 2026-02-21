@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 		local bufnr = event.buf
 		local buftype = vim.api.nvim_get_option_value('buftype', { buf = bufnr })
 		local bufname = vim.api.nvim_buf_get_name(bufnr)
-		if  buftype == '' and bufname ~= '' then
+		if buftype == '' and bufname ~= '' then
 			if buf_cwd[bufnr] then
 				vim.fn.chdir(buf_cwd[bufnr])
 			else
