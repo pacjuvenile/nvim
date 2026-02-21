@@ -32,3 +32,21 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
     vim.wo.relativenumber = false
   end
 })
+
+local buffer_augroup = vim.api.nvim_create_augroup('Buffer', { clear = true })
+-- 切换回已缓存的buffer时根目录同时切换
+local buf_cwd = {}
+vim.api.nvim_create_autocmd('BufEnter', {
+	group = buffer_augroup,
+	callback = function()
+		if vim.bo.buftype == '' then
+				local bufnr = vim.api.nvim_get_current_buf()
+				print(vim.fn.getcwd())
+				if buf_cwd[bufnr] then
+					vim.fn.chdir(buf_cwd[bufnr])
+				else
+					buf_cwd[bufnr] = vim.fn.getcwd()
+				end
+		end
+	end
+})
