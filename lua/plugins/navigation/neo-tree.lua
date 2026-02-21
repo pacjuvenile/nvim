@@ -11,7 +11,7 @@ M.dependencies = {
 
 M.lazy = true
 M.keys = {
-  { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "neo-tree toggle" }
+  { '<leader>e', [[<cmd>Neotree toggle .<cr>]], desc = 'neo-tree toggle' }
 }
 
 M.config = function()
