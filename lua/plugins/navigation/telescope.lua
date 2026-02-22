@@ -31,6 +31,23 @@ M.config = function()
 
 	require('telescope').setup({
 		defaults = {
+			layout_strategy = "center",
+			layout_config = {
+				width = 0.8,
+				height = 0.5,
+				anchor = "S",
+				anchor_padding = 0,
+				prompt_position = 'top',
+				preview_cutoff = 1,
+			},
+			sorting_strategy = 'ascending',
+			results_title = false,
+			border = true,
+			borderchars = {
+				prompt = { "─", "│", " ", "│", "╭", "╮", " ", " " },
+				results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+				preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			},
 			mappings = {
 				i = {
 					['<C-v>'] = actions.select_vertical,
@@ -40,6 +57,7 @@ M.config = function()
 		},
 		pickers = {
 			find_files = {
+				-- theme = 'dropdown',
 				find_command = {
 					'rg',
 					'--files',
