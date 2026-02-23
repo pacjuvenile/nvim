@@ -1,30 +1,31 @@
 local M = {}
 
+M.ensure_installed = false
 M.url = 'https://github.com/akinsho/toggleterm.nvim'
 M.version = '*'
 
 M.lazy = false
 M.keys = {
+	-- {
+	-- 	'<leader>th',
+	-- 	function()
+	-- 		local size = vim.o.lines * 0.4
+	-- 		local direction = 'horizontal'
+	-- 		vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
+	-- 	end,
+	-- 	desc = 'toggle terminal horizontal'
+	-- },
+	-- {
+	-- 	'<leader>tv',
+	-- 	function()
+	-- 		local size = vim.o.columns * 0.5
+	-- 		local direction = 'vertical'
+	-- 		vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
+	-- 	end,
+	-- 	desc = 'toggle terminal vertical'
+	-- },
 	{
-		'<leader>th',
-		function()
-			local size = vim.o.lines * 0.4
-			local direction = 'horizontal'
-			vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
-		end,
-		desc = 'toggle terminal horizontal'
-	},
-	{
-		'<leader>tv',
-		function()
-			local size = vim.o.columns * 0.5
-			local direction = 'vertical'
-			vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
-		end,
-		desc = 'toggle terminal vertical'
-	},
-	{
-		'<leader>tf',
+		'<leader>t',
 		function()
 			local direction = 'float'
 			vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction)

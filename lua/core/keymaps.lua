@@ -5,7 +5,8 @@ vim.keymap.set('n', 'L', [[<cmd>bnext<cr>]], { silent = true })          -- 切�
 
 vim.keymap.set({ 'n', 'v' }, 'y', [["+y]])                               -- 复制
 vim.keymap.set('v', 'x', [["+x]])                                        -- 剪切
-vim.keymap.set({ 'n', 'v' }, 'p', [["+p]])                               -- 粘贴
+vim.keymap.set({ 'n', 'v' }, 'p', [["+p]])                               -- 下一行粘贴
+vim.keymap.set({ 'n', 'v' }, 'P', [["+P]])                               -- 上一行粘贴
 vim.keymap.set('i', '<C-v>', [[<C-r>+]])                                 -- 插入模式下粘贴
 
 vim.keymap.set({ 'n', 'v' }, ':', [[q:]])                                -- 进入命令窗口

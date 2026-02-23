@@ -8,9 +8,7 @@ M.dependencies = {
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
 		build = 'make'
-	},
-	'nvim-telescope/telescope-project.nvim',
-	'2KAbhishek/nerdy.nvim'
+	}
 }
 
 M.lazy = true
@@ -18,8 +16,6 @@ M.event = 'VeryLazy'
 
 M.config = function()
 	local actions = require('telescope.actions')
-	local project_actions = require('telescope._extensions.project.actions')
-	local plugin_path = vim.fn.stdpath('data') .. '/lazy'
 
 	require('telescope').setup({
 		defaults = {
@@ -32,7 +28,6 @@ M.config = function()
 		},
 		pickers = {
 			find_files = {
-				-- theme = (vim.o.columns > 100) and 'ivy',
 				find_command = {
 					'rg',
 					'--files',
@@ -49,32 +44,11 @@ M.config = function()
 					'--hidden',
 				},
 			}
-		},
-		extensions = {
-			project = {
-				base_dirs = {
-					plugin_path,
-					'~/blog',
-					'~/dotfiles/nixos',
-					'~/dotfiles/rime',
-					'~/dotfiles/kanata',
-					'~/dotfiles/wezterm',
-					'~/dotfiles/zshell',
-					'~/dotfiles/nvim',
-					'~/dotfiles/yazi',
-					'~/dotfiles/qutebrowser'
-				}
-			}
 		}
 	})
 
 	-- 使用fzf作为telescope扩展
 	require('telescope').load_extension('fzf')
-	-- 使用project作为telescope扩展
-	require('telescope').load_extension('project')
-	local telescope_augroup = vim.api.nvim_create_augroup('Telescope_augroup', { clear = true })
-	-- 使用nerdy作为telescope扩展
-	require('telescope').load_extension('nerdy')
 
 	local dropdown_like_layout = {
 		layout_strategy = 'center',
@@ -109,16 +83,11 @@ M.config = function()
 		results_title = false,
 		border = true,
 		borderchars = {
-      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
-      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
-      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+			results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+			preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		},
 	}
-
-	vim.keymap.set('n', '<leader>fp', function()
-		local layout = (vim.o.columns < 100) and dropdown_like_layout or horizontal_like_layout
-		require('telescope').extensions.project.project(layout)
-	end, { desc = 'Telescope project' })
 
 	vim.keymap.set('n', '<leader>ff', function()
 		local layout = (vim.o.columns < 100) and dropdown_like_layout or horizontal_like_layout
@@ -144,24 +113,6 @@ M.config = function()
 		local layout = (vim.o.columns < 100) and dropdown_like_layout or horizontal_like_layout
 		require('telescope.builtin').colorscheme(layout)
 	end, { desc = 'Telescope colorscheme' })
-
-	vim.keymap.set('n', '<leader>fn', function()
-		local layout = (vim.o.columns < 100) and dropdown_like_layout or horizontal_like_layout
-		require('telescope.builtin').nerdy(layout)
-	end, { desc = 'Telescope nerd icons' })
-
-	-- 和telescope相关的autocmd
-	-- 每次启动刷新telescope-project
-	vim.api.nvim_create_autocmd('VimEnter', {
-		group = telescope_augroup,
-		callback = function()
-			local telescope_projects_data = vim.fn.stdpath('data') .. '/telescope-projects.txt'
-			if vim.uv.fs_stat(telescope_projects_data) then
-				os.remove(telescope_projects_data)
-			end
-		end,
-		once = true
-	})
 end
 
 return M
