@@ -17,7 +17,6 @@ vim.keymap.set('n', '<Esc>', function()
 		return [[<C-l><Cmd>nohl<cr>]] -- 取消高亮
 	end
 end, { expr = true, silent = true })
-vim.keymap.set({ 'n', 't' }, '<C-q>', [[<cmd>close<cr>]])                       -- 关闭终端窗口
 
 vim.keymap.set('n', '<C-A-m>', [[<Cmd>%s.\r..g<cr>]], { silent = true }) -- 删除Windows风格的换行符
 vim.keymap.set('n', '<C-A-r>', [[<Cmd>silent !/mnt/c/Users/sunny/app/rime/weasel-0.17.4/WeaselDeployer.exe /deploy<cr>]],
