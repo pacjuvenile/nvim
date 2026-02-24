@@ -17,19 +17,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local client = vim.lsp.get_client_by_id(ev.data.client_id)
 		-- 重命名
 		vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { silent = true, buffer = ev.buf, desc = 'Lsp rename' } )
+		-- 查找引用
+		vim.keymap.set('n', 'grr', vim.lsp.buf.references, { silent = true, buffer = ev.buf, desc = 'Lsp references' })
 
 		-- 跳转定义
 		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { silent = true, buffer = ev.buf, desc = 'Lsp definition' })
 
-		-- 查找引用
-		vim.keymap.set('n', 'grr', vim.lsp.buf.references, { silent = true, buffer = ev.buf, desc = 'Lsp references' })
-
-		-- 代码折叠
+		-- 折叠与格式化
 		if client and client:supports_method('textDocument/foldingRange') then
 			vim.wo[0][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
 		end
-
-		-- 格式化配置
 		vim.keymap.set('n', 'gf', vim.lsp.buf.format, { silent = true, buffer = ev.buf, desc = 'Lsp format' })
 
 		-- 诊断配置
