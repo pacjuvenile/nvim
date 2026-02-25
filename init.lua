@@ -12,10 +12,10 @@ vim.cmd('filetype indent off')
 -- 选项设置
 require('core.options')
 -- 插件管理
-require('plugin-manager')
--- 语言设置
-require('core.lsp')
--- 键位配置
-require('core.keymaps')
+require('core.plugin-manager')
 -- 自动命令
 require('core.autocmds')
+-- 键位配置
+require('core.keymaps')
+-- 语言设置
+require('core.lsp')

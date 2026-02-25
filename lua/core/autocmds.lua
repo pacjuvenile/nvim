@@ -33,21 +33,21 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
   end
 })
 
-local buffer_augroup = vim.api.nvim_create_augroup('Buffer', { clear = true })
--- 切换回已缓存的buffer时根目录同时切换
-local buf_cwd = {}
-vim.api.nvim_create_autocmd('BufWinEnter', {
-	group = buffer_augroup,
-	callback = function(event)
-		local bufnr = event.buf
-		local buftype = vim.api.nvim_get_option_value('buftype', { buf = bufnr })
-		local bufname = vim.api.nvim_buf_get_name(bufnr)
-		if buftype == '' and bufname ~= '' then
-			if buf_cwd[bufnr] then
-				vim.fn.chdir(buf_cwd[bufnr])
-			else
-				buf_cwd[bufnr] = vim.fn.getcwd()
-			end
-		end
-	end
-})
+-- local buffer_augroup = vim.api.nvim_create_augroup('Buffer', { clear = true })
+-- -- 切换回已缓存的buffer时根目录同时切换
+-- local buf_cwd = {}
+-- vim.api.nvim_create_autocmd('BufWinEnter', {
+-- 	group = buffer_augroup,
+-- 	callback = function(event)
+-- 		local bufnr = event.buf
+-- 		local buftype = vim.api.nvim_get_option_value('buftype', { buf = bufnr })
+-- 		local bufname = vim.api.nvim_buf_get_name(bufnr)
+-- 		if buftype == '' and bufname ~= '' then
+-- 			if buf_cwd[bufnr] then
+-- 				vim.fn.chdir(buf_cwd[bufnr])
+-- 			else
+-- 				buf_cwd[bufnr] = vim.fn.getcwd()
+-- 			end
+-- 		end
+-- 	end
+-- })
