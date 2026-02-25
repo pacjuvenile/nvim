@@ -1,5 +1,5 @@
-package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/lua/custom/?.lua'
-package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/lua/custom/?/init.lua'
+package.path = vim.fn.stdpath('config') .. '/lua/custom/?.lua;' ..
+								vim.fn.stdpath('config') .. '/lua/custom/?/init.lua'
 
 -- 字符编码
 vim.cmd('language en_US.UTF-8')
