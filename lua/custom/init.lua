@@ -1,6 +1,3 @@
-package.path = vim.fn.stdpath('config') .. '/lua/custom/?.lua;' ..
-								vim.fn.stdpath('config') .. '/lua/custom/?/init.lua'
-
 -- 字符编码
 vim.cmd('language en_US.UTF-8')
 vim.g.encoding = 'UTF-8'
@@ -13,12 +10,12 @@ vim.g.maplocalleader = '\\'
 vim.cmd('filetype indent off')
 
 -- 选项设置
-require('core.options')
+require('custom.core.options')
 -- 插件管理
-require('core.plugin-manager')
+require('custom.core.plugin-manager')
 -- 自动命令
-require('core.autocmds')
+require('custom.core.autocmds')
 -- 键位配置
-require('core.keymaps')
+require('custom.core.keymaps')
 -- 语言设置
-require('core.lsp')
+require('custom.core.lsp')

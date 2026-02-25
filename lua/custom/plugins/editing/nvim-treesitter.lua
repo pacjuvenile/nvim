@@ -24,7 +24,7 @@ M.config = function()
     "commonlisp"
   }
 
-  local ts_configs = require("languages").ts_configs
+  local ts_configs = require("custom.languages").ts_configs
   for _, ts_config in ipairs(ts_configs) do
     if ts_config.ensure_installed ~= false then
       for _, parser in ipairs(ts_config.parser) do

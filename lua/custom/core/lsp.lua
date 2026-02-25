@@ -1,4 +1,4 @@
-local ls_configs = require('languages').ls_configs
+local ls_configs = require('custom.languages').ls_configs
 for _, ls_config in ipairs(ls_configs) do
 	-- 配置lsp
 	if ls_config.name ~= nil then
