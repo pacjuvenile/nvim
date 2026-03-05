@@ -18,6 +18,4 @@ vim.keymap.set('n', '<Esc>', function()
 	end
 end, { expr = true, silent = true })
 
-vim.keymap.set('n', '<C-A-m>', [[<Cmd>%s.\r..g<cr>]], { silent = true }) -- 删除Windows风格的换行符
-vim.keymap.set('n', '<C-A-r>', [[<Cmd>silent !/mnt/c/Users/sunny/app/rime/weasel-0.17.4/WeaselDeployer.exe /deploy<cr>]],
-	{ silent = true })                                                     -- 重新部署rime
+vim.keymap.set('n', '<A-m>', [[<Cmd>%s.\r..g<cr>]], { silent = true }) -- 删除Windows风格的换行符
