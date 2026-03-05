@@ -14,7 +14,6 @@ M.ls_config = {
   filetypes = { 'markdown' },
   root_markers = {
     '.git',
-		'session.md'
   },
   settings = {}
 }
