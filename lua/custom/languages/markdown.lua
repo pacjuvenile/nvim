@@ -13,7 +13,8 @@ M.ls_config = {
   cmd = { 'marksman' },
   filetypes = { 'markdown' },
   root_markers = {
-    '.git'
+    '.git',
+		'session.md'
   },
   settings = {}
 }
