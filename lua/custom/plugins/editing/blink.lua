@@ -2,7 +2,7 @@ local M = {}
 
 M.ensure_installed = true
 M.url = "https://github.com/saghen/blink.cmp"
-M.build = "cargo build --release"
+M.version = "1.x"
 M.dependencies = {
   {
     url = "https://github.com/rafamadriz/friendly-snippets"
