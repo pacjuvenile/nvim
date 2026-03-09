@@ -7,7 +7,6 @@ vim.keymap.set({ 'n', 'v' }, 'y', [["+y]])                               -- 复�
 vim.keymap.set('v', 'x', [["+x]])                                        -- 剪切
 vim.keymap.set({ 'n', 'v' }, 'p', [["+p]])                               -- 下一行粘贴
 vim.keymap.set({ 'n', 'v' }, 'P', [["+P]])                               -- 上一行粘贴
-vim.keymap.set('i', '<C-v>', [[<C-r>+]])                                 -- 插入模式下粘贴
 
 vim.keymap.set({ 'n', 'v' }, ':', [[q:]])                                -- 进入命令窗口
 vim.keymap.set('n', '<Esc>', function()
@@ -18,4 +17,4 @@ vim.keymap.set('n', '<Esc>', function()
 	end
 end, { expr = true, silent = true })
 
-vim.keymap.set('n', '<A-m>', [[<Cmd>%s.\r..g<cr>]], { silent = true }) -- 删除Windows风格的换行符
+vim.keymap.set('n', '<C-A-m>', [[<Cmd>%s.\r..g<cr>]], { silent = true }) -- 删除Windows风格的换行符
