@@ -16,7 +16,7 @@ vim.opt.autoindent     = true -- 继承上一行的缩进
 
 -- Tab行为
 vim.opt.shiftwidth     = 2 -- 缩进宽度2个空格
-vim.opt.tabstop        = 2 -- 制表符宽度8个空格
+vim.opt.tabstop        = 2 -- 制表符宽度2个空格
 -- vim.opt.softtabstop    = 2    -- Tab/Backspace对应2个空格宽度
 -- vim.opt.expandtab      = true -- Tab转换为空格
 
@@ -31,7 +31,7 @@ vim.opt.cmdheight      = 1 -- 始终显示一行的底部命令行区域
 vim.opt.cmdwinheight   = 1 -- 设置命令窗口大小为1
 
 -- 状态栏
-vim.opt.laststatus     = 3 -- 所有window共用底部状态栏
+vim.opt.laststatus     = 3     -- 所有window共用底部状态栏
 vim.opt.showmode       = false -- 不显示模式
 
 -- 搜索设置
