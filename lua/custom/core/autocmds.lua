@@ -9,6 +9,17 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end
 })
 
+local cmd_augroup = vim.api.nvim_create_augroup('Cmd', { clear = true })
+-- 进入命令行窗口即进入插入模式
+vim.api.nvim_create_autocmd('CmdwinEnter', {
+  group = cmd_augroup,
+  callback = function()
+    vim.cmd('startinsert!')
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  end
+})
+
 -- local save_augroup = vim.api.nvim_create_augroup('Save', { clear = true })
 -- -- 普通文件更新则立即保存
 -- vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
@@ -21,17 +32,6 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 --     end
 --   end
 -- })
-
-local cmd_augroup = vim.api.nvim_create_augroup('Cmd', { clear = true })
--- 进入命令行窗口即进入插入模式
-vim.api.nvim_create_autocmd('CmdwinEnter', {
-  group = cmd_augroup,
-  callback = function()
-    vim.cmd('startinsert!')
-    vim.wo.number = false
-    vim.wo.relativenumber = false
-  end
-})
 
 -- local buffer_augroup = vim.api.nvim_create_augroup('Buffer', { clear = true })
 -- -- 切换回已缓存的buffer时根目录同时切换
