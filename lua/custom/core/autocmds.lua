@@ -9,18 +9,18 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end
 })
 
-local save_augroup = vim.api.nvim_create_augroup('Save', { clear = true })
--- 普通文件更新则立即保存
-vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
-  group = save_augroup,
-  callback = function()
-    if vim.bo.buftype == '' and vim.fn.expand('%') ~= '' then
-      vim.defer_fn(function()
-        vim.cmd('silent! write')
-      end, 100)
-    end
-  end
-})
+-- local save_augroup = vim.api.nvim_create_augroup('Save', { clear = true })
+-- -- 普通文件更新则立即保存
+-- vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
+--   group = save_augroup,
+--   callback = function()
+--     if vim.bo.buftype == '' and vim.fn.expand('%') ~= '' then
+--       vim.defer_fn(function()
+--         vim.cmd('silent! write')
+--       end, 100)
+--     end
+--   end
+-- })
 
 local cmd_augroup = vim.api.nvim_create_augroup('Cmd', { clear = true })
 -- 进入命令行窗口即进入插入模式
