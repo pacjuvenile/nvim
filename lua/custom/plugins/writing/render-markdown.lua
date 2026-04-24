@@ -65,6 +65,12 @@ M.config = function()
 		completion = {
 			lsp = { enabled = true },
 			blink = {enabled = true}
+		},
+		latex = {
+			enabled = true,
+			converter = { 'utftex' },
+			highlight = 'RenderMarkdownMath',
+			position = 'above'
 		}
 	})
 end
