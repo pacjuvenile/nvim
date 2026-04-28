@@ -6,6 +6,7 @@ M.dependencies = {
 	'nvim-tree/nvim-web-devicons'
 }
 
+M.enabled = false
 M.lazy = true
 M.ft = "markdown"
 
@@ -65,12 +66,6 @@ M.config = function()
 		completion = {
 			lsp = { enabled = true },
 			blink = {enabled = true}
-		},
-		latex = {
-			enabled = true,
-			converter = { 'utftex' },
-			highlight = 'RenderMarkdownMath',
-			position = 'above'
 		}
 	})
 end
