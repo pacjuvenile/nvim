@@ -1,5 +1,9 @@
 vim.keymap.set('n', 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true }) -- 视觉行下移
 vim.keymap.set('n', 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true }) -- 视觉行上移
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 vim.keymap.set({ 'n', 'v' }, 'y', [["+y]])                               -- 复制
 vim.keymap.set('v', 'x', [["+x]])                                        -- 剪切
