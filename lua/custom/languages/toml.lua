@@ -1,9 +1,3 @@
-local M = {}
-
-M.ts_config = {
-  parser = { 'toml' }
-}
-
 -- local toml_augroup = vim.api.nvim_create_augroup('Toml', { clear = true })
 -- vim.api.nvim_create_autocmd('FileType', {
 --   group = toml_augroup,
@@ -13,4 +7,8 @@ M.ts_config = {
 --   end
 -- })
 
-return M
+return {
+	ts_config = {
+		parser = { 'toml' }
+	}
+}

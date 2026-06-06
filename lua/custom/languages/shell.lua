@@ -1,9 +1,3 @@
-local M = {}
-
-M.ts_config = {
-  parser = { 'zsh', 'powershell' }
-}
-
 local do_augroup = vim.api.nvim_create_augroup('Do', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   group = do_augroup,
@@ -14,4 +8,8 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   end
 })
 
-return M
+return {
+	ts_config = {
+		parser = { 'zsh', 'powershell' }
+	}
+}

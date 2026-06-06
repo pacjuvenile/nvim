@@ -1,73 +1,71 @@
-local M = {}
+return {
+	url = "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+	dependencies = {
+		'nvim-treesitter/nvim-treesitter',
+		'nvim-tree/nvim-web-devicons'
+	},
 
-M.url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
-M.dependencies = {
-	'nvim-treesitter/nvim-treesitter',
-	'nvim-tree/nvim-web-devicons'
-}
+	enabled = false,
+	lazy = true,
+	ft = "markdown",
 
-M.enabled = false
-M.lazy = true
-M.ft = "markdown"
-
-M.config = function()
-	require("render-markdown").setup({
-		sign = {
-			enabled = false
-		},
-		anti_conceal = {
-			disabled_modes = { 'n' }
-		},
-		win_options = {
-			concealcursor = {
-				rendered = 'n'
+	config = function()
+		require("render-markdown").setup({
+			sign = {
+				enabled = false
+			},
+			anti_conceal = {
+				disabled_modes = { 'n' }
+			},
+			win_options = {
+				concealcursor = {
+					rendered = 'n'
+				}
+			},
+			heading = {
+				render_modes = true,
+				icons = { '󰼏  ', '󰎨  ', '󰼑  ', '󰎲  ', '󰼓  ', '󰎴  '},
+				position = 'right',
+				width = 'block',
+				min_width = 0,
+				border = true,
+				border_virtual = true,
+				border_prefix = true,
+				above = '╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════',
+				below = '╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════',
+				backgrounds = {}
+			},
+			code = {
+				render_modes = true,
+				conceal_delimiters = false,
+				language_pad = 1,
+				width = 'block',
+				min_width = 80,
+				left_margin = 0,
+				left_pad = 1,
+				right_pad = 1,
+				border = 'thick',
+				highlight_inline = 'RenderMarkdownCodeInfo'
+			},
+			bullet = {
+				render_modes = true
+			},
+			checkbox = {
+				render_modes = true
+			},
+			pipe_table = {
+				render_modes = true
+			},
+			quote = {
+				render_modes = true
+			},
+			link = {
+				render_modes = true
+			},
+			completion = {
+				lsp = { enabled = true },
+				blink = {enabled = true}
 			}
-		},
-		heading = {
-			render_modes = true,
-			icons = { '󰼏  ', '󰎨  ', '󰼑  ', '󰎲  ', '󰼓  ', '󰎴  '},
-			position = 'right',
-			width = 'block',
-			min_width = 0,
-			border = true,
-			border_virtual = true,
-			border_prefix = true,
-			above = '╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════',
-			below = '╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════',
-			backgrounds = {}
-		},
-		code = {
-			render_modes = true,
-			conceal_delimiters = false,
-			language_pad = 1,
-			width = 'block',
-			min_width = 80,
-			left_margin = 0,
-			left_pad = 1,
-			right_pad = 1,
-			border = 'thick',
-			highlight_inline = 'RenderMarkdownCodeInfo'
-		},
-		bullet = {
-			render_modes = true
-		},
-		checkbox = {
-			render_modes = true
-		},
-		pipe_table = {
-			render_modes = true
-		},
-		quote = {
-			render_modes = true
-		},
-		link = {
-			render_modes = true
-		},
-		completion = {
-			lsp = { enabled = true },
-			blink = {enabled = true}
-		}
-	})
-end
-
-return M
+		})
+	end
+}

@@ -1,7 +1,5 @@
-local M = {}
-
-M.ts_config = {
-	parser = { 'cpp' }
+return {
+	ts_config = {
+		parser = { 'cpp' }
+	}
 }
-
-return M

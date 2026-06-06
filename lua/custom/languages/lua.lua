@@ -1,33 +1,29 @@
-local M = {}
-
-M.ts_config = {
-  ensure_installed = true,
-  parser = { 'lua' }
+return {
+	ts_config = {
+		parser = { 'lua' }
+	},
+	ls_config = {
+		name = 'lua_ls',
+		cmd = { 'lua-language-server' },
+		filetypes = { 'lua' },
+		root_markers = {
+			'.git'
+		},
+		settings = {
+			Lua = {
+				runtime = {
+					version = 'LuaJIT',
+					path = {
+						'lua/?.lua',
+						'lua/?/init.lua',
+					}
+				},
+				workspace = {
+					library = {
+						vim.env.VIMRUNTIME,
+					}
+				},
+			}
+		}
+	}
 }
-
-M.ls_config = {
-  name = 'lua_ls',
-  cmd = { 'lua-language-server' },
-  filetypes = { 'lua' },
-  root_markers = {
-    '.git'
-  },
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = {
-          'lua/?.lua',
-          'lua/?/init.lua',
-        }
-      },
-      workspace = {
-        library = {
-          vim.env.VIMRUNTIME,
-        }
-      },
-    }
-  }
-}
-
-return M

@@ -1,5 +1,5 @@
 return {
 	ts_config = {
-		parser = { 'typescript' }
+		parser = { 'c' }
 	}
 }

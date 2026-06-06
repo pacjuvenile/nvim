@@ -1,7 +1,5 @@
-local M = {}
-
-M.ts_config = {
-	parser = { 'zig' }
+return {
+	ts_config = {
+		parser = { 'zig' }
+	}
 }
-
-return M
