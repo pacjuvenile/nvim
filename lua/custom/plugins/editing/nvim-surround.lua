@@ -1,13 +1,11 @@
-local M = {}
+return {
+	ensure_installed = true,
+	url = "https://github.com/kylechui/nvim-surround",
 
-M.ensure_installed = true
-M.url = "https://github.com/kylechui/nvim-surround"
+	lazy = true,
+	event = "VeryLazy",
 
-M.lazy = true
-M.event = "VeryLazy"
-
-M.config = function()
-  require("nvim-surround").setup({})
-end
-
-return M
+	config = function()
+		require("nvim-surround").setup({})
+	end
+}

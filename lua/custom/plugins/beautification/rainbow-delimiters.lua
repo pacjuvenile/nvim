@@ -1,14 +1,16 @@
-local M = {}
+return {
+	ensure_installed = true,
+	url = "https://github.com/hiphish/rainbow-delimiters.nvim",
+	dependencies = {
+		{
+			url = "https://github.com/nvim-treesitter/nvim-treesitter"
+		}
+	},
 
-M.ensure_installed = true
-M.url = "https://github.com/hiphish/rainbow-delimiters.nvim"
-M.dependencies = {
-  {
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  }
+	enabled = true,
+	lazy = false,
+
+	config = function ()
+		require('rainbow-delimiters.setup').setup({})
+	end
 }
-
-M.enabled = true
-M.lazy = false
-
-return M

@@ -1,15 +1,13 @@
-local M = {}
+return {
+	ensure_installed = false,
+	url = "https://github.com/mg979/vim-visual-multi",
 
-M.ensure_installed = false
-M.url = "https://github.com/mg979/vim-visual-multi"
+	lazy = false,
 
-M.lazy = false
-
-M.init = function()
-  vim.g.VM_maps = {
-    ["Add Cursor Down"] = "<C-j>",
-    ["Add Cursor Up"] = "<C-k>"
-  }
-end
-
-return M
+	init = function()
+		vim.g.Vmaps = {
+			["Add Cursor Down"] = "<C-j>",
+			["Add Cursor Up"] = "<C-k>"
+		}
+	end
+}

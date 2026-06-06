@@ -1,23 +1,22 @@
-local M = {}
-M.url = "https://github.com/folke/flash.nvim"
+return {
+	url = "https://github.com/folke/flash.nvim",
 
-M.lazy = true
-M.keys = {
-  { "<leader>s", mode = { "n", "v" }, [[<cmd>lua require("flash").jump()<cr>]], desc = "Flash" },
+	lazy = true,
+	keys = {
+		{ "<leader>s", mode = { "n", "v" }, [[<cmd>lua require("flash").jump()<cr>]], desc = "Flash" },
+	},
+
+	config = function()
+		require("flash").setup({
+			label = {
+				after = false,
+				before = true
+			},
+			modes = {
+				char = {
+					enabled = false
+				}
+			}
+		})
+	end
 }
-
-M.config = function()
-  require("flash").setup({
-    label = {
-      after = false,
-      before = true
-    },
-    modes = {
-      char = {
-        enabled = false
-      }
-    }
-  })
-end
-
-return M

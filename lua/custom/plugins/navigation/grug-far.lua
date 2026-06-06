@@ -1,18 +1,16 @@
-local M = {}
+return {
+	ensure_installed = true,
+	url = "https://github.com/agicDuck/grug-far.nvim",
+	dependencies = {
+		{ url = "https://github.com/nvim-tree/nvim-web-devicons" }
+	},
 
-M.ensure_installed = true
-M.url = "https://github.com/MagicDuck/grug-far.nvim"
-M.dependencies = {
-  { url = "https://github.com/nvim-tree/nvim-web-devicons" }
+	lazy = true,
+	cmd = "GrugFar",
+
+	config = function()
+		require("grug-far").setup({
+			windowCreationCommand = ""
+		})
+	end
 }
-
-M.lazy = true
-M.cmd = "GrugFar"
-
-M.config = function()
-  require("grug-far").setup({
-    windowCreationCommand = ""
-  })
-end
-
-return M

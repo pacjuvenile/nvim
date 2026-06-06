@@ -1,13 +1,11 @@
-local M = {}
+return {
+	ensure_installed = true,
+	url = "https://github.com/windwp/nvim-autopairs",
 
-M.ensure_installed = true
-M.url = "https://github.com/windwp/nvim-autopairs"
+	lazy = true,
+	event = "InsertEnter",
 
-M.lazy = true
-M.event = "InsertEnter"
-
-M.config = function()
-  require("nvim-autopairs").setup({})
-end
-
-return M
+	config = function()
+		require("nvim-autopairs").setup({})
+	end
+}
