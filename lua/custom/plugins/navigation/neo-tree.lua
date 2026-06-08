@@ -64,11 +64,18 @@ return {
 				--   ["<C-K>"] = "move_cursor_up",
 				-- },
 			},
-			-- filesystem = {
-			--   follow_current_file = { enabled = true },
-			--   hijack_netrw_behavior = "open_current",
-			--   use_libuv_file_watcher = vim.fn.has "win32" ~= 1,
-			-- },
+			filesystem = {
+				window = {
+					mappings = {
+						["<esc>"] = "none",
+						["/"] = "none",
+						["P"] = "none",
+					}
+				}
+			  -- follow_current_file = { enabled = true },
+			  -- hijack_netrw_behavior = "open_current",
+			  -- use_libuv_file_watcher = vim.fn.has "win32" ~= 1,
+			},
 		})
 	end
 }
