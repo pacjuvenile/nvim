@@ -14,11 +14,9 @@ return {
 			experimental = {
 				serverStatusNotification = true,
 				commands = {
-		commands = {
-			'rust-analyzer.showReferences',
-			'rust-analyzer.runSingle',
-			'rust-analyzer.debugSingle',
-		},
+					'rust-analyzer.showReferences',
+					'rust-analyzer.runSingle',
+					'rust-analyzer.debugSingle',
 				},
 			},
 		},
