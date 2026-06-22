@@ -119,7 +119,7 @@ return {
 			end
 		end,
 		on_attach  = function(_, bufnr)
-			vim.api.nvim_buf_create_user_command(bufnr, 'reloadWorkspace', function()
+			vim.api.nvim_buf_create_user_command(bufnr, 'ReloadWorkspace', function()
 			local clients = vim.lsp.get_clients { bufnr = bufnr, name = 'rust_analyzer' }
 			for _, client in ipairs(clients) do
 				 ---@diagnostic disable-next-line:param-type-mismatch
