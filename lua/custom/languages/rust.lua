@@ -111,6 +111,32 @@ return {
 				lens = {
 					enable = false,
 				},
+
+				diagnostics = {
+					disabled = {
+						"unresolved-macro-call",
+						"macro-error",
+						"attribute-expansion-disabled",
+						"proc-macro-disabled",
+					},
+				},
+
+				cachePriming = {
+					enable = false,
+				},
+
+				procMacro = {
+					enable = true,
+				},
+
+				cargo = {
+					allTargets = false,
+					buildScripts = {
+						enable = true,
+					},
+				},
+
+				checkOnSave = false,
 			},
 		},
 		before_init = function(init_params, config)
