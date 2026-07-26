@@ -2,14 +2,22 @@
 local lazy_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.uv.fs_stat(lazy_path) then
 	local repo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system({
+
+  local out = vim.system({
     'git',
     'clone',
     '--filter=blob:none',
     '--branch=stable',
 		repo,
     lazy_path
-  })
+  }):wait()
+
+	if out.code ~= 0 then
+		vim.api.nvim_echo({
+			{ out.stderr or out.stdout, 'ErrorMsg' },
+			{ '\n', 'InfoMsg' }
+		}, true, {})
+	end
 end
 vim.opt.rtp:prepend(lazy_path)
 
