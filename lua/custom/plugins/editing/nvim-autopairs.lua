@@ -1,11 +1,8 @@
 return {
-	ensure_installed = true,
-	url = "https://github.com/windwp/nvim-autopairs",
-
+	'windwp/nvim-autopairs',
 	lazy = true,
-	event = "InsertEnter",
-
+	event = 'InsertEnter',
 	config = function()
-		require("nvim-autopairs").setup({})
+		require('nvim-autopairs').setup({})
 	end
 }

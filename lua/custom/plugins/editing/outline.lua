@@ -1,15 +1,13 @@
 return {
-	url = "https://github.com/hedyhli/outline.nvim",
-
+	'hedyhli/outline.nvim',
 	lazy = true,
 	keys = {
-		{ "<leader>o", "<cmd>Outline!<cr>", desc = "outline toggle" }
+		{ '<leader>o', '<cmd>Outline!<cr>', desc = 'Outline toggle' }
 	},
-
 	config = function()
-		require("outline").setup({
+		require('outline').setup({
 			outline_window = {
-				position = "right",
+				position = 'left',
 				width = 30,
 				wrap = true
 			}

@@ -2,6 +2,21 @@
 vim.cmd('language en_US.UTF-8')
 vim.g.encoding = 'UTF-8'
 
+-- 剪切板
+vim.g.clipboard = 'osc52'
+if vim.fn.has('wsl') == 1 then
+	vim.g.clipboard = {
+		name = 'win32yank',
+		copy = {
+			['+'] = 'win32yank.exe -i --crlf'
+		},
+		paste = {
+			['+'] = 'win32yank.exe -o --lf'
+		},
+		cache_enabled = 0
+	}
+end
+
 -- 全局映射
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'

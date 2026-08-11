@@ -1,14 +1,11 @@
 return {
-	ensure_installed = true,
-	url = "https://github.com/HakonHarnes/img-clip.nvim",
-
+	'HakonHarnes/img-clip.nvim',
 	lazy = true,
-	ft = "markdown",
-
+	ft = 'markdown',
 	config = function()
-		require("img-clip").setup({
+		require('img-clip').setup({
 			default = {
-				dir_path = "assets"
+				dir_path = 'assets'
 			},
 			filetypes = {
 				markdown = {

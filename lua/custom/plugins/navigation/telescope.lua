@@ -1,6 +1,5 @@
 return {
-	ensure_installed = true,
-	url = 'https://github.com/nvim-telescope/telescope.nvim',
+	url = 'nvim-telescope/telescope.nvim',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 		'nvim-tree/nvim-web-devicons',
@@ -9,19 +8,16 @@ return {
 			build = 'make'
 		}
 	},
-
 	lazy = true,
 	event = 'VeryLazy',
-
 	config = function()
 		local actions = require('telescope.actions')
-
 		require('telescope').setup({
 			defaults = {
 				mappings = {
 					i = {
 						['<C-v>'] = actions.select_vertical,
-						['<C-h>'] = actions.select_horizontal,
+						['<C-h>'] = actions.select_horizontal
 					}
 				}
 			},
@@ -40,21 +36,22 @@ return {
 						'!**/.git/*'
 					},
 					additional_args = {
-						'--hidden',
-					},
+						'--hidden'
+					}
 				}
 			}
 		})
 
-		-- 使用fzf作为telescope扩展
+		-- telescope extensions
 		require('telescope').load_extension('fzf')
 
+		-- telescope layout
 		local dropdown_like_layout = {
 			layout_strategy = 'center',
 			layout_config = {
 				width = 0.8,
 				height = 0.5,
-				anchor = "S",
+				anchor = 'S',
 				anchor_padding = 0,
 				prompt_position = 'top',
 				preview_cutoff = 1,
@@ -63,10 +60,10 @@ return {
 			results_title = false,
 			border = true,
 			borderchars = {
-				prompt = { "─", "│", " ", "│", "╭", "╮", " ", " " },
-				results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
-				preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-			},
+				prompt = { '-', '|', ' ', '|', '╭', '╮', ' ', ' ' },
+				results = { '-', '|', '-', '|', '├', '┤', '╯', '╰' },
+				preview = { '-', '|', '-', '|', '╭', '╮', '╯', '╰' },
+			}
 		}
 
 		local horizontal_like_layout = {
@@ -82,10 +79,10 @@ return {
 			results_title = false,
 			border = true,
 			borderchars = {
-				prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
-				results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
-				preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-			},
+				prompt = { '─', '│', ' ', '│', '╭', '╮', '│', '│' },
+				results = { '─', '│', '─', '│', '├', '┤', '╯', '╰' },
+				preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+			}
 		}
 
 		vim.keymap.set('n', '<leader>ff', function()

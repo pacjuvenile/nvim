@@ -1,11 +1,8 @@
 return {
-	ensure_installed = true,
-	url = "https://github.com/lukas-reineke/indent-blankline.nvim",
-
+	'lukas-reineke/indent-blankline.nvim',
 	lazy = true,
-	event = "VeryLazy",
-
+	event = 'VeryLazy',
 	config = function()
-		require("ibl").setup({})
+		require('ibl').setup({})
 	end
 }

@@ -1,16 +1,15 @@
 return {
-	url = "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+	'MeanderingProgrammer/render-markdown.nvim',
 	dependencies = {
 		'nvim-treesitter/nvim-treesitter',
 		'nvim-tree/nvim-web-devicons'
 	},
 
-	enabled = false,
 	lazy = true,
-	ft = "markdown",
+	-- ft = 'markdown',
 
 	config = function()
-		require("render-markdown").setup({
+		require('render-markdown').setup({
 			sign = {
 				enabled = false
 			},
@@ -24,7 +23,7 @@ return {
 			},
 			heading = {
 				render_modes = true,
-				icons = { '󰼏  ', '󰎨  ', '󰼑  ', '󰎲  ', '󰼓  ', '󰎴  '},
+				icons = { '󰼏  ', '󰎨  ', '󰼑  ', '󰎲  ', '󰼓  ', '󰎴  ' },
 				position = 'right',
 				width = 'block',
 				min_width = 0,
@@ -64,7 +63,7 @@ return {
 			},
 			completion = {
 				lsp = { enabled = true },
-				blink = {enabled = true}
+				blink = { enabled = true }
 			}
 		})
 	end

@@ -1,23 +1,18 @@
 return {
-	ensure_installed = true,
-	url = "https://github.com/catppuccin/nvim",
-	name = "catppuccin",
-
+	'catppuccin/nvim',
+	name = 'catppuccin',
 	lazy = false,
-
 	config = function()
-		require("catppuccin").setup({
+		require('catppuccin').setup({
 			transparent_background = true,
 			styles = {
-				keywords = { "italic" }
+				keywords = { 'italic' }
 			},
 			integrations = {
 				rainbow_delimiters = true,
-				telescope = {
-					enabled = true
-				}
+				telescope = { enabled = true }
 			}
 		})
-		vim.cmd("colorscheme catppuccin-macchiato")
+		vim.cmd('colorscheme catppuccin-macchiato')
 	end
 }

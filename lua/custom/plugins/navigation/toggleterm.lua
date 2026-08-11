@@ -1,58 +1,57 @@
-return {
-	ensure_installed = false,
-	url = 'https://github.com/akinsho/toggleterm.nvim',
-	version = '*',
-
-	lazy = false,
-	keys = {
-		-- {
-		-- 	'<leader>th',
-		-- 	function()
-		-- 		local size = vim.o.lines * 0.4
-		-- 		local direction = 'horizontal'
-		-- 		vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
-		-- 	end,
-		-- 	desc = 'toggle terminal horizontal'
-		-- },
-		-- {
-		-- 	'<leader>tv',
-		-- 	function()
-		-- 		local size = vim.o.columns * 0.5
-		-- 		local direction = 'vertical'
-		-- 		vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
-		-- 	end,
-		-- 	desc = 'toggle terminal vertical'
-		-- },
-		{
-			'<leader>t',
-			function()
-				local direction = 'float'
-				vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction)
-			end,
-			desc = 'toggle terminal float'
-		}
-	},
-
-	config = function()
-		require('toggleterm').setup({
-			float_opts = {
-				border = 'curved',
-				winblend = 3,
-			},
-			on_open = function(term)
-				vim.cmd('startinsert!')
-
-				if term.direction == 'float' then
-					vim.api.nvim_win_set_config(term.window, {
-						anchor = 'NW',
-						relative = 'tabline',
-						row = math.floor(vim.o.lines * 0.15),
-						col = math.floor(vim.o.columns * 0.1),
-						height = math.floor(vim.o.lines * 0.6),
-						width = math.floor(vim.o.columns * 0.8),
-					})
-				end
-			end
-		})
-	end
-}
+-- return {
+-- 	'akinsho/toggleterm.nvim',
+-- 	version = '*',
+--
+-- 	lazy = false,
+-- 	keys = {
+-- 		-- {
+-- 		-- 	'<leader>th',
+-- 		-- 	function()
+-- 		-- 		local size = vim.o.lines * 0.4
+-- 		-- 		local direction = 'horizontal'
+-- 		-- 		vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
+-- 		-- 	end,
+-- 		-- 	desc = 'toggle terminal horizontal'
+-- 		-- },
+-- 		-- {
+-- 		-- 	'<leader>tv',
+-- 		-- 	function()
+-- 		-- 		local size = vim.o.columns * 0.5
+-- 		-- 		local direction = 'vertical'
+-- 		-- 		vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction .. ' size=' .. size)
+-- 		-- 	end,
+-- 		-- 	desc = 'toggle terminal vertical'
+-- 		-- },
+-- 		{
+-- 			'<leader>t',
+-- 			function()
+-- 				local direction = 'float'
+-- 				vim.cmd(vim.v.count1 .. 'ToggleTerm direction=' .. direction)
+-- 			end,
+-- 			desc = 'toggle terminal float'
+-- 		}
+-- 	},
+--
+-- 	config = function()
+-- 		require('toggleterm').setup({
+-- 			float_opts = {
+-- 				border = 'curved',
+-- 				winblend = 3,
+-- 			},
+-- 			on_open = function(term)
+-- 				vim.cmd('startinsert!')
+--
+-- 				if term.direction == 'float' then
+-- 					vim.api.nvim_win_set_config(term.window, {
+-- 						anchor = 'NW',
+-- 						relative = 'tabline',
+-- 						row = math.floor(vim.o.lines * 0.15),
+-- 						col = math.floor(vim.o.columns * 0.1),
+-- 						height = math.floor(vim.o.lines * 0.6),
+-- 						width = math.floor(vim.o.columns * 0.8),
+-- 					})
+-- 				end
+-- 			end
+-- 		})
+-- 	end
+-- }
