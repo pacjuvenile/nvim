@@ -3,8 +3,8 @@ local view_augroup = vim.api.nvim_create_augroup('View', { clear = true })
 vim.api.nvim_create_autocmd('BufReadPost', {
   group = view_augroup,
   callback = function()
-    if vim.bo.buftype == '' and vim.fn.expand('%') ~= '' then
-      vim.cmd('normal! `\"')
+    if vim.bo.buftype == '' and vim.fn.expand('%') ~= '' and vim.fn.line([['"]]) > 0 then
+			vim.cmd('normal! `\"')
     end
   end
 })

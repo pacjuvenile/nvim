@@ -1,7 +1,7 @@
 return {
 	'MagicDuck/grug-far.nvim',
 	dependencies = {
-		{ url = 'nvim-tree/nvim-web-devicons' }
+		'nvim-tree/nvim-web-devicons'
 	},
 	lazy = true,
 	cmd = 'GrugFar',

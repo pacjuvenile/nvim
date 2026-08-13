@@ -22,7 +22,7 @@ return {
 			yazi_floating_window_border = 'none',
 
 			keymap = {
-				open_file_in_vertial_split = '<C-v>',
+				open_file_in_vertical_split = '<C-v>',
 				open_file_in_horizontal_split = '<C-h>'
 			}
 		})

@@ -1,7 +1,7 @@
 # Nvim扩展
 
 插件目录结构：
-- 按分类组织（`beautification`/`editing`/`navigation`/`writing`），每个插件一个 `.lua` 文件，内含 spec 与 `config` setup
+- 按分类组织（`ui`/`editing`/`navigation`/`writing`），每个插件一个 `.lua` 文件，内含 spec 与 `config` setup
 - 不安装的插件 → 文件整段注释（`plugin-manager` 会跳过）
 - 不使能的插件 → 保留文件，`lazy = true` 且注释掉触发字段（cmd/keys/event/ft），已安装但不加载
 - `extensions.md`：本说明文档
