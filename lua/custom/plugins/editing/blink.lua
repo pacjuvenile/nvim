@@ -31,7 +31,7 @@ return {
 			},
 			cmdline = {
 				sources = function()
-					if vim.fn.getcmdtype() == '/' then
+					if vim.fn.getcmdtype() == '/' or vim.fn.getcmdtype() == '?' then
 						return { 'buffer' }
 					elseif vim.fn.getcmdwintype() == ':' then
 						return { 'cmdline' }

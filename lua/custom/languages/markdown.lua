@@ -1,6 +1,5 @@
 return {
 	treesitter = {
-		ensure_installed = true,
 		parser = {
 			'markdown',
 			'markdown_inline'

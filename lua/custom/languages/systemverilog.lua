@@ -10,7 +10,7 @@ return {
 		settings = {
 			svls = {
 				option = {
-						linter = false
+					linter = false
 				}
 			}
 		}
