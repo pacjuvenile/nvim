@@ -4,9 +4,6 @@ vim.opt.fileencoding   = 'utf-8' -- 启用utf-8
 -- 同步外部修改
 vim.opt.autoread       = true -- 自动读取外部修改
 
--- 高亮颜色
-vim.opt.termguicolors  = true -- 启用24-bit颜色
-
 -- 行号
 vim.opt.number         = true -- 显示当前行号
 vim.opt.relativenumber = true -- 显示相对行号
@@ -55,6 +52,6 @@ vim.opt.timeoutlen     = 800 -- 缩短按键超时时间
 vim.opt.pumheight      = 10 -- 最多显示10个补全项
 
 -- 文件缓存
-vim.opt.swapfile       = false --禁用交换文件
+vim.opt.swapfile       = false -- 禁用交换文件
 vim.opt.writebackup    = false -- 禁用写入备份文件
 vim.opt.backup         = false -- 禁用备份文件

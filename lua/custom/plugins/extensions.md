@@ -116,7 +116,7 @@
     - `node`
     - 外部浏览器（默认调用 wsl 下的 qutebrowser）
 
-#### render-markdown.nvim（Markdown 渲染）
+#### render-markdown.nvim（Markdown 渲染，未启用，见第 5 节）
 - Dependencies
     - `nvim-treesitter/nvim-treesitter`
     - `nvim-tree/nvim-web-devicons`
