@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
 })
 
 return {
-	ts_config = {
+	treesitter = {
 		parser = { 'zsh', 'powershell' }
 	}
 }

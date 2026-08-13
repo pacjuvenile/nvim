@@ -1,5 +1,5 @@
 return {
-	ts_config = {
+	treesitter = {
 		parser = { 'latex' }
 	}
 }

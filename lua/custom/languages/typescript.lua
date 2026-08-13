@@ -1,11 +1,11 @@
 return {
-	ts_config = {
+	treesitter = {
 		parser = {
 		'typescript',
 		'javascript'
 		}
 	},
-	ls_config = {
+	lsp = {
 		name = 'ts_ls',
 		cmd = { 'typescript-language-server', '--stdio' },
 		filetypes = {

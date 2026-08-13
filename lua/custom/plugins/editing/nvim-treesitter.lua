@@ -21,10 +21,10 @@ return {
 			'commonlisp'
 		}
 
-		local ts_configs = require('custom.languages').ts_configs
-		for _, ts_config in ipairs(ts_configs) do
-			if ts_config.ensure_installed ~= false then
-				for _, parser in ipairs(ts_config.parser) do
+		local treesitter_configs = require('custom.languages').treesitter_configs
+		for _, treesitter in ipairs(treesitter_configs) do
+			if treesitter.ensure_installed ~= false then
+				for _, parser in ipairs(treesitter.parser) do
 					if not vim.tbl_contains(ensure_installed, parser) then
 						table.insert(ensure_installed, parser)
 					end

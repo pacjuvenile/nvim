@@ -1,12 +1,12 @@
 return {
-	ts_config = {
+	treesitter = {
 		ensure_installed = true,
 		parser = {
 			'markdown',
 			'markdown_inline'
 		}
 	},
-	ls_config = {
+	lsp = {
 		name = 'marksman',
 		cmd = { 'marksman' },
 		filetypes = { 'markdown' },

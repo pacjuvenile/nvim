@@ -1,8 +1,8 @@
 return {
-	ts_config = {
+	treesitter = {
 		parser = { 'lua' }
 	},
-	ls_config = {
+	lsp = {
 		name = 'lua_ls',
 		cmd = { 'lua-language-server' },
 		filetypes = { 'lua' },

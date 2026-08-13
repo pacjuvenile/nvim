@@ -1,8 +1,8 @@
 return {
-	ts_config = {
+	treesitter = {
 		parser = { 'systemverilog' }
 	},
-	ls_config = {
+	lsp = {
 		name = 'svls',
 		cmd = { 'svls' },
 		filetypes = { 'systemverilog', 'verilog' },

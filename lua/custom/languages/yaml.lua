@@ -8,10 +8,10 @@
 -- })
 
 return {
-	ts_config = {
+	treesitter = {
 		parser = { 'yaml' }
 	},
-	ls_config = {
+	lsp = {
 		name = 'yamlls',
 		cmd = { 'yaml-language-server', '--stdio' },
 		filetypes = { 'yaml' },

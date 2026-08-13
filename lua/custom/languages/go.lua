@@ -65,10 +65,10 @@ local function get_root_dir(fname)
 end
 
 return {
-	ts_config = {
+	treesitter = {
 		parser = { 'go' }
 	},
-	ls_config = {
+	lsp = {
 		name = 'gopls',
 		cmd = { 'gopls' },
 		filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },

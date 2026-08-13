@@ -45,10 +45,10 @@ local function is_library(fname)
 end
 
 return {
-	ts_config = {
+	treesitter = {
 		parser = { 'rust' }
 	},
-	ls_config = {
+	lsp = {
 		name = 'rust_analyzer',
 		cmd = { 'rust-analyzer' } ,
 		filetypes = { 'rust' },

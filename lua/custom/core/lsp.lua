@@ -1,11 +1,11 @@
-local ls_configs = require('custom.languages').ls_configs
-for _, ls_config in ipairs(ls_configs) do
+local lsp_configs = require('custom.languages').lsp_configs
+for _, lsp in ipairs(lsp_configs) do
 	-- 配置lsp
-	if ls_config.name ~= nil then
-		vim.lsp.config(ls_config.name, ls_config)
+	if lsp.name ~= nil then
+		vim.lsp.config(lsp.name, lsp)
 		-- 启用lsp
-		if ls_config.enabled ~= false then
-			vim.lsp.enable(ls_config.name)
+		if lsp.enabled ~= false then
+			vim.lsp.enable(lsp.name)
 		end
 	end
 end
