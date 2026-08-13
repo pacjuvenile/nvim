@@ -40,6 +40,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		})
 		vim.keymap.set('n', 'go', function()
 			vim.diagnostic.open_float({ source = true })
-		end)
+		end, { buffer = ev.buf, desc = 'Lsp diagnostic float' })
 	end
 })
