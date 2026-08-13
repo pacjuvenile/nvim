@@ -26,7 +26,7 @@ return {
 						end
 
 						local word_count = 0
-						if vim.fn.mode() == 'v' or vim.fn.mode() == 'V' then
+						if vim.fn.mode() == 'v' or vim.fn.mode() == 'V' or vim.fn.mode == '\22' then
 							word_count = vim.fn.wordcount().visual_words
 						else
 							word_count = vim.fn.wordcount().words

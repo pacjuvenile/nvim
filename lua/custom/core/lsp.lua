@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- 折叠
 		if client and client:supports_method('textDocument/foldingRange') then
 			vim.wo[0][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
+			vim.wo[0][0].foldmethod = 'expr'
 		end
 
 		-- 诊断配置
