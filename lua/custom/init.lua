@@ -4,25 +4,13 @@ vim.g.encoding = 'UTF-8'
 
 -- 剪切板
 vim.g.clipboard = 'osc52'
-if vim.fn.has('wsl') == 1 then
-	vim.g.clipboard = {
-		name = 'win32yank',
-		copy = {
-			['+'] = 'win32yank.exe -i --crlf'
-		},
-		paste = {
-			['+'] = 'win32yank.exe -o --lf'
-		},
-		cache_enabled = 0
-	}
-end
 
 -- 全局映射
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 -- 关闭内置文件类型插件&缩进
-vim.cmd('filetype plugin indent off')
+vim.cmd('filetype indent off')
 
 -- 插件管理
 require('custom.core.plugin-manager')
