@@ -56,6 +56,7 @@ return {
 					{
 						'filename',
 						path = 1,
+						shorting_target = 15,
 						padding = { left = 0, right = 1 }
 					}
 				},
