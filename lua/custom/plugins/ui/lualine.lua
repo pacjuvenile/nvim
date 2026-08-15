@@ -1,3 +1,8 @@
+local function macro_recording()
+	local register = vim.fn.reg_recording()
+	return register ~= '' and 'recording @' .. register or ''
+end
+
 return {
 	'nvim-lualine/lualine.nvim',
 	dependencies = {
@@ -6,7 +11,8 @@ return {
 	lazy = true,
 	event = 'VeryLazy',
 	config = function()
-		require('lualine').setup({
+		local lualine = require('lualine')
+		lualine.setup({
 			options = {
 				theme = 'auto',
 				component_separators = { left = '', right = '' },
@@ -15,8 +21,8 @@ return {
 			sections = {
 				lualine_a = { 'mode' },
 				lualine_b = { 'branch', 'diff' },
-				lualine_c = { 'filename', 'encoding', 'filesize' },
-				lualine_x = { 'lsp_status' },
+				lualine_c = { 'encoding', 'filesize' },
+				lualine_x = { macro_recording },
 				lualine_y = { 'progress' },
 				lualine_z = {
 					function()
@@ -37,12 +43,32 @@ return {
 			},
 			winbar = {
 				lualine_a = { '' },
-				lualine_b = { 'filename' },
-				lualine_c = { 'filetype' },
-				lualine_x = { '' },
+				lualine_b = {
+					{
+						'filetype',
+						icon_only = true,
+						colored = true,
+						padding = { left = 1, right = 0 }
+					},
+					{
+						'filename',
+						path = 1,
+						padding = { left = 0, right = 1 }
+					}
+				},
+				lualine_c = { '' },
+				lualine_x = { 'lsp_status' },
 				lualine_y = { '' },
 				lualine_z = { '' }
 			}
+		})
+
+		local macro_augroup = vim.api.nvim_create_augroup('LualineMacroRecording', { clear = true })
+		vim.api.nvim_create_autocmd({ 'RecordingEnter', 'RecordingLeave' }, {
+			group = macro_augroup,
+			callback = function()
+				lualine.refresh({ place = { 'statusline' } })
+			end
 		})
 	end
 }
