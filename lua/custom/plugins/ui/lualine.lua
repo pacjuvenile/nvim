@@ -3,6 +3,21 @@ local function macro_recording()
 	return register ~= '' and 'recording @' .. register or ''
 end
 
+local function location_or_word_count()
+	local prose_filetypes = { 'markdown', 'text' }
+	if not vim.tbl_contains(prose_filetypes, vim.bo.filetype) then
+		return '%l:%c'
+	end
+
+	local word_count = 0
+	if vim.fn.mode() == 'v' or vim.fn.mode() == 'V' or vim.fn.mode() == '\22' then
+		word_count = vim.fn.wordcount().visual_words
+	else
+		word_count = vim.fn.wordcount().words
+	end
+	return word_count .. ' words'
+end
+
 return {
 	'nvim-lualine/lualine.nvim',
 	dependencies = {
@@ -22,24 +37,12 @@ return {
 				lualine_a = { 'mode' },
 				lualine_b = { 'branch', 'diff' },
 				lualine_c = { 'encoding', 'filesize' },
-				lualine_x = { macro_recording },
-				lualine_y = { 'progress' },
-				lualine_z = {
-					function()
-						local prose_filetypes = { 'markdown', 'text' }
-						if not vim.tbl_contains(prose_filetypes, vim.bo.filetype) then
-							return '%l:%c'
-						end
-
-						local word_count = 0
-						if vim.fn.mode() == 'v' or vim.fn.mode() == 'V' or vim.fn.mode() == '\22' then
-							word_count = vim.fn.wordcount().visual_words
-						else
-							word_count = vim.fn.wordcount().words
-						end
-						return word_count .. ' words'
-					end
+				lualine_x = {
+					macro_recording,
+					{ '%S', padding = 0 }
 				},
+				lualine_y = { 'progress' },
+				lualine_z = { location_or_word_count },
 			},
 			winbar = {
 				lualine_a = { '' },
