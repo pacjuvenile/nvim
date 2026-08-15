@@ -21,8 +21,8 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- 关闭内置缩进
-vim.cmd('filetype indent off')
+-- 关闭内置文件类型插件&缩进
+vim.cmd('filetype plugin indent off')
 
 -- 插件管理
 require('custom.core.plugin-manager')
