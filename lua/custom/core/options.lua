@@ -1,18 +1,18 @@
 -- global options
-vim.o.cmdheight      = 0     -- 不显示底部命令行区域
-vim.o.cmdwinheight   = 1     -- 设置命令窗口大小为1
-vim.o.laststatus     = 3     -- 所有window共用底部状态栏
-vim.o.showmode       = false -- 不显示模式
-vim.o.showcmd        = true  -- 显示未完成的命令
+vim.o.cmdheight      = 0            -- 不显示底部命令行区域
+vim.o.cmdwinheight   = 1            -- 设置命令窗口大小为1
+vim.o.laststatus     = 3            -- 所有window共用底部状态栏
+vim.o.showmode       = false        -- 不显示模式
+vim.o.showcmd        = true         -- 启用命令前缀显示
 vim.o.showcmdloc     = 'statusline' -- 在状态栏显示未完成的命令
-vim.o.ignorecase     = true  -- 不输入大写则大小写不敏感
-vim.o.smartcase      = true  -- 输入大写则大写敏感
-vim.o.splitright     = true  -- 新窗口分割到右侧
-vim.o.splitbelow     = true  -- 新窗口分割到下方
-vim.o.timeoutlen     = 800   -- 缩短按键超时时间
-vim.o.pumheight      = 10    -- 最多显示10个补全项
-vim.o.writebackup    = false -- 禁用写入备份文件
-vim.o.backup         = false -- 禁用备份文件
+vim.o.ignorecase     = true         -- 不输入大写则大小写不敏感
+vim.o.smartcase      = true         -- 输入大写则大写敏感
+vim.o.splitright     = true         -- 新窗口分割到右侧
+vim.o.splitbelow     = true         -- 新窗口分割到下方
+vim.o.timeoutlen     = 800          -- 缩短按键超时时间
+vim.o.pumheight      = 10           -- 最多显示10个补全项
+vim.o.writebackup    = false        -- 禁用写入备份文件
+vim.o.backup         = false        -- 禁用备份文件
 
 -- buffer options
 vim.o.fileencoding   = 'utf-8' -- 使用utf-8读写
