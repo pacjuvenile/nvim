@@ -61,16 +61,8 @@ return {
 			end
 
 			local cargo_crate_dir = vim.fs.root(fname, { 'Cargo.toml' })
-			local cargo_workspace_root
-
 			if cargo_crate_dir == nil then
-				local rust_project_root = vim.fs.root(fname, { 'rust-project.json' })
-				local git = vim.fs.find('.git', { path = fname, upward = true })[1]
-				local git_root = git and vim.fs.dirname(git)
-				local root = rust_project_root or git_root
-				if root then
-					on_dir(root)
-				end
+				on_dir(vim.fs.root(fname, { 'rust-project.json', '.git' }))
 				return
 			end
 
@@ -85,19 +77,22 @@ return {
 			}
 
 			vim.system(cmd, { text = true }, function(output)
-				if output.code == 0 then
-					if output.stdout then
-						local result = vim.json.decode(output.stdout)
-						if result['workspace_root'] then
-							cargo_workspace_root = vim.fs.normalize(result['workspace_root'])
-						end
+				if output.code == 0 and output.stdout then
+					local ok, result = pcall(vim.json.decode, output.stdout)
+					local workspace_root = ok and result['workspace_root']
+					if workspace_root then
+						on_dir(vim.fs.normalize(workspace_root))
+					else
+						on_dir(cargo_crate_dir)
 					end
-
-					on_dir(cargo_workspace_root or cargo_crate_dir)
 				else
-					vim.schedule(function ()
-						vim.notify('[rust_analyzer] cmd failed')
+					vim.schedule(function()
+						vim.notify(
+							('[rust_analyzer] cargo metadata failed, using %s'):format(cargo_crate_dir),
+							vim.log.levels.WARN
+						)
 					end)
+					on_dir(cargo_crate_dir)
 				end
 			end)
 		end,
